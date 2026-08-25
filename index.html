@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoorAlAyn Modesty</title>
+    <link rel="stylesheet" href="../style.css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <p class="slogan">HANDMADE · NATURAL · MODEST</p>
+        <h1>HoorAlAyn Modesty</h1>
+        <p class="untertitel">Handgenähte Hijabs aus natürlichen Stoffen.</p>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#hijabs">Hijabs</a>
+            <a href="#ueber-uns">Über uns</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#warenkorb">
+                Warenkorb (<span id="warenkorb-anzahl">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <p class="kleiner-text">Willkommen bei</p>
+            <h2>HoorAlAyn Modesty</h2>
+            <p>
+                Zeitlose, feminine und handgenähte Hijabs –
+                mit Liebe für dich gefertigt.
+            </p>
+            <a class="button-link" href="#hijabs">Kollektion entdecken</a>
+        </section>
+
+        <section class="bereich" id="hijabs">
+            <p class="kleiner-text">UNSERE KOLLEKTION</p>
+            <h2>Für dich mit Liebe genäht</h2>
+            <p class="bereich-text">
+                Weiche Stoffe, sanfte Farben und zeitlose Eleganz.
+            </p>
+
+            <div class="produkte">
+
+                <article class="produkt">
+                    <div class="produkt-bild">
+                        <img src="bilder/classic-beige.jpg" alt="Classic Beige Hijab">
+                    </div>
+                    <h3>Classic Beige</h3>
+                    <p class="material">Handgenäht · Naturstoff</p>
+                    <p class="preis">19,90 €</p>
+                    <button data-name="Classic Beige" data-preis="19.90">
+                        In den Warenkorb
+                    </button>
+                </article>
+
+                <article class="produkt">
+                    <div class="produkt-bild">
+                        <img src="bilder/soft-mocha.jpg" alt="Soft Mocha Hijab">
+                    </div>
+                    <h3>Soft Mocha</h3>
+                    <p class="material">Handgenäht · Naturstoff</p>
+                    <p class="preis">19,90 €</p>
+                    <button data-name="Soft Mocha" data-preis="19.90">
+                        In den Warenkorb
+                    </button>
+                </article>
+
+                <article class="produkt">
+                    <div class="produkt-bild">
+                        <img src="bilder/elegant-cream.jpg" alt="Elegant Cream Hijab">
+                    </div>
+                    <h3>Elegant Cream</h3>
+                    <p class="material">Handgenäht · Naturstoff</p>
+                    <p class="preis">19,90 €</p>
+                    <button data-name="Elegant Cream" data-preis="19.90">
+                        In den Warenkorb
+                    </button>
+                </article>
+
+                <article class="produkt">
+                    <div class="produkt-bild">
+                        <img src="bilder/rose-sand.jpg" alt="Rose Sand Hijab">
+                    </div>
+                    <h3>Rose Sand</h3>
+                    <p class="material">Handgenäht · Naturstoff</p>
+                    <p class="preis">19,90 €</p>
+                    <button data-name="Rose Sand" data-preis="19.90">
+                        In den Warenkorb
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="bereich" id="ueber-uns">
+            <p class="kleiner-text">MIT LIEBE GEMACHT</p>
+            <h2>Unsere Handarbeit</h2>
+            <p class="bereich-text">
+                Jedes Stück wird mit Sorgfalt ausgewählt und liebevoll für
+                dich gefertigt. Für Hijabs, die sich weich anfühlen und dich
+                jeden Tag begleiten.
+            </p>
+        </section>
+
+        <section class="bereich" id="warenkorb">
+            <p class="kleiner-text">DEINE AUSWAHL</p>
+            <h2>Dein Warenkorb</h2>
+
+            <div id="warenkorb-inhalt">
+                <p>Dein Warenkorb ist noch leer.</p>
+            </div>
+
+            <p id="gesamtpreis"></p>
+        </section>
+
+        <section class="bereich" id="kontakt">
+            <p class="kleiner-text">KONTAKT</p>
+            <h2>Schreib uns</h2>
+            <p class="bereich-text">
+                Für Fragen zu Stoffen, Farben oder deiner Bestellung kannst du
+                uns gerne auf Telegram schreiben.
+            </p>
+<div class="kontakt-buttons">
+    <a
+        class="button-link"
+        href="https://t.me/hoor_Al_Ayn"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Für Frauen schreiben
+    </a>
+
+    <a
+        class="button-link"
+        href="https://t.me/al_aamaq"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Für Männer schreiben
+    </a>
+</div>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 HoorAlAyn Modesty · Handmade with love</p>
+    </footer>
+
+    <script>
+        const warenkorb = [];
+
+        const buttons = document.querySelectorAll(
+            ".produkt button"
+        );
+
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function() {
+
+                const name = button.dataset.name;
+                const preis = Number(button.dataset.preis);
+
+                const vorhandenerArtikel = warenkorb.find(function(artikel) {
+                    return artikel.name === name;
+                });
+
+                if (vorhandenerArtikel) {
+                    vorhandenerArtikel.anzahl++;
+                } else {
+                    warenkorb.push({
+                        name: name,
+                        preis: preis,
+                        anzahl: 1
+                    });
+                }
+
+                zeigeWarenkorb();
+            });
+        });
+
+        function zeigeWarenkorb() {
+
+            const inhalt = document.getElementById("warenkorb-inhalt");
+            const anzahlAnzeige =
+                document.getElementById("warenkorb-anzahl");
+            const gesamtpreisAnzeige =
+                document.getElementById("gesamtpreis");
+
+            const artikelAnzahl = warenkorb.reduce(
+                function(summe, artikel) {
+                    return summe + artikel.anzahl;
+                },
+                0
+            );
+
+            const gesamtpreis = warenkorb.reduce(
+                function(summe, artikel) {
+                    return summe + artikel.preis * artikel.anzahl;
+                },
+                0
+            );
+
+            anzahlAnzeige.textContent = artikelAnzahl;
+
+            inhalt.innerHTML = "";
+
+            if (warenkorb.length === 0) {
+
+                inhalt.innerHTML =
+                    "<p>Dein Warenkorb ist noch leer.</p>";
+
+                gesamtpreisAnzeige.textContent = "";
+
+                return;
+            }
+
+            warenkorb.forEach(function(artikel, index) {
+
+                const zeile = document.createElement("div");
+
+                zeile.className = "warenkorb-artikel";
+
+                zeile.innerHTML =
+                    "<span>" +
+                    artikel.name +
+                    " · " +
+                    artikel.anzahl +
+                    " Stück</span>" +
+
+                    "<span>" +
+                    (artikel.preis * artikel.anzahl)
+                        .toFixed(2)
+                        .replace(".", ",") +
+                    " €</span>" +
+
+                    "<button class='entfernen' data-index='" +
+                    index +
+                    "'>×</button>";
+
+                inhalt.appendChild(zeile);
+            });
+
+            gesamtpreisAnzeige.textContent =
+                "Gesamt: " +
+                gesamtpreis.toFixed(2).replace(".", ",") +
+                " €";
+
+            document
+                .querySelectorAll(".entfernen")
+                .forEach(function(button) {
+
+                    button.addEventListener("click", function() {
+
+                        warenkorb.splice(
+                            button.dataset.index,
+                            1
+                        );
+
+                        zeigeWarenkorb();
+                    });
+                });
+        }
+    </script>
+
+</body>
+</html>
