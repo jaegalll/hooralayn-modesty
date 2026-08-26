@@ -1,299 +1,858 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>HoorAlAyn Modesty</title>
+
     <link rel="stylesheet" href="style.css">
+
+
+    <!--
+        Diese kleinen Ergänzungen sorgen dafür,
+        dass die Produktansicht richtig funktioniert.
+    -->
+    <style>
+
+        /* PRODUKT AUF DER SHOP-SEITE */
+
+        .produkt-oeffnen {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: none;
+            background: transparent;
+            color: inherit;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .produkt-hauptbild {
+            width: 100%;
+            overflow: hidden;
+            background: #ebe0d4;
+        }
+
+        .produkt-hauptbild img {
+            display: block;
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        .produkt-oeffnen h3 {
+            margin: 22px 10px 5px;
+            font-size: 25px;
+            font-weight: normal;
+            color: #4b3c31;
+        }
+
+
+        /* PRODUKTFENSTER */
+
+        .produkt-modal {
+            width: min(900px, calc(100% - 24px));
+            max-height: 90vh;
+
+            padding: 0;
+
+            border: none;
+
+            background: #fffdf9;
+
+            color: #4b3c31;
+
+            overflow-y: auto;
+        }
+
+        .produkt-modal::backdrop {
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .produkt-modal-inhalt {
+            position: relative;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .modal-schliessen {
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            padding: 5px 10px;
+
+            border: none;
+
+            background: transparent;
+
+            color: #4b3c31;
+
+            font-size: 34px;
+
+            cursor: pointer;
+        }
+
+
+        /* BEIDE BILDER IM PRODUKT */
+
+        .produkt-detail-bilder {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .produkt-detail-bilder img {
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: 3 / 4;
+
+            object-fit: cover;
+
+            background: #ebe0d4;
+        }
+
+
+        /* HANDY */
+
+        @media (max-width: 600px) {
+
+            .produkt-hauptbild img {
+                height: 330px;
+            }
+
+            .produkt-modal-inhalt {
+                padding: 35px 12px 20px;
+            }
+
+            .produkt-detail-bilder {
+                gap: 6px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
     <header>
-        <p class="slogan">HANDMADE · NATURAL · MODEST</p>
-        <h1>HoorAlAyn Modesty</h1>
-        <p class="untertitel">Handgenähte Hijabs aus natürlichen Stoffen.</p>
+
+        <p class="slogan">
+            HANDMADE · NATURAL · MODEST
+        </p>
+
+        <h1>
+            HoorAlAyn Modesty
+        </h1>
+
+        <p class="untertitel">
+            Handgenähte Hijabs und Khimars aus natürlichen Stoffen.
+        </p>
+
 
         <nav>
-            <a href="#home">Home</a>
-            <a href="#hijabs">Hijabs</a>
-            <a href="#ueber-uns">Über uns</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#warenkorb">
-                Warenkorb (<span id="warenkorb-anzahl">0</span>)
+
+            <a href="#home">
+                Home
             </a>
+
+            <a href="#hijabs">
+                Kollektion
+            </a>
+
+            <a href="#ueber-uns">
+                Über uns
+            </a>
+
+            <a href="#kontakt">
+                Kontakt
+            </a>
+
+            <a href="#warenkorb">
+                Warenkorb
+                (<span id="warenkorb-anzahl">0</span>)
+            </a>
+
         </nav>
+
     </header>
+
+
 
     <main>
 
+
+        <!-- ================================
+             STARTSEITE
+        ================================= -->
+
         <section class="hero" id="home">
-            <p class="kleiner-text">Willkommen bei</p>
-            <h2>HoorAlAyn Modesty</h2>
+
+            <p class="kleiner-text">
+                WILLKOMMEN BEI
+            </p>
+
+            <h2>
+                HoorAlAyn Modesty
+            </h2>
+
             <p>
-                Zeitlose, feminine und handgenähte Hijabs –
+                Zeitlose, feminine und handgenähte Modest Fashion –
                 mit Liebe für dich gefertigt.
             </p>
-            <a class="button-link" href="#hijabs">Kollektion entdecken</a>
+
+            <a
+                class="button-link"
+                href="#hijabs"
+            >
+                Kollektion entdecken
+            </a>
+
         </section>
+
+
+
+        <!-- ================================
+             KOLLEKTION
+        ================================= -->
 
         <section class="bereich" id="hijabs">
-            <p class="kleiner-text">UNSERE KOLLEKTION</p>
-            <h2>Für dich mit Liebe genäht</h2>
-            <p class="bereich-text">
-                Weiche Stoffe, sanfte Farben und zeitlose Eleganz.
+
+            <p class="kleiner-text">
+                UNSERE KOLLEKTION
             </p>
 
-          <div class="produkt-bild">
-    <img src="Bambus Khimar.jpg" alt="Bambus Khimar">
-    <img src="Bambus Khimar vorne.jpg" alt="Bambus Khimar">
-</div>
+            <h2>
+                Für dich mit Liebe genäht
+            </h2>
 
-<h3>Bambus Khimar</h3>
+            <p class="bereich-text">
+                Weiche Stoffe, natürliche Materialien und zeitlose Eleganz.
+            </p>
 
-<p class="material">Handgenäht · Naturstoff</p>
 
-<p class="preis">59,99 €</p>
 
-<button data-name="Bambus Khimar" data-preis="59.99">
-    In den Warenkorb
-</button>
+            <div class="produkte">
 
-</article>
 
-                <article class="produkt">
-                    <div class="produkt-bild">
-                        <img src="bilder/soft-mocha.jpg" alt="Soft Mocha Hijab">
-                    </div>
-                    <h3>Soft Mocha</h3>
-                    <p class="material">Handgenäht · Naturstoff</p>
-                    <p class="preis">19,90 €</p>
-                    <button data-name="Soft Mocha" data-preis="19.90">
-                        In den Warenkorb
-                    </button>
-                </article>
+                <!-- ==========================
+                     BAMBUS KHIMAR
+                =========================== -->
 
                 <article class="produkt">
-                    <div class="produkt-bild">
-                        <img src="bilder/elegant-cream.jpg" alt="Elegant Cream Hijab">
-                    </div>
-                    <h3>Elegant Cream</h3>
-                    <p class="material">Handgenäht · Naturstoff</p>
-                    <p class="preis">19,90 €</p>
-                    <button data-name="Elegant Cream" data-preis="19.90">
+
+
+                    <!--
+                        DER KUNDE SIEHT ZUERST
+                        NUR DIESES EINE BILD
+                    -->
+
+                    <button
+                        class="produkt-oeffnen"
+                        id="bambus-oeffnen"
+                        type="button"
+                    >
+
+                        <div class="produkt-hauptbild">
+
+                            <img
+                                src="bilder/Bambus Khimar.jpg"
+                                alt="Bambus Khimar"
+                            >
+
+                        </div>
+
+
+                        <h3>
+                            Bambus Khimar
+                        </h3>
+
+                    </button>
+
+
+
+                    <p class="material">
+                        Handgenäht · Naturstoff
+                    </p>
+
+
+                    <p class="preis">
+                        59,99 €
+                    </p>
+
+
+                    <button
+                        class="warenkorb-button"
+                        type="button"
+                        data-name="Bambus Khimar"
+                        data-preis="59.99"
+                    >
                         In den Warenkorb
                     </button>
+
+
                 </article>
 
-                <article class="produkt">
-                    <div class="produkt-bild">
-                        <img src="bilder/rose-sand.jpg" alt="Rose Sand Hijab">
-                    </div>
-                    <h3>Rose Sand</h3>
-                    <p class="material">Handgenäht · Naturstoff</p>
-                    <p class="preis">19,90 €</p>
-                    <button data-name="Rose Sand" data-preis="19.90">
-                        In den Warenkorb
-                    </button>
-                </article>
 
             </div>
+
         </section>
+
+
+
+        <!-- ================================
+             ÜBER UNS
+        ================================= -->
 
         <section class="bereich" id="ueber-uns">
-            <p class="kleiner-text">MIT LIEBE GEMACHT</p>
-            <h2>Unsere Handarbeit</h2>
-            <p class="bereich-text">
-                Jedes Stück wird mit Sorgfalt ausgewählt und liebevoll für
-                dich gefertigt. Für Hijabs, die sich weich anfühlen und dich
-                jeden Tag begleiten.
+
+            <p class="kleiner-text">
+                MIT LIEBE GEMACHT
             </p>
+
+            <h2>
+                Unsere Handarbeit
+            </h2>
+
+            <p class="bereich-text">
+                Jedes Stück wird mit Sorgfalt ausgewählt und liebevoll
+                gefertigt. Unsere Modest Fashion verbindet natürliche
+                Materialien, Komfort und zeitlose Eleganz.
+            </p>
+
         </section>
+
+
+
+        <!-- ================================
+             WARENKORB
+        ================================= -->
 
         <section class="bereich" id="warenkorb">
-            <p class="kleiner-text">DEINE AUSWAHL</p>
-            <h2>Dein Warenkorb</h2>
+
+            <p class="kleiner-text">
+                DEINE AUSWAHL
+            </p>
+
+            <h2>
+                Dein Warenkorb
+            </h2>
+
 
             <div id="warenkorb-inhalt">
-                <p>Dein Warenkorb ist noch leer.</p>
+
+                <p>
+                    Dein Warenkorb ist noch leer.
+                </p>
+
             </div>
 
+
             <p id="gesamtpreis"></p>
+
         </section>
+
+
+
+        <!-- ================================
+             KONTAKT
+        ================================= -->
 
         <section class="bereich" id="kontakt">
-            <p class="kleiner-text">KONTAKT</p>
-            <h2>Schreib uns</h2>
-            <p class="bereich-text">
-                Für Fragen zu Stoffen, Farben oder deiner Bestellung kannst du
-                uns gerne auf Telegram schreiben.
-            </p>
-<div class="kontakt-buttons">
-    <a
-        class="button-link"
-        href="https://t.me/hoor_Al_Ayn"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Für Frauen schreiben
-    </a>
 
-    <a
-        class="button-link"
-        href="https://t.me/al_aamaq"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Für Männer schreiben
-    </a>
-</div>
-            
+            <p class="kleiner-text">
+                KONTAKT
+            </p>
+
+            <h2>
+                Schreib uns
+            </h2>
+
+            <p class="bereich-text">
+                Für Fragen zu Stoffen, Farben oder deiner Bestellung
+                kannst du uns gerne über Telegram kontaktieren.
+            </p>
+
+
+            <div class="kontakt-buttons">
+
+
+                <a
+                    class="button-link"
+                    href="https://t.me/hoor_Al_Ayn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Für Frauen schreiben
+                </a>
+
+
+                <a
+                    class="button-link"
+                    href="https://t.me/al_aamaq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Für Männer schreiben
+                </a>
+
+
+            </div>
+
         </section>
+
 
     </main>
 
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
     <footer>
-        <p>© 2026 HoorAlAyn Modesty · Handmade with love</p>
+
+        <p>
+            © 2026 HoorAlAyn Modesty · Handmade with love
+        </p>
+
     </footer>
 
-    <script>
-        const warenkorb = [];
 
-        const buttons = document.querySelectorAll(
-            ".produkt button"
+
+    <!-- =====================================
+         PRODUKTFENSTER
+         
+         ERST NACH KLICK SICHTBAR
+    ====================================== -->
+
+    <dialog
+        class="produkt-modal"
+        id="bambus-modal"
+    >
+
+        <div class="produkt-modal-inhalt">
+
+
+            <!-- SCHLIESSEN -->
+
+            <button
+                class="modal-schliessen"
+                id="modal-schliessen"
+                type="button"
+                aria-label="Produktansicht schließen"
+            >
+                ×
+            </button>
+
+
+
+            <p class="kleiner-text">
+                HOORALAYN MODESTY
+            </p>
+
+
+            <h2>
+                Bambus Khimar
+            </h2>
+
+
+
+            <!--
+                HIER SIEHT DER KUNDE
+                BEIDE BILDER
+            -->
+
+            <div class="produkt-detail-bilder">
+
+
+                <img
+                    src="bilder/Bambus Khimar.jpg"
+                    alt="Bambus Khimar"
+                >
+
+
+                <img
+                    src="bilder/Bambus Khimar vorne.jpg"
+                    alt="Bambus Khimar Vorderansicht"
+                >
+
+
+            </div>
+
+
+
+            <p class="material">
+                Handgenäht · Naturstoff
+            </p>
+
+
+            <p class="preis">
+                59,99 €
+            </p>
+
+
+            <button
+                class="button-link warenkorb-button"
+                type="button"
+                data-name="Bambus Khimar"
+                data-preis="59.99"
+            >
+                In den Warenkorb
+            </button>
+
+
+        </div>
+
+    </dialog>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* ================================
+           PRODUKTFENSTER
+        ================================= */
+
+
+        const bambusOeffnen =
+            document.getElementById("bambus-oeffnen");
+
+
+        const bambusModal =
+            document.getElementById("bambus-modal");
+
+
+        const modalSchliessen =
+            document.getElementById("modal-schliessen");
+
+
+
+        bambusOeffnen.addEventListener(
+            "click",
+            function() {
+
+                bambusModal.showModal();
+
+            }
         );
 
-        buttons.forEach(function(button) {
-            button.addEventListener("click", function() {
 
-                const name = button.dataset.name;
-                const preis = Number(button.dataset.preis);
 
-                const vorhandenerArtikel = warenkorb.find(function(artikel) {
-                    return artikel.name === name;
-                });
+        modalSchliessen.addEventListener(
+            "click",
+            function() {
 
-                if (vorhandenerArtikel) {
-                    vorhandenerArtikel.anzahl++;
-                } else {
-                    warenkorb.push({
-                        name: name,
-                        preis: preis,
-                        anzahl: 1
-                    });
-                }
+                bambusModal.close();
 
-                zeigeWarenkorb();
-            });
-        });
+            }
+        );
+
+
+
+        /* ================================
+           WARENKORB
+        ================================= */
+
+
+        const warenkorb = [];
+
+
+        const warenkorbButtons =
+            document.querySelectorAll(
+                ".warenkorb-button"
+            );
+
+
+
+        warenkorbButtons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        const name =
+                            button.dataset.name;
+
+
+                        const preis =
+                            Number(
+                                button.dataset.preis
+                            );
+
+
+
+                        const vorhandenerArtikel =
+                            warenkorb.find(
+                                function(artikel) {
+
+                                    return artikel.name === name;
+
+                                }
+                            );
+
+
+
+                        if (vorhandenerArtikel) {
+
+                            vorhandenerArtikel.anzahl++;
+
+                        }
+
+                        else {
+
+                            warenkorb.push({
+
+                                name: name,
+
+                                preis: preis,
+
+                                anzahl: 1
+
+                            });
+
+                        }
+
+
+
+                        zeigeWarenkorb();
+
+                    }
+                );
+
+            }
+        );
+
+
 
         function zeigeWarenkorb() {
 
-            const inhalt = document.getElementById("warenkorb-inhalt");
+
+            const inhalt =
+                document.getElementById(
+                    "warenkorb-inhalt"
+                );
+
+
             const anzahlAnzeige =
-                document.getElementById("warenkorb-anzahl");
+                document.getElementById(
+                    "warenkorb-anzahl"
+                );
+
+
             const gesamtpreisAnzeige =
-                document.getElementById("gesamtpreis");
+                document.getElementById(
+                    "gesamtpreis"
+                );
 
-            const artikelAnzahl = warenkorb.reduce(
-                function(summe, artikel) {
-                    return summe + artikel.anzahl;
-                },
-                0
-            );
 
-            const gesamtpreis = warenkorb.reduce(
-                function(summe, artikel) {
-                    return summe + artikel.preis * artikel.anzahl;
-                },
-                0
-            );
 
-            anzahlAnzeige.textContent = artikelAnzahl;
+            const artikelAnzahl =
+                warenkorb.reduce(
+
+                    function(summe, artikel) {
+
+                        return summe +
+                            artikel.anzahl;
+
+                    },
+
+                    0
+
+                );
+
+
+
+            const gesamtpreis =
+                warenkorb.reduce(
+
+                    function(summe, artikel) {
+
+                        return summe +
+                            artikel.preis *
+                            artikel.anzahl;
+
+                    },
+
+                    0
+
+                );
+
+
+
+            anzahlAnzeige.textContent =
+                artikelAnzahl;
+
+
 
             inhalt.innerHTML = "";
 
+
+
             if (warenkorb.length === 0) {
+
 
                 inhalt.innerHTML =
                     "<p>Dein Warenkorb ist noch leer.</p>";
 
-                gesamtpreisAnzeige.textContent = "";
+
+                gesamtpreisAnzeige.textContent =
+                    "";
+
 
                 return;
+
             }
 
-            warenkorb.forEach(function(artikel, index) {
 
-                const zeile = document.createElement("div");
 
-                zeile.className = "warenkorb-artikel";
+            warenkorb.forEach(
 
-                zeile.innerHTML =
-                    "<span>" +
-                    artikel.name +
-                    " · " +
-                    artikel.anzahl +
-                    " Stück</span>" +
+                function(artikel, index) {
 
-                    "<span>" +
-                    (artikel.preis * artikel.anzahl)
-                        .toFixed(2)
-                        .replace(".", ",") +
-                    " €</span>" +
 
-                    "<button class='entfernen' data-index='" +
-                    index +
-                    "'>×</button>";
-
-                inhalt.appendChild(zeile);
-            });
-
-            gesamtpreisAnzeige.textContent =
-                "Gesamt: " +
-                gesamtpreis.toFixed(2).replace(".", ",") +
-                " €";
-
-            document
-                .querySelectorAll(".entfernen")
-                .forEach(function(button) {
-
-                    button.addEventListener("click", function() {
-
-                        warenkorb.splice(
-                            button.dataset.index,
-                            1
+                    const zeile =
+                        document.createElement(
+                            "div"
                         );
 
-                        zeigeWarenkorb();
-                    });
-                });
+
+                    zeile.className =
+                        "warenkorb-artikel";
+
+
+
+                    zeile.innerHTML =
+
+                        "<span>" +
+
+                        artikel.name +
+
+                        " · " +
+
+                        artikel.anzahl +
+
+                        " Stück</span>" +
+
+
+                        "<span>" +
+
+                        (
+                            artikel.preis *
+                            artikel.anzahl
+                        )
+                        .toFixed(2)
+                        .replace(".", ",") +
+
+                        " €</span>" +
+
+
+                        "<button class='entfernen' data-index='" +
+
+                        index +
+
+                        "'>×</button>";
+
+
+
+                    inhalt.appendChild(
+                        zeile
+                    );
+
+                }
+
+            );
+
+
+
+            gesamtpreisAnzeige.textContent =
+
+                "Gesamt: " +
+
+                gesamtpreis
+                    .toFixed(2)
+                    .replace(".", ",") +
+
+                " €";
+
+
+
+            document
+                .querySelectorAll(
+                    ".entfernen"
+                )
+                .forEach(
+                    function(button) {
+
+
+                        button.addEventListener(
+                            "click",
+                            function() {
+
+
+                                const index =
+                                    Number(
+                                        button.dataset.index
+                                    );
+
+
+                                warenkorb.splice(
+                                    index,
+                                    1
+                                );
+
+
+                                zeigeWarenkorb();
+
+                            }
+                        );
+
+                    }
+                );
+
         }
+
+
     </script>
-  <div class="produkt-detail-bilder">
 
-            <img
-                src="bilder/Bambus Khimar.jpg"
-                alt="Bambus Khimar"
-            >
 
-            <img
-                src="bilder/Bambus Khimar vorne.jpg"
-                alt="Bambus Khimar Vorderansicht"
-            >
-
-        </div>
-
-        <p class="material">
-            Handgenäht · Naturstoff
-        </p>
-
-        <p class="preis">
-            59,99 €
-        </p>
-
-    </div>
-
-</div>
 </body>
+
 </html>
+Danach Strg + S drücken.
+Wichtig: Dieser Code erwartet deine Bilder genau hier:
+Website
+│
+├── index.html
+├── style.css
+│
+└── bilder
+    ├── Bambus Khimar.jpg
+    └── Bambus Khimar vorne.jpg
