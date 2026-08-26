@@ -367,3 +367,17 @@ footer p {
 }
     }
 }
+.produkt-bild {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    background: transparent;
+}
+
+.produkt-bild img {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
