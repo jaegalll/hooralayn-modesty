@@ -3,26 +3,21 @@
    KOMPLETTES DESIGN
 ========================================= */
 
-
-/* =========================================
-   FARBEN
-========================================= */
-
 :root {
     --hintergrund: #f8f4ee;
     --karte: #fffdf9;
     --braun: #4b3c31;
     --mittelbraun: #806a58;
-    --hellbraun: #a08772;
-    --text: #66564a;
-    --linie: #e4d9cd;
-    --bild-hintergrund: #ebe0d4;
+    --hellbraun: #a58b76;
+    --text: #6c5a4d;
+    --linie: #e5dacf;
+    --bild: #eee4da;
     --weiss: #ffffff;
 }
 
 
 /* =========================================
-   GRUNDEINSTELLUNGEN
+   GRUNDLAGEN
 ========================================= */
 
 * {
@@ -37,12 +32,15 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: Georgia, "Times New Roman", serif;
-
-    background-color: var(--hintergrund);
+    background: var(--hintergrund);
     color: var(--braun);
 
+    font-family: Georgia, "Times New Roman", serif;
     line-height: 1.6;
+}
+
+body.modal-offen {
+    overflow: hidden;
 }
 
 img {
@@ -59,7 +57,7 @@ header {
 
     text-align: center;
 
-    background-color: var(--hintergrund);
+    background: var(--hintergrund);
 
     border-bottom: 1px solid var(--linie);
 }
@@ -89,7 +87,7 @@ header h1 {
 
     font-size: 16px;
 
-    color: #78685b;
+    color: #7c6b5e;
 }
 
 
@@ -109,18 +107,34 @@ nav {
 }
 
 nav a {
+    color: var(--braun);
+
     font-family: Arial, sans-serif;
     font-size: 14px;
 
-    color: var(--braun);
-
     text-decoration: none;
 
-    transition: 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 nav a:hover {
     opacity: 0.6;
+}
+
+.warenkorb-nav {
+    position: relative;
+}
+
+.warenkorb-nav.pulsieren {
+    animation: warenkorbPuls 0.45s ease;
+}
+
+@keyframes warenkorbPuls {
+
+    50% {
+        transform: scale(1.15);
+    }
+
 }
 
 
@@ -129,9 +143,9 @@ nav a:hover {
 ========================================= */
 
 .hero {
-    min-height: 470px;
+    min-height: 440px;
 
-    padding: 80px 20px;
+    padding: 70px 20px;
 
     display: flex;
 
@@ -146,12 +160,12 @@ nav a:hover {
 .kleiner-text {
     margin: 0 0 12px;
 
+    color: var(--hellbraun);
+
     font-family: Arial, sans-serif;
     font-size: 11px;
 
     letter-spacing: 3px;
-
-    color: var(--hellbraun);
 }
 
 .hero h2 {
@@ -163,14 +177,15 @@ nav a:hover {
     color: var(--braun);
 }
 
+.hero-beschreibung,
 .hero > p:not(.kleiner-text) {
-    max-width: 600px;
+    max-width: 620px;
 
     margin: 20px auto 30px;
 
-    font-size: 18px;
-
     color: var(--text);
+
+    font-size: 18px;
 }
 
 
@@ -182,12 +197,11 @@ nav a:hover {
 .warenkorb-button {
     display: inline-block;
 
-    padding: 13px 25px;
+    padding: 13px 24px;
 
     border: none;
 
-    background-color: var(--mittelbraun);
-
+    background: var(--mittelbraun);
     color: var(--weiss);
 
     font-family: Arial, sans-serif;
@@ -198,15 +212,18 @@ nav a:hover {
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .button-link:hover,
 .warenkorb-button:hover {
-    background-color: #665344;
+    background: #665344;
 
     transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(75, 60, 49, 0.15);
 }
 
 
@@ -240,21 +257,17 @@ nav a:hover {
 
     margin: 20px auto;
 
-    font-size: 17px;
+    color: var(--text);
 
-    color: #6e5d50;
+    font-size: 17px;
 }
 
 
 /* =========================================
-   PRODUKTE
+   PRODUKTBEREICH
 ========================================= */
 
 .produkte {
-    width: 100%;
-
-    margin-top: 40px;
-
     display: flex;
 
     justify-content: center;
@@ -263,23 +276,27 @@ nav a:hover {
     flex-wrap: wrap;
 
     gap: 30px;
+
+    margin-top: 40px;
 }
 
 
 /* =========================================
-   EIN PRODUKT
+   PRODUKTKARTE
 ========================================= */
 
 .produkt {
-    width: 320px;
+    width: 290px;
 
     max-width: 100%;
 
-    padding: 10px 10px 25px;
+    padding: 9px 9px 24px;
 
-    background-color: var(--karte);
+    background: var(--karte);
 
     border: 1px solid var(--linie);
+
+    box-shadow: 0 7px 25px rgba(75, 60, 49, 0.06);
 
     text-align: center;
 
@@ -289,14 +306,14 @@ nav a:hover {
 }
 
 .produkt:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
 
-    box-shadow: 0 10px 30px rgba(75, 60, 49, 0.10);
+    box-shadow: 0 15px 35px rgba(75, 60, 49, 0.12);
 }
 
 
 /* =========================================
-   PRODUKT ZUM ANKLICKEN
+   PRODUKT ANKLICKEN
 ========================================= */
 
 .produkt-oeffnen {
@@ -318,59 +335,55 @@ nav a:hover {
     cursor: pointer;
 }
 
-
-/* =========================================
-   PRODUKTBILD AUSSEN
-========================================= */
-
 .produkt-hauptbild {
     width: 100%;
 
     overflow: hidden;
 
-    background-color: var(--bild-hintergrund);
+    background: var(--bild);
 }
 
 .produkt-hauptbild img {
     display: block;
 
     width: 100%;
-    height: 400px;
+    height: 350px;
 
     object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.produkt-oeffnen:hover .produkt-hauptbild img {
+    transform: scale(1.03);
 }
 
 
 /* =========================================
-   PRODUKTNAME
+   PRODUKTTEXT
 ========================================= */
 
 .produkt h3,
 .produkt-oeffnen h3 {
-    margin: 20px 10px 5px;
+    margin: 18px 5px 4px;
 
-    font-size: 24px;
+    font-size: 23px;
     font-weight: normal;
 
     color: var(--braun);
 }
 
-
-/* =========================================
-   MATERIAL UND PREIS
-========================================= */
-
 .material {
-    margin: 4px 10px;
+    margin: 5px 0;
+
+    color: #947f6d;
 
     font-family: Arial, sans-serif;
     font-size: 12px;
-
-    color: #927d6c;
 }
 
 .preis {
-    margin: 12px 0 18px;
+    margin: 11px 0 17px;
 
     font-size: 20px;
 
@@ -378,71 +391,145 @@ nav a:hover {
 }
 
 .produkt .warenkorb-button {
-    width: calc(100% - 30px);
+    width: 88%;
 
     max-width: 240px;
 }
 
+.produkt-hinweis {
+    margin: 10px 0 0;
+
+    color: #a08c7b;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
 
 /* =========================================
-   PRODUKTFENSTER
-   WENN MAN AUF DAS PRODUKT KLICKT
+   PRODUKTFENSTER / MODAL
 ========================================= */
 
 .produkt-modal {
-    width: min(900px, calc(100% - 30px));
+    position: fixed;
 
-    max-height: 90vh;
+    inset: 0;
 
-    padding: 0;
+    z-index: 10000;
 
-    border: none;
+    padding: 25px;
 
-    background-color: var(--karte);
+    display: flex;
 
-    color: var(--braun);
+    align-items: center;
+    justify-content: center;
 
-    overflow-y: auto;
+    background: rgba(50, 43, 38, 0.67);
+
+    backdrop-filter: blur(4px);
 }
 
-.produkt-modal::backdrop {
-    background: rgba(0, 0, 0, 0.55);
+.produkt-modal[hidden] {
+    display: none !important;
 }
 
-.produkt-modal-inhalt {
+.modal-box {
     position: relative;
 
-    padding: 40px 30px;
+    width: min(900px, 100%);
 
-    text-align: center;
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding: 38px;
+
+    background: var(--karte);
+
+    border-radius: 16px;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.28);
+
+    animation: modalRein 0.25s ease;
+}
+
+@keyframes modalRein {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+
 }
 
 
 /* =========================================
-   PRODUKTFENSTER SCHLIESSEN
+   X BUTTON
 ========================================= */
 
 .modal-schliessen {
     position: absolute;
 
-    top: 8px;
-    right: 14px;
+    top: 14px;
+    right: 16px;
 
-    padding: 4px 10px;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     border: none;
 
-    background: transparent;
+    border-radius: 50%;
+
+    background: #f1e9e1;
 
     color: var(--braun);
 
-    font-size: 34px;
+    font-size: 27px;
+    line-height: 1;
 
     cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .modal-schliessen:hover {
-    opacity: 0.6;
+    background: #e6d9cc;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   PRODUKTFENSTER KOPF
+========================================= */
+
+.modal-kopf {
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+.modal-kopf h2 {
+    margin: 5px 0 0;
+
+    font-size: 36px;
+    font-weight: normal;
 }
 
 
@@ -453,23 +540,151 @@ nav a:hover {
 .produkt-detail-bilder {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 12px;
-
-    margin: 25px 0;
 }
 
 .produkt-detail-bilder img {
     display: block;
 
     width: 100%;
-
-    aspect-ratio: 3 / 4;
+    height: 470px;
 
     object-fit: cover;
 
-    background-color: var(--bild-hintergrund);
+    border-radius: 8px;
+
+    background: var(--bild);
+}
+
+
+/* =========================================
+   PRODUKTINFOS IM MODAL
+========================================= */
+
+.modal-produkt-info {
+    max-width: 500px;
+
+    margin: 25px auto 0;
+
+    text-align: center;
+}
+
+.modal-produkt-info .preis {
+    font-size: 25px;
+}
+
+.modal-beschreibung {
+    margin: 15px 0 22px;
+
+    color: var(--text);
+}
+
+.modal-produkt-info .warenkorb-button {
+    min-width: 230px;
+
+    padding: 15px 25px;
+}
+
+
+/* =========================================
+   WARENKORB BENACHRICHTIGUNG
+========================================= */
+
+.warenkorb-toast {
+    position: fixed !important;
+
+    top: 18px !important;
+    right: 18px !important;
+
+    z-index: 999999 !important;
+
+    width: 360px;
+    max-width: calc(100vw - 36px);
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #fffdf9;
+
+    color: var(--braun);
+
+    border: 1px solid var(--linie);
+
+    border-radius: 13px;
+
+    box-shadow: 0 15px 45px rgba(40, 31, 25, 0.25);
+
+    opacity: 0;
+
+    transform: translateY(-25px);
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.warenkorb-toast.anzeigen {
+    opacity: 1 !important;
+
+    transform: translateY(0) !important;
+
+    visibility: visible !important;
+}
+
+.toast-check {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--mittelbraun);
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+}
+
+.toast-text {
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.toast-text strong {
+    font-size: 14px;
+}
+
+.toast-text span {
+    margin-top: 2px;
+
+    color: #8c7868;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
 }
 
 
@@ -488,9 +703,10 @@ nav a:hover {
 }
 
 .warenkorb-artikel {
-    display: flex;
+    display: grid;
 
-    justify-content: space-between;
+    grid-template-columns: 1fr auto auto;
+
     align-items: center;
 
     gap: 15px;
@@ -503,19 +719,24 @@ nav a:hover {
 }
 
 .entfernen {
+    width: 32px;
+    height: 32px;
+
     border: none;
 
-    background: transparent;
+    border-radius: 50%;
 
-    color: var(--mittelbraun);
+    background: #eee5dd;
 
-    font-size: 23px;
+    color: var(--braun);
+
+    font-size: 19px;
 
     cursor: pointer;
 }
 
 .entfernen:hover {
-    color: var(--braun);
+    background: #dfd0c3;
 }
 
 #gesamtpreis {
@@ -523,8 +744,6 @@ nav a:hover {
 
     font-size: 21px;
     font-weight: bold;
-
-    color: var(--braun);
 }
 
 
@@ -533,16 +752,15 @@ nav a:hover {
 ========================================= */
 
 .kontakt-buttons {
-    margin-top: 30px;
-
     display: flex;
 
     justify-content: center;
-    align-items: center;
 
     flex-wrap: wrap;
 
     gap: 15px;
+
+    margin-top: 28px;
 }
 
 
@@ -553,11 +771,11 @@ nav a:hover {
 footer {
     padding: 35px 20px;
 
-    text-align: center;
-
-    background-color: var(--braun);
+    background: var(--braun);
 
     color: var(--hintergrund);
+
+    text-align: center;
 }
 
 footer p {
@@ -578,12 +796,6 @@ footer p {
         font-size: 36px;
     }
 
-    .hero {
-        min-height: 400px;
-
-        padding: 65px 20px;
-    }
-
     .hero h2 {
         font-size: 43px;
     }
@@ -595,6 +807,7 @@ footer p {
     .bereich h2 {
         font-size: 34px;
     }
+
 }
 
 
@@ -602,10 +815,10 @@ footer p {
    HANDY
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     header {
-        padding: 25px 15px 20px;
+        padding: 25px 14px 20px;
     }
 
     header h1 {
@@ -622,6 +835,7 @@ footer p {
         font-size: 14px;
     }
 
+
     nav {
         gap: 12px;
     }
@@ -630,19 +844,26 @@ footer p {
         font-size: 12px;
     }
 
-    .hero {
-        min-height: 350px;
 
-        padding: 55px 18px;
+    /* START */
+
+    .hero {
+        min-height: 340px;
+
+        padding: 50px 17px;
     }
 
     .hero h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
+    .hero-beschreibung,
     .hero > p:not(.kleiner-text) {
         font-size: 16px;
     }
+
+
+    /* BEREICHE */
 
     .bereich {
         padding: 55px 15px;
@@ -652,48 +873,131 @@ footer p {
         font-size: 30px;
     }
 
-    .bereich-text {
-        font-size: 15px;
-    }
 
-
-    /* PRODUKT AUF HANDY */
+    /* PRODUKTKARTE KLEINER */
 
     .produkt {
-        width: 100%;
+        width: 225px;
 
-        max-width: 340px;
+        max-width: 82vw;
     }
 
     .produkt-hauptbild img {
-        height: 420px;
+        height: 270px;
+    }
+
+    .produkt h3,
+    .produkt-oeffnen h3 {
+        margin-top: 13px;
+
+        font-size: 19px;
+    }
+
+    .material {
+        font-size: 11px;
+    }
+
+    .preis {
+        margin: 8px 0 12px;
+
+        font-size: 17px;
+    }
+
+    .produkt .warenkorb-button {
+        padding: 10px;
+
+        font-size: 12px;
     }
 
 
-    /* PRODUKTFENSTER AUF HANDY */
+    /* PRODUKTFENSTER */
 
-   .produkt {
-    width: 230px;
-    max-width: 85vw;
-    margin: 0 auto;
-}
+    .produkt-modal {
+        padding:
+            max(7px, env(safe-area-inset-top))
+            7px
+            7px;
+    }
 
-.produkt-hauptbild img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
+    .modal-box {
+        width: 100%;
+
+        max-height: 95dvh;
+
+        padding: 48px 12px 24px;
+
+        border-radius: 12px;
+    }
+
+    .modal-kopf h2 {
+        font-size: 29px;
+    }
+
+
+    /* BILDER AUF HANDY UNTEREINANDER */
 
     .produkt-detail-bilder {
         grid-template-columns: 1fr;
 
-        gap: 10px;
+        gap: 9px;
     }
 
     .produkt-detail-bilder img {
         width: 100%;
 
         height: auto;
+
+        max-height: 500px;
+
+        object-fit: cover;
+    }
+
+
+    .modal-produkt-info .warenkorb-button {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* =====================================
+       BENACHRICHTIGUNG AUF HANDY
+    ===================================== */
+
+    .warenkorb-toast {
+        top: max(
+            10px,
+            env(safe-area-inset-top)
+        ) !important;
+
+        left: 10px !important;
+        right: 10px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        padding: 13px 14px;
+
+        border-radius: 11px;
+
+        font-size: 13px;
+    }
+
+    .toast-check {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 17px;
+    }
+
+    .toast-text strong {
+        font-size: 13px;
+    }
+
+    .toast-text span {
+        font-size: 11px;
     }
 
 
@@ -701,22 +1005,23 @@ footer p {
 
     .kontakt-buttons {
         flex-direction: column;
+
+        align-items: center;
     }
 
     .kontakt-buttons .button-link {
-        width: 100%;
-
-        max-width: 280px;
+        width: min(280px, 100%);
     }
 
 
     /* WARENKORB */
 
     .warenkorb-artikel {
-        font-size: 13px;
+        grid-template-columns: 1fr auto;
 
-        flex-wrap: wrap;
+        gap: 8px;
     }
+
 }
 
 
@@ -726,15 +1031,20 @@ footer p {
 
 @media (max-width: 400px) {
 
+    .produkt {
+        width: 210px;
+    }
+
+    .produkt-hauptbild img {
+        height: 250px;
+    }
+
     .hero h2 {
-        font-size: 31px;
+        font-size: 30px;
     }
 
     .bereich h2 {
         font-size: 27px;
     }
 
-    .produkt-hauptbild img {
-        height: 380px;
-    }
 }
