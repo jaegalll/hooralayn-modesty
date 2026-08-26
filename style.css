@@ -672,13 +672,17 @@ footer p {
 
     /* PRODUKTFENSTER AUF HANDY */
 
-    .produkt-modal {
-        width: calc(100% - 16px);
-    }
+   .produkt {
+    width: 230px;
+    max-width: 85vw;
+    margin: 0 auto;
+}
 
-    .produkt-modal-inhalt {
-        padding: 40px 12px 22px;
-    }
+.produkt-hauptbild img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
 
     .produkt-detail-bilder {
         grid-template-columns: 1fr;
