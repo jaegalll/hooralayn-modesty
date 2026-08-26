@@ -1,6 +1,24 @@
-/* ================================
-   GRUNDSTIL
-================================ */
+/* =========================================
+   HOORALAYN MODESTY
+   KOMPLETTES DESIGN
+========================================= */
+
+
+/* ---------- FARBEN ---------- */
+
+:root {
+    --hintergrund: #f8f4ee;
+    --karte: #fffdf9;
+    --braun: #4b3c31;
+    --mittelbraun: #806a58;
+    --hellbraun: #9a806b;
+    --linie: #e2d7ca;
+    --bild-hintergrund: #ebe0d4;
+    --weiss: #ffffff;
+}
+
+
+/* ---------- GRUNDEINSTELLUNGEN ---------- */
 
 * {
     box-sizing: border-box;
@@ -12,372 +30,643 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
+
     font-family: Georgia, "Times New Roman", serif;
-    background: #f8f4ee;
-    color: #3f352e;
+
+    background-color: var(--hintergrund);
+    color: var(--braun);
+
     line-height: 1.6;
 }
 
-/* ================================
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================
    HEADER
-================================ */
+========================================= */
 
 header {
     text-align: center;
+
     padding: 35px 20px 25px;
-    background: #f8f4ee;
-    border-bottom: 1px solid #ded4c8;
+
+    background-color: var(--hintergrund);
+
+    border-bottom: 1px solid var(--linie);
 }
+
 
 .slogan {
     margin: 0 0 10px;
+
     font-family: Arial, sans-serif;
-    font-size: 12px;
+
+    font-size: 11px;
+
     letter-spacing: 4px;
-    color: #8c7664;
+
+    color: var(--hellbraun);
 }
+
 
 header h1 {
     margin: 0;
+
     font-size: 42px;
+
     font-weight: normal;
-    letter-spacing: 1px;
-    color: #4b3c31;
+
+    color: var(--braun);
 }
+
 
 .untertitel {
     margin: 10px 0 25px;
-    font-size: 17px;
-    color: #806e60;
+
+    font-size: 16px;
+
+    color: #78685b;
 }
 
-/* ================================
+
+/* =========================================
    NAVIGATION
-================================ */
+========================================= */
 
 nav {
     display: flex;
+
     justify-content: center;
+
+    align-items: center;
+
     flex-wrap: wrap;
-    gap: 25px;
+
+    gap: 22px;
 }
+
 
 nav a {
-    color: #4b3c31;
-    text-decoration: none;
     font-family: Arial, sans-serif;
+
     font-size: 14px;
-    transition: opacity 0.2s ease;
+
+    color: var(--braun);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
 }
+
 
 nav a:hover {
-    opacity: 0.55;
+    opacity: 0.6;
 }
 
-/* ================================
-   HERO
-================================ */
+
+/* =========================================
+   HERO / STARTSEITE
+========================================= */
 
 .hero {
-    min-height: 600px;
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    min-height: 470px;
 
-    background:
-        linear-gradient(
-            rgba(248, 244, 238, 0.72),
-            rgba(248, 244, 238, 0.72)
-        );
+    padding: 80px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
 }
+
 
 .kleiner-text {
     margin: 0 0 12px;
+
     font-family: Arial, sans-serif;
-    font-size: 12px;
+
+    font-size: 11px;
+
     letter-spacing: 3px;
-    color: #9a806b;
+
+    color: var(--hellbraun);
 }
+
 
 .hero h2 {
     margin: 0;
-    font-size: 56px;
+
+    font-size: 52px;
+
     font-weight: normal;
-    color: #4b3c31;
+
+    color: var(--braun);
 }
+
 
 .hero > p:not(.kleiner-text) {
     max-width: 600px;
+
     margin: 20px auto 30px;
-    font-size: 19px;
-    color: #66564a;
+
+    font-size: 18px;
+
+    color: #68584b;
 }
 
-/* ================================
-   BUTTONS
-================================ */
+
+/* =========================================
+   ALLGEMEINE BUTTONS
+========================================= */
 
 .button-link,
-.produkt button {
+.produkt > button {
     display: inline-block;
-    padding: 13px 25px;
+
     border: none;
-    background: #806a58;
-    color: white;
-    text-decoration: none;
+
+    padding: 13px 25px;
+
+    background-color: var(--mittelbraun);
+
+    color: var(--weiss);
+
     font-family: Arial, sans-serif;
+
     font-size: 14px;
+
+    text-decoration: none;
+
     cursor: pointer;
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+
+    transition: 0.2s ease;
 }
 
+
 .button-link:hover,
-.produkt button:hover {
-    background: #665344;
+.produkt > button:hover {
+    background-color: #665344;
+
     transform: translateY(-2px);
 }
 
-/* ================================
-   BEREICHE
-================================ */
+
+/* =========================================
+   SEITENBEREICHE
+========================================= */
 
 .bereich {
+    width: 100%;
+
     max-width: 1100px;
+
     margin: 0 auto;
-    padding: 90px 25px;
+
+    padding: 80px 25px;
+
     text-align: center;
 }
+
 
 .bereich h2 {
     margin: 0;
+
     font-size: 40px;
+
     font-weight: normal;
-    color: #4b3c31;
+
+    color: var(--braun);
 }
+
 
 .bereich-text {
     max-width: 650px;
+
     margin: 20px auto;
-    color: #6e5d50;
+
     font-size: 17px;
+
+    color: #6e5d50;
 }
 
-/* ================================
-   PRODUKTE
-================================ */
+
+/* =========================================
+   PRODUKTBEREICH
+========================================= */
 
 .produkte {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    margin-top: 45px;
+    width: 100%;
+
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
 }
+
+
+/* EIN PRODUKT */
 
 .produkt {
-    background: #fffdf9;
-    padding-bottom: 25px;
-    border: 1px solid #e3d9cd;
-    transition: transform 0.2s ease;
+    width: 620px;
+
+    max-width: 100%;
+
+    padding: 12px 12px 25px;
+
+    background-color: var(--karte);
+
+    border: 1px solid var(--linie);
+
+    text-align: center;
+
+    transition: 0.2s ease;
 }
 
+
 .produkt:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(75, 60, 49, 0.08);
 }
+
+
+/* =========================================
+   ZWEI PRODUKTBILDER NEBENEINANDER
+========================================= */
 
 .produkt-bild {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    background: #e9dfd3;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    background-color: transparent;
 }
+
 
 .produkt-bild img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+    height: 360px;
+
     display: block;
+
+    object-fit: cover;
+
+    background-color: var(--bild-hintergrund);
 }
+
+
+/* =========================================
+   PRODUKTTEXT
+========================================= */
 
 .produkt h3 {
-    margin: 20px 10px 5px;
-    font-size: 22px;
+    margin: 22px 10px 5px;
+
+    font-size: 25px;
+
     font-weight: normal;
-    color: #4b3c31;
+
+    color: var(--braun);
 }
 
+
 .material {
-    margin: 0 10px;
+    margin: 4px 10px;
+
     font-family: Arial, sans-serif;
+
     font-size: 12px;
+
     color: #927d6c;
 }
 
+
 .preis {
     margin: 12px 0 18px;
-    font-size: 18px;
-    color: #4b3c31;
+
+    font-size: 20px;
+
+    color: var(--braun);
 }
 
-.produkt button {
-    width: calc(100% - 40px);
+
+.produkt > button {
+    width: 220px;
+
+    max-width: calc(100% - 30px);
 }
 
-/* ================================
+
+/* =========================================
    WARENKORB
-================================ */
+========================================= */
 
 #warenkorb {
-    border-top: 1px solid #ded4c8;
+    border-top: 1px solid var(--linie);
 }
+
 
 #warenkorb-inhalt {
     max-width: 700px;
+
     margin: 30px auto 15px;
 }
 
+
 .warenkorb-artikel {
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
+
+    align-items: center;
+
     gap: 15px;
+
     padding: 15px 0;
-    border-bottom: 1px solid #ded4c8;
+
+    border-bottom: 1px solid var(--linie);
+
     text-align: left;
 }
 
+
 .entfernen {
     border: none;
+
     background: transparent;
-    color: #806a58;
+
+    color: var(--mittelbraun);
+
     font-size: 22px;
+
     cursor: pointer;
 }
 
+
 .entfernen:hover {
-    color: #4b3c31;
+    color: var(--braun);
 }
+
 
 #gesamtpreis {
     margin-top: 25px;
+
     font-size: 21px;
+
     font-weight: bold;
-    color: #4b3c31;
 }
 
-/* ================================
+
+/* =========================================
+   KONTAKT
+========================================= */
+
+.kontakt-buttons {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =========================================
    FOOTER
-================================ */
+========================================= */
 
 footer {
     padding: 35px 20px;
+
     text-align: center;
-    background: #4b3c31;
-    color: #f8f4ee;
+
+    background-color: var(--braun);
+
+    color: var(--hintergrund);
 }
+
 
 footer p {
     margin: 0;
+
     font-family: Arial, sans-serif;
+
     font-size: 13px;
 }
 
-/* ================================
-   HANDY / TABLET
-================================ */
 
-@media (max-width: 900px) {
+/* =========================================
+   TABLET
+========================================= */
 
-    .produkte {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h2 {
-        font-size: 45px;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
     header h1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
-    nav {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
 
     .hero {
-        min-height: 500px;
-        padding: 70px 20px;
+        min-height: 400px;
+
+        padding: 65px 20px;
     }
 
+
     .hero h2 {
-        font-size: 38px;
+        font-size: 43px;
     }
+
 
     .bereich {
         padding: 65px 20px;
     }
 
+
     .bereich h2 {
-        font-size: 32px;
+        font-size: 34px;
     }
+
+
+    .produkt {
+        width: 550px;
+    }
+
+
+    .produkt-bild img {
+        height: 310px;
+    }
+}
+
+
+/* =========================================
+   HANDY
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px 15px 20px;
+    }
+
+
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    .slogan {
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .untertitel {
+        font-size: 14px;
+    }
+
+
+    nav {
+        gap: 12px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        min-height: 350px;
+
+        padding: 55px 18px;
+    }
+
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+
+    .hero > p:not(.kleiner-text) {
+        font-size: 16px;
+    }
+
+
+    .bereich {
+        padding: 55px 15px;
+    }
+
+
+    .bereich h2 {
+        font-size: 30px;
+    }
+
+
+    .bereich-text {
+        font-size: 15px;
+    }
+
 
     .produkte {
-        grid-template-columns: 1fr;
+        margin-top: 30px;
     }
+
+
+    .produkt {
+        width: 100%;
+
+        padding: 8px 8px 22px;
+    }
+
+
+    /*
+       Auch auf dem Handy bleiben
+       die zwei Bilder nebeneinander.
+    */
+
+    .produkt-bild {
+        gap: 6px;
+    }
+
+
+    .produkt-bild img {
+        height: 230px;
+    }
+
+
+    .produkt h3 {
+        font-size: 22px;
+    }
+
+
+    .preis {
+        font-size: 18px;
+    }
+
 
     .warenkorb-artikel {
-        font-size: 14px;
-       /* Produkt kleiner und mittig */
+        font-size: 13px;
+    }
 
-.produkte {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
 
-.produkt {
-    width: 280px;
-    max-width: 100%;
-    margin: 0;
-}
+    .kontakt-buttons {
+        flex-direction: column;
+    }
 
-.produkt-bild {
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-}
 
-.produkt-bild img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+    .kontakt-buttons .button-link {
+        width: 100%;
+
+        max-width: 280px;
     }
 }
-.produkt-bild {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    height: auto;
-    background: transparent;
-}
 
-.produkt-bild img {
-    width: 50%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
+
+/* =========================================
+   SEHR KLEINE HANDYS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .produkt-bild img {
+        height: 190px;
+    }
+
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+
+    .bereich h2 {
+        font-size: 27px;
+    }
 }
