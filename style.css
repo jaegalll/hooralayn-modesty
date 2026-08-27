@@ -1,6 +1,5 @@
 /* =========================================
    HOORALAYN MODESTY
-   LUXURY BOUTIQUE DESIGN
 ========================================= */
 
 :root {
@@ -20,14 +19,12 @@
     --line: rgba(91, 71, 58, 0.14);
 
     --shadow:
-        0 18px 55px rgba(73, 58, 49, 0.10);
+        0 18px 55px
+        rgba(73, 58, 49, 0.10);
 
     --shadow-strong:
-        0 25px 80px rgba(52, 39, 31, 0.18);
-
-    --radius-small: 10px;
-    --radius: 18px;
-    --radius-large: 28px;
+        0 25px 80px
+        rgba(52, 39, 31, 0.18);
 
     --error: #9c5353;
 }
@@ -43,6 +40,10 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 body {
@@ -81,7 +82,8 @@ select {
 
 button,
 a {
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 
@@ -97,6 +99,7 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -129,7 +132,7 @@ a {
     z-index: 900;
 
     background:
-        rgba(250, 247, 242, 0.92);
+        rgba(250, 247, 242, 0.94);
 
     backdrop-filter: blur(15px);
 
@@ -152,7 +155,7 @@ a {
 
     align-items: center;
 
-    gap: 35px;
+    gap: 28px;
 }
 
 .logo-bereich {
@@ -215,9 +218,7 @@ nav a::after {
     position: absolute;
 
     left: 50%;
-
     right: 50%;
-
     bottom: 0;
 
     height: 1px;
@@ -229,32 +230,63 @@ nav a::after {
 
 nav a:hover::after {
     left: 0;
-
     right: 0;
 }
 
-.warenkorb-nav {
+.header-actions {
     display: flex;
 
     align-items: center;
 
+    gap: 8px;
+}
+
+
+/* =========================================
+   KONTO / WARENKORB HEADER
+========================================= */
+
+.konto-nav,
+.warenkorb-nav {
+    min-height: 41px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     gap: 7px;
 
-    padding: 10px 14px;
+    padding: 9px 13px;
 
     border: 1px solid var(--line);
 
     border-radius: 30px;
 
+    background:
+        rgba(255, 255, 255, 0.58);
+
     color: var(--brown);
 
     font-family: Arial, sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
     text-decoration: none;
 
-    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.konto-nav:hover,
+.warenkorb-nav:hover {
+    background: white;
+}
+
+.konto-nav > span:first-child {
+    font-size: 17px;
 }
 
 .warenkorb-symbol {
@@ -284,7 +316,9 @@ nav a:hover::after {
 }
 
 .warenkorb-nav.pulsieren {
-    animation: warenkorbPuls 0.45s ease;
+    animation:
+        warenkorbPuls
+        0.45s ease;
 }
 
 @keyframes warenkorbPuls {
@@ -297,7 +331,7 @@ nav a:hover::after {
 
 
 /* =========================================
-   TYPOGRAPHY
+   TEXT
 ========================================= */
 
 .eyebrow {
@@ -312,6 +346,82 @@ nav a:hover::after {
     font-weight: bold;
 
     letter-spacing: 3px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button-primary,
+.button-secondary,
+.warenkorb-button,
+.checkout-button,
+.konto-primary-button {
+    min-height: 48px;
+
+    padding: 13px 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 4px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.8px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.button-primary,
+.warenkorb-button,
+.checkout-button,
+.konto-primary-button {
+    border: 1px solid var(--brown);
+
+    background: var(--brown);
+
+    color: white;
+}
+
+.button-secondary {
+    border: 1px solid var(--brown);
+
+    background: transparent;
+
+    color: var(--brown);
+}
+
+.button-primary:hover,
+.warenkorb-button:hover,
+.checkout-button:hover,
+.konto-primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(73, 58, 49, 0.18);
+}
+
+.button-secondary:hover {
+    background: var(--brown);
+
+    color: white;
 }
 
 
@@ -410,74 +520,6 @@ nav a:hover::after {
     gap: 12px;
 }
 
-.button-primary,
-.button-secondary,
-.warenkorb-button,
-.checkout-button {
-    min-height: 48px;
-
-    padding: 13px 24px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 4px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 0.8px;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-.button-primary,
-.warenkorb-button,
-.checkout-button {
-    border: 1px solid var(--brown);
-
-    background: var(--brown);
-
-    color: white;
-}
-
-.button-secondary {
-    border: 1px solid var(--brown);
-
-    background: transparent;
-
-    color: var(--brown);
-}
-
-.button-primary:hover,
-.warenkorb-button:hover,
-.checkout-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(73, 58, 49, 0.18);
-}
-
-.button-secondary:hover {
-    background: var(--brown);
-
-    color: white;
-}
-
 .hero-vorteile {
     margin-top: 45px;
 
@@ -513,7 +555,9 @@ nav a:hover::after {
 }
 
 
-/* HERO VISUAL */
+/* =========================================
+   HERO BILD
+========================================= */
 
 .hero-visual {
     position: relative;
@@ -530,7 +574,8 @@ nav a:hover::after {
 
     border-radius: 6px;
 
-    background: rgba(255, 255, 255, 0.72);
+    background:
+        rgba(255, 255, 255, 0.72);
 
     box-shadow: var(--shadow-strong);
 
@@ -543,14 +588,14 @@ nav a:hover::after {
     position: absolute;
 
     top: 24px;
-
     left: 24px;
 
     z-index: 3;
 
     padding: 7px 10px;
 
-    background: rgba(248, 244, 239, 0.92);
+    background:
+        rgba(248, 244, 239, 0.92);
 
     color: var(--brown);
 
@@ -617,7 +662,6 @@ nav a:hover::after {
     position: absolute;
 
     left: -75px;
-
     bottom: 75px;
 
     padding: 13px 18px;
@@ -630,7 +674,8 @@ nav a:hover::after {
 
     border: 1px solid var(--line);
 
-    background: rgba(255, 255, 255, 0.91);
+    background:
+        rgba(255, 255, 255, 0.91);
 
     box-shadow: var(--shadow);
 
@@ -665,8 +710,6 @@ nav a:hover::after {
     position: absolute;
 
     border-radius: 50%;
-
-    filter: blur(2px);
 }
 
 .hero-deko-links {
@@ -736,17 +779,21 @@ nav a:hover::after {
 
     gap: 13px;
 
-    border-right: 1px solid var(--line);
+    border-right:
+        1px solid
+        var(--line);
 }
 
 .trust-item:last-child {
-    border-right: none;
+    border-right: 0;
 }
 
 .trust-icon {
     width: 34px;
 
     height: 34px;
+
+    flex-shrink: 0;
 
     display: flex;
 
@@ -783,8 +830,16 @@ nav a:hover::after {
 
 
 /* =========================================
-   SECTION HEADINGS
+   SECTIONS
 ========================================= */
+
+.bereich {
+    width: min(1160px, 92%);
+
+    margin: 0 auto;
+
+    padding: 110px 0;
+}
 
 .section-heading {
     max-width: 680px;
@@ -823,19 +878,6 @@ nav a:hover::after {
 
 
 /* =========================================
-   BEREICHE
-========================================= */
-
-.bereich {
-    width: min(1160px, 92%);
-
-    margin: 0 auto;
-
-    padding: 110px 0;
-}
-
-
-/* =========================================
    PRODUKT
 ========================================= */
 
@@ -858,6 +900,8 @@ nav a:hover::after {
 
     box-shadow: var(--shadow);
 
+    text-align: center;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -875,9 +919,7 @@ nav a:hover::after {
     position: absolute;
 
     top: 24px;
-
     left: 24px;
-
     right: 24px;
 
     z-index: 5;
@@ -892,7 +934,8 @@ nav a:hover::after {
 .produkt-label {
     padding: 6px 9px;
 
-    background: rgba(250, 247, 242, 0.9);
+    background:
+        rgba(250, 247, 242, 0.9);
 
     font-family: Arial, sans-serif;
 
@@ -914,7 +957,8 @@ nav a:hover::after {
 
     border-radius: 50%;
 
-    background: rgba(250, 247, 242, 0.9);
+    background:
+        rgba(250, 247, 242, 0.9);
 }
 
 .produkt-oeffnen {
@@ -957,11 +1001,16 @@ nav a:hover::after {
 .produkt-overlay {
     position: absolute;
 
-    inset: auto 12px 12px 12px;
+    inset:
+        auto
+        12px
+        12px
+        12px;
 
     padding: 11px;
 
-    background: rgba(73, 58, 49, 0.88);
+    background:
+        rgba(73, 58, 49, 0.88);
 
     color: white;
 
@@ -973,19 +1022,25 @@ nav a:hover::after {
 
     opacity: 0;
 
-    transform: translateY(8px);
+    transform:
+        translateY(8px);
 
-    transition: 0.3s ease;
+    transition:
+        0.3s ease;
 }
 
-.produkt:hover .produkt-hauptbild img {
-    transform: scale(1.025);
+.produkt:hover
+.produkt-hauptbild img {
+    transform:
+        scale(1.025);
 }
 
-.produkt:hover .produkt-overlay {
+.produkt:hover
+.produkt-overlay {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 .produkt-titel-bereich {
@@ -1048,7 +1103,8 @@ nav a:hover::after {
     font-size: 8px;
 }
 
-.produkt .warenkorb-button {
+.produkt
+.warenkorb-button {
     width: 100%;
 }
 
@@ -1060,139 +1116,6 @@ nav a:hover::after {
     font-family: Arial, sans-serif;
 
     font-size: 8px;
-}
-
-
-/* =========================================
-   WERTE
-========================================= */
-
-.werte-section {
-    padding: 110px 6%;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(280px, 0.8fr)
-        minmax(0, 1.4fr);
-
-    gap: 80px;
-
-    background: var(--brown);
-
-    color: #f8f3ed;
-}
-
-.werte-intro {
-    max-width: 430px;
-}
-
-.werte-intro .eyebrow {
-    color: #c9b6a6;
-}
-
-.werte-intro h2 {
-    margin: 0;
-
-    font-size:
-        clamp(
-            40px,
-            5vw,
-            58px
-        );
-
-    font-weight: normal;
-
-    line-height: 1.08;
-}
-
-.werte-intro h2 span {
-    display: block;
-
-    color: #c9b6a6;
-
-    font-style: italic;
-}
-
-.werte-intro > p:last-child {
-    margin-top: 22px;
-
-    color: #d6c9be;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
-.werte-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 12px;
-}
-
-.wert-karte {
-    position: relative;
-
-    min-height: 300px;
-
-    padding: 28px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.15);
-
-    background:
-        rgba(255, 255, 255, 0.035);
-}
-
-.wert-nummer {
-    position: absolute;
-
-    top: 22px;
-
-    right: 22px;
-
-    color:
-        rgba(255, 255, 255, 0.35);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-}
-
-.wert-icon {
-    margin-bottom: auto;
-
-    font-size: 28px;
-}
-
-.wert-karte h3 {
-    margin: 0 0 8px;
-
-    font-size: 22px;
-
-    font-weight: normal;
-}
-
-.wert-karte p {
-    margin: 0;
-
-    color: #d2c5bb;
-
-    font-size: 12px;
-
-    line-height: 1.8;
 }
 
 
@@ -1398,7 +1321,8 @@ nav a:hover::after {
     font-weight: normal;
 }
 
-.ueber-text > p:not(.eyebrow) {
+.ueber-text >
+p:not(.eyebrow) {
     max-width: 510px;
 
     color: var(--brown-soft);
@@ -1455,6 +1379,73 @@ nav a:hover::after {
     box-shadow: var(--shadow);
 }
 
+.warenkorb-sync-info {
+    margin-bottom: 25px;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        #f7efe6;
+}
+
+.warenkorb-sync-info > span {
+    width: 32px;
+
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 18px;
+}
+
+.warenkorb-sync-info p {
+    flex: 1;
+
+    margin: 0;
+
+    color: var(--brown-soft);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+}
+
+.warenkorb-sync-info button {
+    padding: 8px 11px;
+
+    border: 1px solid var(--brown);
+
+    background: transparent;
+
+    color: var(--brown);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
 .warenkorb-leer-box {
     padding: 55px 20px;
 
@@ -1505,7 +1496,9 @@ nav a:hover::after {
 
     padding: 20px 0;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .warenkorb-artikel-info {
@@ -1517,9 +1510,13 @@ nav a:hover::after {
 }
 
 .warenkorb-artikel-label {
-    color: var(--brown-light) !important;
+    color:
+        var(--brown-light)
+        !important;
 
-    font-size: 7px !important;
+    font-size:
+        7px
+        !important;
 
     letter-spacing: 2px;
 }
@@ -1558,10 +1555,6 @@ nav a:hover::after {
     cursor: pointer;
 }
 
-.warenkorb-abschluss[hidden] {
-    display: none;
-}
-
 .warenkorb-abschluss {
     padding-top: 25px;
 }
@@ -1590,7 +1583,8 @@ nav a:hover::after {
     font-weight: normal;
 }
 
-.warenkorb-abschluss .checkout-button {
+.warenkorb-abschluss
+.checkout-button {
     width: 100%;
 }
 
@@ -1624,7 +1618,9 @@ nav a:hover::after {
 }
 
 .faq-grid details {
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .faq-grid summary {
@@ -1645,7 +1641,8 @@ nav a:hover::after {
     cursor: pointer;
 }
 
-.faq-grid summary::-webkit-details-marker {
+.faq-grid
+summary::-webkit-details-marker {
     display: none;
 }
 
@@ -1655,11 +1652,11 @@ nav a:hover::after {
     font-family: Arial, sans-serif;
 
     font-size: 20px;
-
-    font-weight: normal;
 }
 
-.faq-grid details[open] summary::after {
+.faq-grid
+details[open]
+summary::after {
     content: "−";
 }
 
@@ -1695,9 +1692,7 @@ nav a:hover::after {
 
     text-align: center;
 
-    border:
-        1px solid
-        var(--line);
+    border: 1px solid var(--line);
 
     background:
         linear-gradient(
@@ -1717,7 +1712,8 @@ nav a:hover::after {
     font-weight: normal;
 }
 
-.kontakt-box > p:not(.eyebrow) {
+.kontakt-box >
+p:not(.eyebrow) {
     max-width: 540px;
 
     margin: 18px auto 25px;
@@ -1837,10 +1833,6 @@ footer small {
     backdrop-filter: blur(7px);
 }
 
-.overlay[hidden] {
-    display: none !important;
-}
-
 .modal-box {
     position: relative;
 
@@ -1909,6 +1901,362 @@ footer small {
 
 
 /* =========================================
+   KUNDENKONTO
+========================================= */
+
+.konto-box {
+    width: min(540px, 100%);
+
+    padding:
+        50px
+        45px
+        42px;
+}
+
+.konto-kopf {
+    text-align: center;
+}
+
+.konto-kopf h2 {
+    margin: 0;
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.konto-kopf > p:last-child {
+    margin: 12px auto 0;
+
+    color: var(--brown-soft);
+
+    font-size: 12px;
+}
+
+.auth-tabs {
+    margin: 30px 0 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    border-bottom:
+        1px solid
+        var(--line);
+}
+
+.auth-tab {
+    position: relative;
+
+    padding: 13px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--brown-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.auth-tab::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    right: 50%;
+
+    bottom: -1px;
+
+    height: 2px;
+
+    background: var(--brown);
+
+    transition: 0.2s ease;
+}
+
+.auth-tab.aktiv {
+    color: var(--brown);
+
+    font-weight: bold;
+}
+
+.auth-tab.aktiv::after {
+    left: 0;
+
+    right: 0;
+}
+
+.auth-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.auth-form label {
+    display: block;
+}
+
+.auth-form
+label > span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--brown);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+.auth-form
+label > small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--brown-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+}
+
+.auth-form input {
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        1px solid
+        var(--taupe-light);
+
+    outline: 0;
+
+    background: white;
+
+    color: var(--brown);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color
+        0.2s ease;
+}
+
+.auth-form input:focus {
+    border-color: var(--brown);
+}
+
+.konto-primary-button {
+    width: 100%;
+
+    margin-top: 4px;
+}
+
+.passwort-vergessen {
+    align-self: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--brown-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.konto-datenschutz {
+    margin: 0;
+
+    color: var(--brown-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* ANGEMELDET */
+
+.konto-erfolg-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--brown);
+
+    color: white;
+
+    font-size: 24px;
+}
+
+.konto-info-karte {
+    margin-top: 28px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background: #f8f3ed;
+}
+
+.konto-info-karte > div {
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+}
+
+.konto-info-karte >
+div:last-child {
+    border-bottom: 0;
+}
+
+.konto-info-karte span {
+    color: var(--brown-light);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+}
+
+.konto-info-karte strong {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+.konto-vorteil-box {
+    margin-top: 18px;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        #f5ede4;
+}
+
+.konto-vorteil-box >
+span {
+    width: 35px;
+
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.konto-vorteil-box strong {
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+.konto-vorteil-box p {
+    margin: 5px 0 0;
+
+    color: var(--brown-soft);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+.konto-logout-button {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        var(--brown);
+
+    background: transparent;
+
+    color: var(--brown);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
    PRODUKT MODAL
 ========================================= */
 
@@ -1942,7 +2290,8 @@ footer small {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 10px;
 }
@@ -2007,7 +2356,9 @@ footer small {
 
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .modal-preis-zeile div {
@@ -2032,7 +2383,8 @@ footer small {
     font-weight: normal;
 }
 
-.modal-preis-zeile > span {
+.modal-preis-zeile >
+span {
     color: var(--brown-light);
 
     font-family: Arial, sans-serif;
@@ -2042,7 +2394,7 @@ footer small {
 
 
 /* =========================================
-   STOFF INFO
+   STOFF
 ========================================= */
 
 .stoff-info,
@@ -2051,7 +2403,9 @@ footer small {
 
     padding: 25px;
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
 
     background: #f8f3ed;
 }
@@ -2065,7 +2419,8 @@ footer small {
     font-weight: normal;
 }
 
-.stoff-info > p:not(.eyebrow) {
+.stoff-info >
+p:not(.eyebrow) {
     color: var(--brown-soft);
 
     font-size: 13px;
@@ -2079,7 +2434,8 @@ footer small {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 7px;
 }
@@ -2100,7 +2456,9 @@ footer small {
 .stoff-details {
     padding-top: 15px;
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid
+        var(--line);
 }
 
 .stoff-details h4 {
@@ -2123,7 +2481,8 @@ footer small {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 7px;
 }
@@ -2131,7 +2490,8 @@ footer small {
 .masse-grid div {
     padding: 12px;
 
-    background: var(--cream-dark);
+    background:
+        var(--cream-dark);
 
     text-align: center;
 }
@@ -2169,7 +2529,7 @@ footer small {
 
 
 /* =========================================
-   MASSAUSWAHL
+   MAẞE
 ========================================= */
 
 .mass-kopf {
@@ -2193,7 +2553,9 @@ footer small {
 
     justify-content: center;
 
-    border: 1px solid var(--taupe);
+    border:
+        1px solid
+        var(--taupe);
 
     border-radius: 50%;
 
@@ -2222,12 +2584,14 @@ footer small {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 10px;
 }
 
-.mass-felder label > span {
+.mass-felder
+label > span {
     display: block;
 
     margin-bottom: 7px;
@@ -2307,17 +2671,13 @@ footer small {
     font-size: 10px;
 }
 
-.formular-fehler[hidden] {
-    display: none;
-}
-
 .modal-warenkorb {
     width: 100%;
 }
 
 
 /* =========================================
-   IMAGE ZOOM
+   BILD ZOOM
 ========================================= */
 
 .bild-zoom {
@@ -2339,10 +2699,6 @@ footer small {
 
     background:
         rgba(23, 18, 15, 0.96);
-}
-
-.bild-zoom[hidden] {
-    display: none !important;
 }
 
 .zoom-schliessen {
@@ -2398,7 +2754,9 @@ footer small {
 
     transform-origin: center;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform
+        0.2s ease;
 }
 
 .zoom-steuerung {
@@ -2474,21 +2832,27 @@ footer small {
 
     gap: 11px;
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
 
-    background: var(--cream-light);
+    background:
+        var(--cream-light);
 
-    box-shadow: var(--shadow-strong);
+    box-shadow:
+        var(--shadow-strong);
 
     opacity: 0;
 
     visibility: hidden;
 
-    transform: translateY(-18px);
+    transform:
+        translateY(-18px);
 
     pointer-events: none;
 
-    transition: 0.3s ease;
+    transition:
+        0.3s ease;
 }
 
 .warenkorb-toast.anzeigen {
@@ -2496,7 +2860,8 @@ footer small {
 
     visibility: visible;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 .toast-check {
@@ -2545,7 +2910,11 @@ footer small {
 ========================================= */
 
 .checkout-box {
-    width: min(1050px, 100%);
+    width:
+        min(
+            1050px,
+            100%
+        );
 }
 
 .checkout-kopf {
@@ -2562,7 +2931,8 @@ footer small {
     font-weight: normal;
 }
 
-.checkout-kopf > p:last-child {
+.checkout-kopf >
+p:last-child {
     color: var(--brown-soft);
 
     font-size: 12px;
@@ -2584,7 +2954,9 @@ footer small {
 .checkout-zusammenfassung {
     padding: 25px;
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
 
     background: #f8f3ed;
 }
@@ -2599,23 +2971,29 @@ footer small {
 }
 
 .checkout-zwischenueberschrift {
-    margin-top: 28px !important;
+    margin-top:
+        28px
+        !important;
 }
 
 .checkout-grid {
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
     gap: 12px;
 }
 
-.checkout-grid .volle-breite {
-    grid-column: 1 / -1;
+.checkout-grid
+.volle-breite {
+    grid-column:
+        1 / -1;
 }
 
-.checkout-grid label > span {
+.checkout-grid
+label > span {
     display: block;
 
     margin-bottom: 6px;
@@ -2653,7 +3031,8 @@ footer small {
     border-color: var(--brown);
 }
 
-.checkout-formular .checkout-button {
+.checkout-formular
+.checkout-button {
     width: 100%;
 
     margin-top: 20px;
@@ -2674,7 +3053,9 @@ footer small {
 
     gap: 15px;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .checkout-artikel > div {
@@ -2709,11 +3090,15 @@ footer small {
 
 
 /* =========================================
-   PRÜFUNG
+   BESTELLPRÜFUNG
 ========================================= */
 
 .pruefung-box {
-    width: min(700px, 100%);
+    width:
+        min(
+            700px,
+            100%
+        );
 }
 
 .pruefung-box > h2 {
@@ -2729,7 +3114,9 @@ footer small {
 
     padding: 18px;
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
 
     background: #f8f3ed;
 }
@@ -2757,7 +3144,9 @@ footer small {
 
     padding: 10px 0;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 .pruefung-artikel span {
@@ -2785,7 +3174,9 @@ footer small {
 
     padding: 17px;
 
-    border: 1px solid #dbc8b6;
+    border:
+        1px solid
+        #dbc8b6;
 
     background: #fff8ed;
 }
@@ -2817,14 +3208,14 @@ footer small {
    TABLET
 ========================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
 
     .header-inhalt {
         grid-template-columns:
             auto
-            1fr;
+            auto;
 
-        gap: 20px;
+        gap: 18px;
     }
 
     nav {
@@ -2836,17 +3227,22 @@ footer small {
         padding-bottom: 14px;
     }
 
-    .warenkorb-nav {
+    .header-actions {
         justify-self: end;
     }
 
+}
+
+
+@media (max-width: 950px) {
 
     .hero {
         padding: 80px 0;
     }
 
     .hero-inhalt {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         gap: 55px;
     }
@@ -2874,7 +3270,8 @@ footer small {
 
     .trust-strip {
         grid-template-columns:
-            1fr 1fr;
+            1fr
+            1fr;
     }
 
     .trust-item:nth-child(2) {
@@ -2882,30 +3279,21 @@ footer small {
     }
 
     .trust-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--line);
-    }
-
-
-    .werte-section {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-    }
-
-    .werte-intro {
-        text-align: center;
-
-        margin: 0 auto;
+        border-bottom:
+            1px solid
+            var(--line);
     }
 
 
     .ueber-section {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
     .checkout-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .checkout-zusammenfassung {
@@ -2937,9 +3325,13 @@ footer small {
 
 
     .header-inhalt {
-        width: 92%;
+        width: 94%;
 
         min-height: 68px;
+
+        grid-template-columns:
+            1fr
+            auto;
     }
 
     .logo-gross {
@@ -2949,6 +3341,37 @@ footer small {
     .logo-klein {
         font-size: 7px;
     }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .konto-nav,
+    .warenkorb-nav {
+        min-height: 36px;
+
+        padding: 7px 8px;
+
+        font-size: 0;
+    }
+
+    .konto-nav >
+    span:first-child {
+        font-size: 17px;
+    }
+
+    .warenkorb-symbol {
+        font-size: 15px;
+    }
+
+    .warenkorb-badge {
+        min-width: 19px;
+
+        height: 19px;
+
+        font-size: 8px;
+    }
+
 
     nav {
         gap: 14px;
@@ -2964,16 +3387,6 @@ footer small {
         flex-shrink: 0;
 
         font-size: 9px;
-    }
-
-    .warenkorb-nav {
-        padding: 8px 9px;
-
-        font-size: 0;
-    }
-
-    .warenkorb-symbol {
-        font-size: 15px;
     }
 
 
@@ -3008,7 +3421,11 @@ footer small {
     }
 
     .hero-buttons a {
-        width: min(280px, 100%);
+        width:
+            min(
+                280px,
+                100%
+            );
     }
 
     .hero-vorteile {
@@ -3053,7 +3470,9 @@ footer small {
     .trust-strip {
         width: 90%;
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr
+            1fr;
     }
 
     .trust-item {
@@ -3106,7 +3525,10 @@ footer small {
     .produkt {
         width: 235px;
 
-        padding: 8px 8px 20px;
+        padding:
+            8px
+            8px
+            20px;
     }
 
     .produkt-hauptbild {
@@ -3125,36 +3547,19 @@ footer small {
         gap: 2px;
     }
 
-    .produkt .warenkorb-button {
+    .produkt
+    .warenkorb-button {
         min-height: 42px;
 
         font-size: 9px;
     }
 
 
-    /* VALUES */
-
-    .werte-section {
-        padding: 80px 7%;
-    }
-
-    .werte-intro h2 {
-        font-size: 39px;
-    }
-
-    .werte-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .wert-karte {
-        min-height: 220px;
-    }
-
-
     /* PROCESS */
 
     .ablauf-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         gap: 0;
     }
@@ -3165,8 +3570,6 @@ footer small {
         height: 35px;
 
         margin: 8px auto;
-
-        background: var(--taupe-light);
     }
 
 
@@ -3196,15 +3599,34 @@ footer small {
     /* CART */
 
     .warenkorb-container {
-        padding: 18px;
+        padding: 16px;
+    }
+
+    .warenkorb-sync-info {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .warenkorb-sync-info p {
+        min-width:
+            calc(
+                100% - 50px
+            );
+    }
+
+    .warenkorb-sync-info button {
+        margin-left: 44px;
     }
 
     .warenkorb-artikel {
         grid-template-columns:
-            1fr auto;
+            1fr
+            auto;
     }
 
-    .warenkorb-artikel .entfernen {
+    .warenkorb-artikel
+    .entfernen {
         grid-column: 2;
     }
 
@@ -3212,7 +3634,9 @@ footer small {
     /* CONTACT */
 
     .kontakt-box {
-        padding: 50px 18px;
+        padding:
+            50px
+            18px;
     }
 
     .kontakt-box h2 {
@@ -3226,11 +3650,15 @@ footer small {
     }
 
     .kontakt-buttons a {
-        width: min(280px, 100%);
+        width:
+            min(
+                280px,
+                100%
+            );
     }
 
 
-    /* MODAL */
+    /* MODALS */
 
     .overlay {
         padding: 7px;
@@ -3241,7 +3669,34 @@ footer small {
 
         max-height: 95dvh;
 
-        padding: 48px 12px 24px;
+        padding:
+            48px
+            12px
+            24px;
+    }
+
+    .konto-box {
+        padding:
+            48px
+            17px
+            25px;
+    }
+
+    .konto-kopf h2 {
+        font-size: 29px;
+    }
+
+    .konto-info-karte >
+    div {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .konto-info-karte strong {
+        text-align: left;
     }
 
     .modal-kopf h2 {
@@ -3249,11 +3704,12 @@ footer small {
     }
 
 
-    /* PRODUCT IMAGES ON PHONE */
+    /* PRODUCT IMAGES */
 
     .produkt-detail-bilder {
         grid-template-columns:
-            1fr 1fr;
+            1fr
+            1fr;
 
         gap: 5px;
     }
@@ -3272,7 +3728,9 @@ footer small {
 
     .stoff-info,
     .mass-auswahl {
-        padding: 17px 13px;
+        padding:
+            17px
+            13px;
     }
 
     .stoff-info h3,
@@ -3282,13 +3740,16 @@ footer small {
 
     .stoff-vorteile-grid {
         grid-template-columns:
-            1fr 1fr;
+            1fr
+            1fr;
 
         gap: 5px;
     }
 
     .stoff-vorteile-grid span {
-        padding: 8px 5px;
+        padding:
+            8px
+            5px;
 
         font-size: 7px;
     }
@@ -3298,19 +3759,23 @@ footer small {
     }
 
     .mass-input input {
-        padding: 10px 7px;
+        padding:
+            10px
+            7px;
 
         font-size: 13px;
     }
 
 
-    /* TOAST PHONE */
+    /* TOAST */
 
     .warenkorb-toast {
         top:
             max(
                 10px,
-                env(safe-area-inset-top)
+                env(
+                    safe-area-inset-top
+                )
             );
 
         left: 10px;
@@ -3331,7 +3796,9 @@ footer small {
 
     .checkout-formular,
     .checkout-zusammenfassung {
-        padding: 17px 13px;
+        padding:
+            17px
+            13px;
     }
 
     .checkout-grid {
@@ -3342,7 +3809,7 @@ footer small {
 
 
 /* =========================================
-   VERY SMALL PHONES
+   KLEINE HANDYS
 ========================================= */
 
 @media (max-width: 390px) {
@@ -3365,11 +3832,17 @@ footer small {
 
     .mass-felder,
     .checkout-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
-    .checkout-grid .volle-breite {
+    .checkout-grid
+    .volle-breite {
         grid-column: auto;
+    }
+
+    .auth-tabs {
+        margin-top: 22px;
     }
 
 }
