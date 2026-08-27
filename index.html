@@ -2,6 +2,7 @@
 <html lang="de">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,906 +12,20 @@
 
     <title>HoorAlAyn Modesty</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-    <style>
-
-        /* =========================================
-           FARBEN
-        ========================================= */
-
-        :root {
-            --hintergrund: #f8f4ee;
-            --karte: #fffdf9;
-            --braun: #4b3c31;
-            --mittelbraun: #806a58;
-            --hellbraun: #a58b76;
-            --text: #6c5a4d;
-            --linie: #e5dacf;
-            --bild: #eee4da;
-            --weiss: #ffffff;
-        }
-
-
-        /* =========================================
-           GRUNDLAGEN
-        ========================================= */
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-
-            background: var(--hintergrund);
-
-            color: var(--braun);
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            line-height: 1.6;
-        }
-
-        body.modal-offen {
-            overflow: hidden;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-
-        /* =========================================
-           HEADER
-        ========================================= */
-
-        header {
-            padding: 35px 20px 25px;
-
-            text-align: center;
-
-            border-bottom: 1px solid var(--linie);
-        }
-
-        .slogan {
-            margin: 0 0 10px;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 11px;
-
-            letter-spacing: 4px;
-
-            color: var(--hellbraun);
-        }
-
-        header h1 {
-            margin: 0;
-
-            font-size: 42px;
-
-            font-weight: normal;
-        }
-
-        .untertitel {
-            margin: 10px 0 25px;
-
-            color: #7c6b5e;
-        }
-
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        nav {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 22px;
-        }
-
-        nav a {
-            color: var(--braun);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 14px;
-
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            opacity: 0.6;
-        }
-
-        .warenkorb-nav {
-            position: relative;
-        }
-
-        .warenkorb-nav.pulsieren {
-            animation: puls 0.45s ease;
-        }
-
-        @keyframes puls {
-
-            50% {
-                transform: scale(1.15);
-            }
-
-        }
-
-
-        /* =========================================
-           STARTBEREICH
-        ========================================= */
-
-        .hero {
-            min-height: 440px;
-
-            padding: 70px 20px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-        }
-
-        .kleiner-text {
-            margin: 0 0 12px;
-
-            color: var(--hellbraun);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 11px;
-
-            letter-spacing: 3px;
-        }
-
-        .hero h2 {
-            margin: 0;
-
-            font-size: 52px;
-
-            font-weight: normal;
-        }
-
-        .hero-beschreibung {
-            max-width: 620px;
-
-            margin: 20px auto 30px;
-
-            color: var(--text);
-
-            font-size: 18px;
-        }
-
-
-        /* =========================================
-           BUTTONS
-        ========================================= */
-
-        .button-link,
-        .warenkorb-button {
-            display: inline-block;
-
-            padding: 13px 24px;
-
-            border: 0;
-
-            background: var(--mittelbraun);
-
-            color: var(--weiss);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 14px;
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease;
-        }
-
-        .button-link:hover,
-        .warenkorb-button:hover {
-            background: #665344;
-
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================================
-           BEREICHE
-        ========================================= */
-
-        .bereich {
-            width: 100%;
-
-            max-width: 1100px;
-
-            margin: 0 auto;
-
-            padding: 80px 25px;
-
-            text-align: center;
-        }
-
-        .bereich h2 {
-            margin: 0;
-
-            font-size: 40px;
-
-            font-weight: normal;
-        }
-
-        .bereich-text {
-            max-width: 650px;
-
-            margin: 20px auto;
-
-            color: var(--text);
-        }
-
-
-        /* =========================================
-           PRODUKT AUF DER SHOP-SEITE
-        ========================================= */
-
-        .produkte {
-            display: flex;
-
-            justify-content: center;
-
-            margin-top: 40px;
-        }
-
-        .produkt {
-            width: 290px;
-
-            padding: 9px 9px 24px;
-
-            border: 1px solid var(--linie);
-
-            background: var(--karte);
-
-            box-shadow: 0 7px 25px rgba(75, 60, 49, 0.06);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .produkt:hover {
-            transform: translateY(-5px);
-
-            box-shadow: 0 15px 35px rgba(75, 60, 49, 0.12);
-        }
-
-        .produkt-oeffnen {
-            width: 100%;
-
-            padding: 0;
-
-            border: 0;
-
-            background: transparent;
-
-            color: inherit;
-
-            font-family: inherit;
-
-            cursor: pointer;
-        }
-
-        .produkt-hauptbild {
-            overflow: hidden;
-
-            background: var(--bild);
-        }
-
-        .produkt-hauptbild img {
-            display: block;
-
-            width: 100%;
-
-            height: 350px;
-
-            object-fit: cover;
-
-            transition: transform 0.35s ease;
-        }
-
-        .produkt-oeffnen:hover img {
-            transform: scale(1.03);
-        }
-
-        .produkt h3 {
-            margin: 18px 5px 4px;
-
-            font-size: 23px;
-
-            font-weight: normal;
-        }
-
-        .material {
-            margin: 5px 0;
-
-            color: #947f6d;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 12px;
-        }
-
-        .preis {
-            margin: 11px 0 17px;
-
-            font-size: 20px;
-        }
-
-        .produkt .warenkorb-button {
-            width: 88%;
-        }
-
-        .produkt-hinweis {
-            margin: 10px 0 0;
-
-            color: #a08c7b;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 10px;
-        }
-
-
-        /* =========================================
-           PRODUKTFENSTER
-        ========================================= */
-
-        .produkt-modal {
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 1000;
-
-            padding: 25px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: rgba(50, 43, 38, 0.67);
-
-            backdrop-filter: blur(4px);
-        }
-
-        .produkt-modal[hidden] {
-            display: none;
-        }
-
-        .modal-box {
-            position: relative;
-
-            width: min(900px, 100%);
-
-            max-height: 92vh;
-
-            overflow-y: auto;
-
-            padding: 38px;
-
-            border-radius: 16px;
-
-            background: var(--karte);
-
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.28);
-
-            animation: modalRein 0.25s ease;
-        }
-
-        @keyframes modalRein {
-
-            from {
-                opacity: 0;
-                transform: translateY(18px) scale(0.98);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-
-        }
-
-        .modal-schliessen {
-            position: absolute;
-
-            top: 14px;
-
-            right: 16px;
-
-            width: 40px;
-
-            height: 40px;
-
-            border: 0;
-
-            border-radius: 50%;
-
-            background: #f1e9e1;
-
-            color: var(--braun);
-
-            font-size: 27px;
-
-            cursor: pointer;
-
-            transition: 0.2s ease;
-        }
-
-        .modal-schliessen:hover {
-            background: #e6d9cc;
-
-            transform: rotate(90deg);
-        }
-
-        .modal-kopf {
-            margin-bottom: 25px;
-
-            text-align: center;
-        }
-
-        .modal-kopf h2 {
-            margin: 5px 0 0;
-
-            font-size: 36px;
-
-            font-weight: normal;
-        }
-
-
-        /* =========================================
-           BILDER IM PRODUKTFENSTER
-        ========================================= */
-
-        .produkt-detail-bilder {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 12px;
-        }
-
-        .produkt-detail-bilder img {
-            width: 100%;
-
-            height: 470px;
-
-            display: block;
-
-            object-fit: cover;
-
-            border-radius: 8px;
-
-            background: var(--bild);
-        }
-
-        .modal-produkt-info {
-            max-width: 500px;
-
-            margin: 25px auto 0;
-
-            text-align: center;
-        }
-
-        .modal-produkt-info .preis {
-            font-size: 25px;
-        }
-
-        .modal-beschreibung {
-            margin: 15px 0 22px;
-
-            color: var(--text);
-        }
-
-        .modal-produkt-info .warenkorb-button {
-            min-width: 230px;
-
-            padding: 15px 25px;
-        }
-
-
-        /* =========================================
-           WARENKORB-BENACHRICHTIGUNG
-        ========================================= */
-
-        .warenkorb-toast {
-            position: fixed;
-
-            top: 18px;
-
-            right: 18px;
-
-            z-index: 2000;
-
-            width: 360px;
-
-            max-width: calc(100% - 36px);
-
-            padding: 15px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            border: 1px solid var(--linie);
-
-            border-radius: 13px;
-
-            background: var(--karte);
-
-            box-shadow: 0 15px 45px rgba(40, 31, 25, 0.22);
-
-            opacity: 0;
-
-            transform: translateY(-25px);
-
-            pointer-events: none;
-
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
-        }
-
-        .warenkorb-toast.anzeigen {
-            opacity: 1;
-
-            transform: translateY(0);
-        }
-
-        .toast-check {
-            width: 38px;
-
-            height: 38px;
-
-            flex-shrink: 0;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: var(--mittelbraun);
-
-            color: white;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 19px;
-        }
-
-        .toast-text {
-            display: flex;
-
-            flex-direction: column;
-
-            text-align: left;
-        }
-
-        .toast-text strong {
-            font-size: 14px;
-        }
-
-        .toast-text span {
-            margin-top: 2px;
-
-            color: #8c7868;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 11px;
-        }
-
-
-        /* =========================================
-           WARENKORB
-        ========================================= */
-
-        #warenkorb {
-            border-top: 1px solid var(--linie);
-        }
-
-        #warenkorb-inhalt {
-            max-width: 700px;
-
-            margin: 30px auto 15px;
-        }
-
-        .warenkorb-artikel {
-            display: grid;
-
-            grid-template-columns: 1fr auto auto;
-
-            align-items: center;
-
-            gap: 15px;
-
-            padding: 15px 0;
-
-            border-bottom: 1px solid var(--linie);
-
-            text-align: left;
-        }
-
-        .entfernen {
-            width: 32px;
-
-            height: 32px;
-
-            border: 0;
-
-            border-radius: 50%;
-
-            background: #eee5dd;
-
-            color: var(--braun);
-
-            font-size: 19px;
-
-            cursor: pointer;
-        }
-
-        #gesamtpreis {
-            margin-top: 25px;
-
-            font-size: 21px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================================
-           KONTAKT
-        ========================================= */
-
-        .kontakt-buttons {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-
-            margin-top: 28px;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            padding: 35px 20px;
-
-            background: var(--braun);
-
-            color: var(--hintergrund);
-
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           HANDY
-        ========================================= */
-
-        @media (max-width: 650px) {
-
-            header {
-                padding: 25px 14px 20px;
-            }
-
-            header h1 {
-                font-size: 30px;
-            }
-
-            .slogan {
-                font-size: 9px;
-
-                letter-spacing: 2.5px;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-
-            .hero {
-                min-height: 340px;
-
-                padding: 50px 17px;
-            }
-
-            .hero h2 {
-                font-size: 34px;
-            }
-
-            .hero-beschreibung {
-                font-size: 16px;
-            }
-
-
-            .bereich {
-                padding: 55px 15px;
-            }
-
-            .bereich h2 {
-                font-size: 30px;
-            }
-
-
-            /* Produktkarte auf Handy kleiner */
-
-            .produkt {
-                width: 225px;
-            }
-
-            .produkt-hauptbild img {
-                height: 270px;
-            }
-
-            .produkt h3 {
-                margin-top: 13px;
-
-                font-size: 19px;
-            }
-
-            .preis {
-                margin: 8px 0 12px;
-
-                font-size: 17px;
-            }
-
-            .produkt .warenkorb-button {
-                padding: 10px 10px;
-
-                font-size: 12px;
-            }
-
-
-            /* Produktfenster auf Handy */
-
-            .produkt-modal {
-                padding: 7px;
-            }
-
-            .modal-box {
-                width: 100%;
-
-                max-height: 95vh;
-
-                padding: 48px 12px 24px;
-
-                border-radius: 12px;
-            }
-
-            .modal-kopf h2 {
-                font-size: 29px;
-            }
-
-            .produkt-detail-bilder {
-                grid-template-columns: 1fr;
-
-                gap: 9px;
-            }
-
-            .produkt-detail-bilder img {
-                width: 100%;
-
-                height: auto;
-
-                max-height: 500px;
-
-                object-fit: cover;
-            }
-
-            .modal-produkt-info .warenkorb-button {
-                width: 100%;
-
-                min-width: 0;
-            }
-
-
-            /* Toast auf Handy */
-
-            .warenkorb-toast {
-                top: 10px;
-
-                left: 10px;
-
-                right: 10px;
-
-                width: auto;
-
-                max-width: none;
-
-                padding: 12px;
-
-                border-radius: 11px;
-            }
-
-
-            .kontakt-buttons {
-                flex-direction: column;
-
-                align-items: center;
-            }
-
-            .kontakt-buttons .button-link {
-                width: min(280px, 100%);
-            }
-
-
-            .warenkorb-artikel {
-                grid-template-columns: 1fr auto;
-
-                gap: 8px;
-            }
-
-            .warenkorb-artikel .entfernen {
-                grid-column: 2;
-            }
-
-        }
-
-    </style>
 </head>
 
 
 <body>
 
 
-    <!-- HEADER -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header>
 
@@ -963,7 +78,9 @@
     <main>
 
 
-        <!-- START -->
+        <!-- =========================================
+             STARTSEITE
+        ========================================== -->
 
         <section
             class="hero"
@@ -994,7 +111,9 @@
 
 
 
-        <!-- KOLLEKTION -->
+        <!-- =========================================
+             KOLLEKTION
+        ========================================== -->
 
         <section
             class="bereich"
@@ -1016,6 +135,10 @@
 
             <div class="produkte">
 
+
+                <!-- =================================
+                     BAMBUS KHIMAR
+                ================================== -->
 
                 <article class="produkt">
 
@@ -1044,7 +167,7 @@
 
 
                     <p class="material">
-                        Handgenäht · Naturstoff
+                        Handgenäht · 100 % Bambus
                     </p>
 
 
@@ -1054,17 +177,16 @@
 
 
                     <button
-                        class="warenkorb-button"
+                        class="warenkorb-button produkt-konfigurieren"
+                        id="produkt-konfigurieren"
                         type="button"
-                        data-name="Bambus Khimar"
-                        data-preis="59.99"
                     >
-                        In den Warenkorb
+                        Maße auswählen
                     </button>
 
 
                     <p class="produkt-hinweis">
-                        Für Details auf das Produktbild klicken
+                        Individuell nach deinen gewünschten Längen gefertigt
                     </p>
 
 
@@ -1077,7 +199,9 @@
 
 
 
-        <!-- ÜBER UNS -->
+        <!-- =========================================
+             ÜBER UNS
+        ========================================== -->
 
         <section
             class="bereich"
@@ -1102,7 +226,9 @@
 
 
 
-        <!-- WARENKORB -->
+        <!-- =========================================
+             WARENKORB
+        ========================================== -->
 
         <section
             class="bereich"
@@ -1133,7 +259,9 @@
 
 
 
-        <!-- KONTAKT -->
+        <!-- =========================================
+             KONTAKT
+        ========================================== -->
 
         <section
             class="bereich"
@@ -1149,7 +277,7 @@
             </h2>
 
             <p class="bereich-text">
-                Für Fragen zu Stoffen, Farben oder deiner Bestellung
+                Für Fragen zu Stoffen, Maßen, Farben oder deiner Bestellung
                 kannst du uns gerne über Telegram kontaktieren.
             </p>
 
@@ -1184,6 +312,10 @@
 
 
 
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer>
 
         <p>
@@ -1194,7 +326,9 @@
 
 
 
-    <!-- PRODUKTFENSTER -->
+    <!-- =========================================
+         PRODUKTFENSTER
+    ========================================== -->
 
     <div
         class="produkt-modal"
@@ -1205,15 +339,20 @@
         <div class="modal-box">
 
 
+            <!-- SCHLIESSEN -->
+
             <button
                 class="modal-schliessen"
                 id="modal-schliessen"
                 type="button"
-                aria-label="Schließen"
+                aria-label="Produkt schließen"
             >
                 ×
             </button>
 
+
+
+            <!-- PRODUKTÜBERSCHRIFT -->
 
             <div class="modal-kopf">
 
@@ -1227,146 +366,420 @@
 
             </div>
 
-<div class="produkt-detail-bilder">
-
-    <button
-        class="zoom-bild-button"
-        type="button"
-        data-bild="bilder/Bambus Khimar.jpg"
-    >
-        <img
-            src="bilder/Bambus Khimar.jpg"
-            alt="Bambus Khimar"
-        >
-        <span>Zum Vergrößern tippen</span>
-    </button>
 
 
-    <button
-        class="zoom-bild-button"
-        type="button"
-        data-bild="bilder/Bambus Khimar vorne.jpg"
-    >
-        <img
-            src="bilder/Bambus Khimar vorne.jpg"
-            alt="Bambus Khimar Vorderansicht"
-        >
-        <span>Zum Vergrößern tippen</span>
-    </button>
+            <!-- =====================================
+                 PRODUKTBILDER
+            ====================================== -->
 
-</div>
+            <div class="produkt-detail-bilder">
 
 
-<div class="modal-produkt-info">
+                <button
+                    class="zoom-bild-button"
+                    type="button"
+                    data-bild="bilder/Bambus Khimar.jpg"
+                    aria-label="Erstes Produktbild vergrößern"
+                >
 
-    <p class="material">
-        Handgenäht · Naturstoff
-    </p>
+                    <img
+                        src="bilder/Bambus Khimar.jpg"
+                        alt="Bambus Khimar"
+                    >
 
-    <p class="preis">
-        59,99 €
-    </p>
+                    <span>
+                        Zum Vergrößern
+                    </span>
 
-
-    <div class="stoff-info">
-
-        <h3>Stoff Info</h3>
-
-        <p>
-            Unser Bambusstoff überzeugt mit seiner unglaublich weichen,
-            glatten und angenehm fließenden Qualität. Er liegt leicht auf
-            der Haut und fühlt sich besonders geschmeidig an ideal für
-            Kleidung, die den ganzen Tag angenehm zu tragen sein soll.
-        </p>
-
-        <p>
-            Hervorragend geeignet für Khimars, Abayas, Kopftücher und
-            weitere Modest-Wear.
-        </p>
+                </button>
 
 
-        <ul class="stoff-vorteile">
 
-            <li>🌿 Weich & angenehm auf der Haut</li>
+                <button
+                    class="zoom-bild-button"
+                    type="button"
+                    data-bild="bilder/Bambus Khimar vorne.jpg"
+                    aria-label="Zweites Produktbild vergrößern"
+                >
 
-            <li>🌿 Leicht & fließend</li>
+                    <img
+                        src="bilder/Bambus Khimar vorne.jpg"
+                        alt="Bambus Khimar Vorderansicht"
+                    >
 
-            <li>🌿 Eleganter, natürlicher Fall</li>
+                    <span>
+                        Zum Vergrößern
+                    </span>
 
-            <li>🌿 Atmungsaktiver Stoff</li>
+                </button>
 
-        </ul>
-
-
-        <div class="stoff-details">
-
-            <h4>Zusammensetzung</h4>
-
-            <p>
-                <strong>Khimar:</strong>
-                100 % Bambus
-            </p>
-
-            <p>
-                <strong>Kopf & Kinn:</strong>
-                Baumwoll-Jersey aus 95 % Baumwolle und 5 % Elasthan
-            </p>
-
-
-            <h4>Maße</h4>
-
-            <div class="masse-grid">
-
-                <div>
-                    <span>Hinten</span>
-                    <strong>140 cm</strong>
-                    <small>Länge</small>
-                </div>
-
-                <div>
-                    <span>Vorne</span>
-                    <strong>100 cm</strong>
-                    <small>Länge</small>
-                </div>
-
-                <div>
-                    <span>Vorne</span>
-                    <strong>180 cm</strong>
-                    <small>Breite</small>
-                </div>
-
-                <div>
-                    <span>Hinten</span>
-                    <strong>260 cm</strong>
-                    <small>Breite</small>
-                </div>
 
             </div>
 
+
+
+            <!-- =====================================
+                 PRODUKTINFORMATIONEN
+            ====================================== -->
+
+            <div class="modal-produkt-info">
+
+
+                <p class="material">
+                    Handgenäht · Naturstoff
+                </p>
+
+
+                <p class="preis">
+                    59,99 €
+                </p>
+
+
+
+                <!-- =================================
+                     STOFF INFO
+                ================================== -->
+
+                <div class="stoff-info">
+
+
+                    <h3>
+                        Stoff Info
+                    </h3>
+
+
+                    <p>
+                        Unser Bambusstoff überzeugt mit seiner unglaublich
+                        weichen, glatten und angenehm fließenden Qualität.
+                        Er liegt leicht auf der Haut und fühlt sich besonders
+                        geschmeidig an – ideal für Kleidung, die den ganzen
+                        Tag angenehm zu tragen sein soll.
+                    </p>
+
+
+                    <p>
+                        Hervorragend geeignet für Khimars, Abayas,
+                        Kopftücher und weitere Modest-Wear.
+                    </p>
+
+
+
+                    <ul class="stoff-vorteile">
+
+                        <li>
+                            🌿 Weich & angenehm auf der Haut
+                        </li>
+
+                        <li>
+                            🌿 Leicht & fließend
+                        </li>
+
+                        <li>
+                            🌿 Eleganter, natürlicher Fall
+                        </li>
+
+                        <li>
+                            🌿 Atmungsaktiver Stoff
+                        </li>
+
+                    </ul>
+
+
+
+                    <!-- ZUSAMMENSETZUNG -->
+
+                    <div class="stoff-details">
+
+                        <h4>
+                            Zusammensetzung
+                        </h4>
+
+
+                        <p>
+                            <strong>Khimar:</strong>
+                            100 % Bambus
+                        </p>
+
+
+                        <p>
+                            <strong>Kopf & Kinn:</strong>
+                            Baumwoll-Jersey aus 95 % Baumwolle
+                            und 5 % Elasthan
+                        </p>
+
+
+
+                        <!-- STANDARDMASSE -->
+
+                        <h4>
+                            Maße
+                        </h4>
+
+
+                        <div class="masse-grid">
+
+
+                            <div>
+
+                                <span>
+                                    Vorne
+                                </span>
+
+                                <strong>
+                                    180 cm
+                                </strong>
+
+                                <small>
+                                    Breite
+                                </small>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Hinten
+                                </span>
+
+                                <strong>
+                                    260 cm
+                                </strong>
+
+                                <small>
+                                    Breite
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <p class="bereich-text">
+                            Die Breite bleibt bei jedem Khimar gleich.
+                            Die Länge vorne und hinten kannst du
+                            individuell auswählen.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     INDIVIDUELLE MAẞE
+                ================================== -->
+
+                <div class="mass-auswahl">
+
+
+                    <div class="mass-kopf">
+
+                        <p class="kleiner-text">
+                            DEINE MAẞE
+                        </p>
+
+                        <h3>
+                            Deine individuelle Länge
+                        </h3>
+
+                        <p>
+                            Bitte gib die gewünschte Länge vorne
+                            und hinten in Zentimetern ein.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="mass-felder">
+
+
+                        <!-- LÄNGE VORNE -->
+
+                        <label for="laenge-vorne">
+
+                            <span>
+                                Länge vorne
+                            </span>
+
+
+                            <div class="mass-input">
+
+                                <input
+                                    type="number"
+                                    id="laenge-vorne"
+                                    min="60"
+                                    max="180"
+                                    step="1"
+                                    inputmode="numeric"
+                                    placeholder="z. B. 100"
+                                    required
+                                >
+
+                                <span>
+                                    cm
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <!-- LÄNGE HINTEN -->
+
+                        <label for="laenge-hinten">
+
+                            <span>
+                                Länge hinten
+                            </span>
+
+
+                            <div class="mass-input">
+
+                                <input
+                                    type="number"
+                                    id="laenge-hinten"
+                                    min="80"
+                                    max="220"
+                                    step="1"
+                                    inputmode="numeric"
+                                    placeholder="z. B. 140"
+                                    required
+                                >
+
+                                <span>
+                                    cm
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- FEHLERMELDUNG -->
+
+                    <p
+                        class="mass-fehler"
+                        id="mass-fehler"
+                        hidden
+                    >
+                        Bitte gib die Länge vorne und hinten ein.
+                    </p>
+
+
+
+                    <p class="mass-hinweis">
+                        Bitte kontrolliere deine Maße vor dem
+                        Hinzufügen zum Warenkorb sorgfältig.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     WARENKORB BUTTON
+                ================================== -->
+
+                <button
+                    class="warenkorb-button"
+                    id="modal-warenkorb-button"
+                    type="button"
+                >
+                    In den Warenkorb
+                </button>
+
+
+            </div>
+
+
         </div>
 
     </div>
 
 
-    <button
-        class="warenkorb-button"
-        type="button"
-        data-name="Bambus Khimar"
-        data-preis="59.99"
+
+    <!-- =========================================
+         BILD-ZOOM
+    ========================================== -->
+
+    <div
+        class="bild-zoom"
+        id="bild-zoom"
+        hidden
     >
-        In den Warenkorb
-    </button>
 
-</div>
+
+        <button
+            class="zoom-schliessen"
+            id="zoom-schliessen"
+            type="button"
+            aria-label="Bild schließen"
+        >
+            ×
+        </button>
+
+
+
+        <div class="zoom-bild-bereich">
+
+            <img
+                id="zoom-bild"
+                src=""
+                alt="Bambus Khimar vergrößert"
+            >
+
+        </div>
+
+
+
+        <div class="zoom-steuerung">
+
+
+            <button
+                type="button"
+                id="zoom-minus"
+                aria-label="Herauszoomen"
+            >
+                −
+            </button>
+
+
+            <span id="zoom-anzeige">
+                100 %
+            </span>
+
+
+            <button
+                type="button"
+                id="zoom-plus"
+                aria-label="Hineinzoomen"
+            >
+                +
+            </button>
 
 
         </div>
+
 
     </div>
 
 
 
-    <!-- WARENKORB-MELDUNG -->
+    <!-- =========================================
+         WARENKORB BENACHRICHTIGUNG
+    ========================================== -->
 
     <div
         class="warenkorb-toast"
@@ -1375,9 +788,11 @@
         aria-live="polite"
     >
 
+
         <div class="toast-check">
             ✓
         </div>
+
 
         <div class="toast-text">
 
@@ -1391,65 +806,118 @@
 
         </div>
 
+
     </div>
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
+
         /* =========================================
            PRODUKTFENSTER
-        ========================================= */
+        ========================================== */
+
 
         const produktOeffnen =
-            document.getElementById("produkt-oeffnen");
+            document.getElementById(
+                "produkt-oeffnen"
+            );
+
+
+        const produktKonfigurieren =
+            document.getElementById(
+                "produkt-konfigurieren"
+            );
+
 
         const produktModal =
-            document.getElementById("produkt-modal");
+            document.getElementById(
+                "produkt-modal"
+            );
+
 
         const modalSchliessen =
-            document.getElementById("modal-schliessen");
+            document.getElementById(
+                "modal-schliessen"
+            );
 
 
-        function modalOeffnen() {
+
+        function produktFensterOeffnen() {
 
             produktModal.hidden = false;
 
-            document.body.classList.add("modal-offen");
+            document.body.classList.add(
+                "modal-offen"
+            );
 
         }
 
 
-        function modalSchliessenFunktion() {
+
+        function produktFensterSchliessen() {
 
             produktModal.hidden = true;
 
-            document.body.classList.remove("modal-offen");
+            document.body.classList.remove(
+                "modal-offen"
+            );
 
         }
+
 
 
         produktOeffnen.addEventListener(
             "click",
-            modalOeffnen
+            produktFensterOeffnen
         );
+
+
+
+        produktKonfigurieren.addEventListener(
+            "click",
+            function () {
+
+                produktFensterOeffnen();
+
+
+                setTimeout(
+                    function () {
+
+                        document
+                            .getElementById("laenge-vorne")
+                            .focus();
+
+                    },
+                    200
+                );
+
+            }
+        );
+
 
 
         modalSchliessen.addEventListener(
             "click",
-            modalSchliessenFunktion
+            produktFensterSchliessen
         );
+
 
 
         produktModal.addEventListener(
             "click",
             function (event) {
 
-                if (event.target === produktModal) {
+                if (
+                    event.target === produktModal
+                ) {
 
-                    modalSchliessenFunktion();
+                    produktFensterSchliessen();
 
                 }
 
@@ -1457,16 +925,205 @@
         );
 
 
+
         document.addEventListener(
             "keydown",
             function (event) {
 
                 if (
-                    event.key === "Escape" &&
-                    produktModal.hidden === false
+                    event.key === "Escape"
                 ) {
 
-                    modalSchliessenFunktion();
+                    if (
+                        bildZoom.hidden === false
+                    ) {
+
+                        zoomSchliessenFunktion();
+
+                    }
+
+                    else if (
+                        produktModal.hidden === false
+                    ) {
+
+                        produktFensterSchliessen();
+
+                    }
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           BILD-ZOOM
+        ========================================== */
+
+
+        const zoomButtons =
+            document.querySelectorAll(
+                ".zoom-bild-button"
+            );
+
+
+        const bildZoom =
+            document.getElementById(
+                "bild-zoom"
+            );
+
+
+        const zoomBild =
+            document.getElementById(
+                "zoom-bild"
+            );
+
+
+        const zoomSchliessen =
+            document.getElementById(
+                "zoom-schliessen"
+            );
+
+
+        const zoomPlus =
+            document.getElementById(
+                "zoom-plus"
+            );
+
+
+        const zoomMinus =
+            document.getElementById(
+                "zoom-minus"
+            );
+
+
+        const zoomAnzeige =
+            document.getElementById(
+                "zoom-anzeige"
+            );
+
+
+        let zoomStufe = 1;
+
+
+
+        function zoomAktualisieren() {
+
+            zoomBild.style.transform =
+                "scale(" +
+                zoomStufe +
+                ")";
+
+
+            zoomAnzeige.textContent =
+                Math.round(
+                    zoomStufe * 100
+                ) +
+                " %";
+
+        }
+
+
+
+        zoomButtons.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+
+                        zoomBild.src =
+                            button.dataset.bild;
+
+
+                        zoomStufe = 1;
+
+
+                        zoomAktualisieren();
+
+
+                        bildZoom.hidden = false;
+
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        function zoomSchliessenFunktion() {
+
+            bildZoom.hidden = true;
+
+            zoomStufe = 1;
+
+            zoomBild.style.transform =
+                "scale(1)";
+
+        }
+
+
+
+        zoomSchliessen.addEventListener(
+            "click",
+            zoomSchliessenFunktion
+        );
+
+
+
+        zoomPlus.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    zoomStufe < 3
+                ) {
+
+                    zoomStufe += 0.25;
+
+                    zoomAktualisieren();
+
+                }
+
+            }
+        );
+
+
+
+        zoomMinus.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    zoomStufe > 1
+                ) {
+
+                    zoomStufe -= 0.25;
+
+                    zoomAktualisieren();
+
+                }
+
+            }
+        );
+
+
+
+        zoomBild.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    zoomStufe < 3
+                ) {
+
+                    zoomStufe += 0.25;
+
+                    zoomAktualisieren();
 
                 }
 
@@ -1477,24 +1134,59 @@
 
         /* =========================================
            WARENKORB
-        ========================================= */
+        ========================================== */
+
 
         const warenkorb = [];
 
-        const warenkorbButtons =
-            document.querySelectorAll(".warenkorb-button");
+
+        const laengeVorne =
+            document.getElementById(
+                "laenge-vorne"
+            );
+
+
+        const laengeHinten =
+            document.getElementById(
+                "laenge-hinten"
+            );
+
+
+        const massFehler =
+            document.getElementById(
+                "mass-fehler"
+            );
+
+
+        const modalWarenkorbButton =
+            document.getElementById(
+                "modal-warenkorb-button"
+            );
+
 
         const warenkorbAnzahl =
-            document.getElementById("warenkorb-anzahl");
+            document.getElementById(
+                "warenkorb-anzahl"
+            );
+
 
         const warenkorbInhalt =
-            document.getElementById("warenkorb-inhalt");
+            document.getElementById(
+                "warenkorb-inhalt"
+            );
+
 
         const gesamtpreisAnzeige =
-            document.getElementById("gesamtpreis");
+            document.getElementById(
+                "gesamtpreis"
+            );
+
 
         const warenkorbNav =
-            document.getElementById("warenkorb-nav");
+            document.getElementById(
+                "warenkorb-nav"
+            );
+
 
 
         const euro =
@@ -1507,82 +1199,189 @@
             );
 
 
-        warenkorbButtons.forEach(
-            function (button) {
 
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        const name =
-                            button.dataset.name;
-
-                        const preis =
-                            Number(button.dataset.preis);
+        modalWarenkorbButton.addEventListener(
+            "click",
+            function () {
 
 
-                        const vorhanden =
-                            warenkorb.find(
-                                function (artikel) {
+                const vorne =
+                    Number(
+                        laengeVorne.value
+                    );
 
-                                    return artikel.name === name;
 
-                                }
+                const hinten =
+                    Number(
+                        laengeHinten.value
+                    );
+
+
+
+                if (
+                    !vorne ||
+                    !hinten
+                ) {
+
+                    massFehler.textContent =
+                        "Bitte gib die Länge vorne und hinten ein.";
+
+
+                    massFehler.hidden =
+                        false;
+
+
+                    return;
+
+                }
+
+
+
+                if (
+                    vorne < 60 ||
+                    vorne > 180
+                ) {
+
+                    massFehler.textContent =
+                        "Die Länge vorne muss zwischen 60 cm und 180 cm liegen.";
+
+
+                    massFehler.hidden =
+                        false;
+
+
+                    laengeVorne.focus();
+
+
+                    return;
+
+                }
+
+
+
+                if (
+                    hinten < 80 ||
+                    hinten > 220
+                ) {
+
+                    massFehler.textContent =
+                        "Die Länge hinten muss zwischen 80 cm und 220 cm liegen.";
+
+
+                    massFehler.hidden =
+                        false;
+
+
+                    laengeHinten.focus();
+
+
+                    return;
+
+                }
+
+
+
+                massFehler.hidden =
+                    true;
+
+
+
+                const artikelSchluessel =
+                    "Bambus Khimar-" +
+                    vorne +
+                    "-" +
+                    hinten;
+
+
+
+                const vorhandenerArtikel =
+                    warenkorb.find(
+                        function (artikel) {
+
+                            return (
+                                artikel.schluessel ===
+                                artikelSchluessel
                             );
 
-
-                        if (vorhanden) {
-
-                            vorhanden.anzahl++;
-
-                        } else {
-
-                            warenkorb.push({
-
-                                name: name,
-
-                                preis: preis,
-
-                                anzahl: 1
-
-                            });
-
                         }
+                    );
 
 
-                        warenkorbAktualisieren();
 
-                        toastAnzeigen(name);
+                if (
+                    vorhandenerArtikel
+                ) {
 
-                        warenkorbAnimation();
+                    vorhandenerArtikel.anzahl++;
 
-                    }
+                }
+
+                else {
+
+                    warenkorb.push({
+
+                        schluessel:
+                            artikelSchluessel,
+
+                        name:
+                            "Bambus Khimar",
+
+                        preis:
+                            59.99,
+
+                        vorne:
+                            vorne,
+
+                        hinten:
+                            hinten,
+
+                        anzahl:
+                            1
+
+                    });
+
+                }
+
+
+
+                warenkorbAktualisieren();
+
+
+                toastAnzeigen(
+                    "Bambus Khimar · vorne " +
+                    vorne +
+                    " cm · hinten " +
+                    hinten +
+                    " cm"
                 );
+
+
+                warenkorbAnimation();
+
 
             }
         );
 
 
+
+        /* =========================================
+           WARENKORB ANZEIGEN
+        ========================================== */
+
+
         function warenkorbAktualisieren() {
+
 
             const anzahl =
                 warenkorb.reduce(
-                    function (summe, artikel) {
-
-                        return summe + artikel.anzahl;
-
-                    },
-                    0
-                );
-
-
-            const gesamt =
-                warenkorb.reduce(
-                    function (summe, artikel) {
+                    function (
+                        summe,
+                        artikel
+                    ) {
 
                         return (
                             summe +
-                            artikel.preis * artikel.anzahl
+                            artikel.anzahl
                         );
 
                     },
@@ -1590,83 +1389,156 @@
                 );
 
 
+
+            const gesamt =
+                warenkorb.reduce(
+                    function (
+                        summe,
+                        artikel
+                    ) {
+
+                        return (
+                            summe +
+                            artikel.preis *
+                            artikel.anzahl
+                        );
+
+                    },
+                    0
+                );
+
+
+
             warenkorbAnzahl.textContent =
                 anzahl;
+
 
 
             warenkorbInhalt.innerHTML =
                 "";
 
 
-            if (warenkorb.length === 0) {
+
+            if (
+                warenkorb.length === 0
+            ) {
 
                 warenkorbInhalt.innerHTML =
                     "<p>Dein Warenkorb ist noch leer.</p>";
 
+
                 gesamtpreisAnzeige.textContent =
                     "";
+
 
                 return;
 
             }
 
 
+
             warenkorb.forEach(
-                function (artikel, index) {
+                function (
+                    artikel,
+                    index
+                ) {
+
 
                     const zeile =
-                        document.createElement("div");
+                        document.createElement(
+                            "div"
+                        );
 
 
                     zeile.className =
                         "warenkorb-artikel";
 
 
+
+                    const artikelGesamt =
+                        artikel.preis *
+                        artikel.anzahl;
+
+
+
                     zeile.innerHTML = `
-                        <span>
-                            ${artikel.name} ·
-                            ${artikel.anzahl} Stück
-                        </span>
+
+                        <div>
+
+                            <strong>
+                                ${artikel.name}
+                            </strong>
+
+                            <br>
+
+                            <small>
+                                Vorne:
+                                ${artikel.vorne} cm
+                                ·
+                                Hinten:
+                                ${artikel.hinten} cm
+                            </small>
+
+                            <br>
+
+                            <small>
+                                Anzahl:
+                                ${artikel.anzahl}
+                            </small>
+
+                        </div>
+
 
                         <strong>
                             ${euro.format(
-                                artikel.preis *
-                                artikel.anzahl
+                                artikelGesamt
                             )}
                         </strong>
+
 
                         <button
                             class="entfernen"
                             type="button"
                             data-index="${index}"
-                            aria-label="Entfernen"
+                            aria-label="Artikel entfernen"
                         >
                             ×
                         </button>
+
                     `;
+
 
 
                     warenkorbInhalt.appendChild(
                         zeile
                     );
 
+
                 }
             );
 
 
+
             gesamtpreisAnzeige.textContent =
                 "Gesamt: " +
-                euro.format(gesamt);
+                euro.format(
+                    gesamt
+                );
+
 
 
             document
-                .querySelectorAll(".entfernen")
+                .querySelectorAll(
+                    ".entfernen"
+                )
                 .forEach(
                     function (button) {
+
 
                         button.addEventListener(
                             "click",
                             function () {
+
 
                                 const index =
                                     Number(
@@ -1682,60 +1554,85 @@
 
                                 warenkorbAktualisieren();
 
+
                             }
                         );
 
+
                     }
                 );
+
 
         }
 
 
 
         /* =========================================
-           TOAST / BENACHRICHTIGUNG
-        ========================================= */
+           BENACHRICHTIGUNG
+        ========================================== */
+
 
         const toast =
-            document.getElementById("warenkorb-toast");
+            document.getElementById(
+                "warenkorb-toast"
+            );
+
 
         const toastNachricht =
-            document.getElementById("toast-nachricht");
+            document.getElementById(
+                "toast-nachricht"
+            );
+
 
         let toastTimer;
 
 
-        function toastAnzeigen(name) {
+
+        function toastAnzeigen(
+            text
+        ) {
+
 
             toastNachricht.textContent =
-                name + " wurde hinzugefügt";
+                text;
 
 
-            toast.classList.add("anzeigen");
+            toast.classList.add(
+                "anzeigen"
+            );
 
 
-            clearTimeout(toastTimer);
+            clearTimeout(
+                toastTimer
+            );
 
 
             toastTimer =
                 setTimeout(
                     function () {
 
-                        toast.classList.remove("anzeigen");
+
+                        toast.classList.remove(
+                            "anzeigen"
+                        );
+
 
                     },
-                    2800
+                    3000
                 );
+
 
         }
 
 
 
         /* =========================================
-           WARENKORB KURZ ANIMIEREN
-        ========================================= */
+           WARENKORB ANIMATION
+        ========================================== */
+
 
         function warenkorbAnimation() {
+
 
             warenkorbNav.classList.remove(
                 "pulsieren"
@@ -1749,7 +1646,36 @@
                 "pulsieren"
             );
 
+
         }
+
+
+
+        /* =========================================
+           FEHLERMELDUNG ENTFERNEN
+           WENN KUNDIN MAẞE EINGIBT
+        ========================================== */
+
+
+        laengeVorne.addEventListener(
+            "input",
+            function () {
+
+                massFehler.hidden = true;
+
+            }
+        );
+
+
+        laengeHinten.addEventListener(
+            "input",
+            function () {
+
+                massFehler.hidden = true;
+
+            }
+        );
+
 
     </script>
 
