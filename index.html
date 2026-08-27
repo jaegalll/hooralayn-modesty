@@ -26,6 +26,10 @@
 <body>
 
 
+    <!-- =========================================
+         TOPBAR
+    ========================================== -->
+
     <div class="topbar">
 
         <span>
@@ -43,6 +47,10 @@
     </div>
 
 
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header class="haupt-header">
 
@@ -88,23 +96,47 @@
 
 
 
-            <a
-                href="#warenkorb"
-                class="warenkorb-nav"
-                id="warenkorb-nav"
-            >
+            <div class="header-actions">
 
-                <span class="warenkorb-symbol">
-                    ♡
-                </span>
 
-                Warenkorb
+                <button
+                    class="konto-nav"
+                    id="konto-button"
+                    type="button"
+                >
+                    <span>
+                        ◌
+                    </span>
 
-                <span class="warenkorb-badge">
-                    <span id="warenkorb-anzahl">0</span>
-                </span>
+                    <span id="konto-button-text">
+                        Anmelden
+                    </span>
+                </button>
 
-            </a>
+
+
+                <a
+                    href="#warenkorb"
+                    class="warenkorb-nav"
+                    id="warenkorb-nav"
+                >
+
+                    <span class="warenkorb-symbol">
+                        ♡
+                    </span>
+
+                    <span class="warenkorb-text">
+                        Warenkorb
+                    </span>
+
+                    <span class="warenkorb-badge">
+                        <span id="warenkorb-anzahl">0</span>
+                    </span>
+
+                </a>
+
+
+            </div>
 
 
         </div>
@@ -115,6 +147,10 @@
 
     <main>
 
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
         <section
             class="hero"
@@ -289,6 +325,10 @@
 
 
 
+        <!-- =========================================
+             VORTEILE
+        ========================================== -->
+
         <section class="trust-strip">
 
 
@@ -299,6 +339,7 @@
                 </span>
 
                 <div>
+
                     <strong>
                         Mit Liebe gefertigt
                     </strong>
@@ -306,6 +347,7 @@
                     <small>
                         Sorgfältige Handarbeit
                     </small>
+
                 </div>
 
             </div>
@@ -319,6 +361,7 @@
                 </span>
 
                 <div>
+
                     <strong>
                         Individuelle Maße
                     </strong>
@@ -326,6 +369,7 @@
                     <small>
                         Länge vorne & hinten
                     </small>
+
                 </div>
 
             </div>
@@ -339,6 +383,7 @@
                 </span>
 
                 <div>
+
                     <strong>
                         Natürliche Stoffe
                     </strong>
@@ -346,6 +391,7 @@
                     <small>
                         Angenehm auf der Haut
                     </small>
+
                 </div>
 
             </div>
@@ -359,13 +405,15 @@
                 </span>
 
                 <div>
+
                     <strong>
-                        Zeitloses Design
+                        Kundenkonto
                     </strong>
 
                     <small>
-                        Für deinen Alltag
+                        Warenkorb gespeichert
                     </small>
+
                 </div>
 
             </div>
@@ -374,6 +422,10 @@
         </section>
 
 
+
+        <!-- =========================================
+             KOLLEKTION
+        ========================================== -->
 
         <section
             class="bereich kollektion-bereich"
@@ -496,6 +548,10 @@
 
 
 
+        <!-- =========================================
+             BESTELLABLAUF
+        ========================================== -->
+
         <section class="ablauf-section">
 
 
@@ -518,9 +574,7 @@
 
                 <div class="ablauf-schritt">
 
-                    <span>
-                        1
-                    </span>
+                    <span>1</span>
 
                     <h3>
                         Produkt wählen
@@ -534,16 +588,12 @@
                 </div>
 
 
-
                 <div class="ablauf-linie"></div>
-
 
 
                 <div class="ablauf-schritt">
 
-                    <span>
-                        2
-                    </span>
+                    <span>2</span>
 
                     <h3>
                         Maße angeben
@@ -557,16 +607,12 @@
                 </div>
 
 
-
                 <div class="ablauf-linie"></div>
-
 
 
                 <div class="ablauf-schritt">
 
-                    <span>
-                        3
-                    </span>
+                    <span>3</span>
 
                     <h3>
                         Bestellung prüfen
@@ -585,6 +631,10 @@
         </section>
 
 
+
+        <!-- =========================================
+             ÜBER UNS
+        ========================================== -->
 
         <section
             class="ueber-section"
@@ -665,6 +715,10 @@
 
 
 
+        <!-- =========================================
+             WARENKORB
+        ========================================== -->
+
         <section
             class="bereich warenkorb-section"
             id="warenkorb"
@@ -684,7 +738,33 @@
             </div>
 
 
+
             <div class="warenkorb-container">
+
+
+                <div
+                    class="warenkorb-sync-info"
+                    id="warenkorb-sync-info"
+                >
+
+                    <span>
+                        ◌
+                    </span>
+
+                    <p id="warenkorb-sync-text">
+                        Melde dich an, damit dein Warenkorb dauerhaft
+                        in deinem Konto gespeichert wird.
+                    </p>
+
+                    <button
+                        id="warenkorb-login-button"
+                        type="button"
+                    >
+                        Anmelden
+                    </button>
+
+                </div>
+
 
 
                 <div id="warenkorb-inhalt">
@@ -706,6 +786,7 @@
                     </div>
 
                 </div>
+
 
 
                 <div
@@ -743,9 +824,14 @@
 
             </div>
 
+
         </section>
 
 
+
+        <!-- =========================================
+             FAQ
+        ========================================== -->
 
         <section class="faq-section">
 
@@ -816,13 +902,13 @@
                 <details>
 
                     <summary>
-                        Kann ich Fragen vor der Bestellung stellen?
+                        Bleibt mein Warenkorb gespeichert?
                     </summary>
 
                     <p>
-                        Natürlich. Über unsere Telegram-Kontakte kannst
-                        du uns jederzeit Fragen zu Stoffen, Maßen und
-                        deiner Bestellung stellen.
+                        Wenn du ein Kundenkonto erstellst und angemeldet bist,
+                        wird dein Warenkorb mit deinem Konto gespeichert und
+                        beim nächsten Anmelden wieder geladen.
                     </p>
 
                 </details>
@@ -833,6 +919,10 @@
         </section>
 
 
+
+        <!-- =========================================
+             KONTAKT
+        ========================================== -->
 
         <section
             class="kontakt-section"
@@ -894,6 +984,10 @@
 
 
 
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer>
 
 
@@ -926,6 +1020,359 @@
     </footer>
 
 
+
+    <!-- =========================================
+         KUNDENKONTO
+    ========================================== -->
+
+    <div
+        class="konto-modal overlay"
+        id="konto-modal"
+        hidden
+    >
+
+        <div class="modal-box konto-box">
+
+
+            <button
+                class="modal-schliessen"
+                id="konto-schliessen"
+                type="button"
+                aria-label="Kundenkonto schließen"
+            >
+                ×
+            </button>
+
+
+
+            <!-- NICHT ANGEMELDET -->
+
+            <div id="konto-gast-bereich">
+
+
+                <div class="konto-kopf">
+
+                    <p class="eyebrow">
+                        DEIN KUNDENKONTO
+                    </p>
+
+                    <h2>
+                        Willkommen bei HoorAlAyn
+                    </h2>
+
+                    <p>
+                        Melde dich an oder erstelle kostenlos dein Konto.
+                    </p>
+
+                </div>
+
+
+
+                <div class="auth-tabs">
+
+                    <button
+                        class="auth-tab aktiv"
+                        id="tab-anmelden"
+                        type="button"
+                    >
+                        Anmelden
+                    </button>
+
+                    <button
+                        class="auth-tab"
+                        id="tab-registrieren"
+                        type="button"
+                    >
+                        Konto erstellen
+                    </button>
+
+                </div>
+
+
+
+                <!-- ANMELDEN -->
+
+                <form
+                    class="auth-form"
+                    id="anmelden-form"
+                >
+
+                    <label>
+
+                        <span>
+                            E-Mail-Adresse
+                        </span>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Passwort
+                        </span>
+
+                        <input
+                            type="password"
+                            id="login-passwort"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </label>
+
+
+                    <p
+                        class="formular-fehler"
+                        id="login-fehler"
+                        hidden
+                    ></p>
+
+
+                    <button
+                        class="konto-primary-button"
+                        type="submit"
+                    >
+                        Anmelden
+                    </button>
+
+
+                    <button
+                        class="passwort-vergessen"
+                        id="passwort-vergessen"
+                        type="button"
+                    >
+                        Passwort vergessen?
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- REGISTRIEREN -->
+
+                <form
+                    class="auth-form"
+                    id="registrieren-form"
+                    hidden
+                >
+
+                    <label>
+
+                        <span>
+                            Dein Name
+                        </span>
+
+                        <input
+                            type="text"
+                            id="register-name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            E-Mail-Adresse
+                        </span>
+
+                        <input
+                            type="email"
+                            id="register-email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Passwort
+                        </span>
+
+                        <input
+                            type="password"
+                            id="register-passwort"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                        <small>
+                            Mindestens 6 Zeichen
+                        </small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Passwort wiederholen
+                        </span>
+
+                        <input
+                            type="password"
+                            id="register-passwort-wiederholen"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                    </label>
+
+
+                    <p
+                        class="formular-fehler"
+                        id="register-fehler"
+                        hidden
+                    ></p>
+
+
+                    <button
+                        class="konto-primary-button"
+                        type="submit"
+                    >
+                        Konto erstellen
+                    </button>
+
+
+                    <p class="konto-datenschutz">
+                        Dein Passwort wird nicht auf unserer Webseite
+                        gespeichert. Die Anmeldung wird sicher über
+                        Firebase Authentication verwaltet.
+                    </p>
+
+
+                </form>
+
+
+            </div>
+
+
+
+            <!-- ANGEMELDET -->
+
+            <div
+                id="konto-user-bereich"
+                hidden
+            >
+
+
+                <div class="konto-erfolg-icon">
+                    ✓
+                </div>
+
+
+                <div class="konto-kopf">
+
+                    <p class="eyebrow">
+                        MEIN KONTO
+                    </p>
+
+                    <h2 id="konto-begruessung">
+                        Willkommen
+                    </h2>
+
+                    <p>
+                        Du bist angemeldet.
+                    </p>
+
+                </div>
+
+
+
+                <div class="konto-info-karte">
+
+
+                    <div>
+
+                        <span>
+                            E-Mail
+                        </span>
+
+                        <strong id="konto-email-anzeige">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Warenkorb
+                        </span>
+
+                        <strong id="konto-warenkorb-status">
+                            Synchronisiert
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="konto-vorteil-box">
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Dein Warenkorb ist gespeichert
+                        </strong>
+
+                        <p>
+                            Wenn du die Webseite schließt und dich später
+                            wieder mit diesem Konto anmeldest, wird dein
+                            Warenkorb automatisch geladen.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    class="konto-logout-button"
+                    id="abmelden-button"
+                    type="button"
+                >
+                    Abmelden
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         PRODUKTMODAL
+    ========================================== -->
 
     <div
         class="produkt-modal overlay"
@@ -1025,7 +1472,6 @@
 
                     </div>
 
-
                     <span>
                         ♡ Handmade
                     </span>
@@ -1091,12 +1537,10 @@
                             Zusammensetzung
                         </h4>
 
-
                         <p>
                             <strong>Khimar:</strong>
                             100 % Bambus
                         </p>
-
 
                         <p>
                             <strong>Kopf & Kinn:</strong>
@@ -1154,6 +1598,8 @@
 
 
 
+                <!-- MAẞE -->
+
                 <div class="mass-auswahl">
 
 
@@ -1162,6 +1608,7 @@
                         <span class="mass-nummer">
                             01
                         </span>
+
 
                         <div>
 
@@ -1253,9 +1700,7 @@
                         class="formular-fehler"
                         id="mass-fehler"
                         hidden
-                    >
-                        Bitte gib beide Längen ein.
-                    </p>
+                    ></p>
 
 
                     <p class="mass-hinweis">
@@ -1285,12 +1730,15 @@
 
 
 
+    <!-- =========================================
+         BILD ZOOM
+    ========================================== -->
+
     <div
         class="bild-zoom"
         id="bild-zoom"
         hidden
     >
-
 
         <button
             class="zoom-schliessen"
@@ -1334,10 +1782,13 @@
 
         </div>
 
-
     </div>
 
 
+
+    <!-- =========================================
+         CHECKOUT
+    ========================================== -->
 
     <div
         class="checkout-modal overlay"
@@ -1545,9 +1996,7 @@
                         class="formular-fehler"
                         id="checkout-fehler"
                         hidden
-                    >
-                        Bitte fülle alle Pflichtfelder aus.
-                    </p>
+                    ></p>
 
 
                     <button
@@ -1572,6 +2021,7 @@
                     <h3>
                         Zusammenfassung
                     </h3>
+
 
                     <div id="checkout-artikel"></div>
 
@@ -1605,6 +2055,10 @@
     </div>
 
 
+
+    <!-- =========================================
+         BESTELLUNG PRÜFEN
+    ========================================== -->
 
     <div
         class="bestellpruefung overlay"
@@ -1647,9 +2101,8 @@
                 </p>
 
                 <p>
-                    Im nächsten Schritt verbinden wir deine Webseite
-                    mit einem richtigen Bestellsystem und danach
-                    mit PayPal und Kartenzahlung.
+                    Als Nächstes verbinden wir deine Webseite
+                    mit dem richtigen Bestellsystem und der Zahlung.
                 </p>
 
             </div>
@@ -1670,6 +2123,10 @@
 
 
 
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
     <div
         class="warenkorb-toast"
         id="warenkorb-toast"
@@ -1683,7 +2140,7 @@
 
         <div class="toast-text">
 
-            <strong>
+            <strong id="toast-titel">
                 Im Warenkorb
             </strong>
 
@@ -1697,7 +2154,93 @@
 
 
 
-    <script>
+    <!-- =========================================
+         FIREBASE + JAVASCRIPT
+    ========================================== -->
+
+    <script type="module">
+
+
+        /* =========================================
+           FIREBASE
+        ========================================== */
+
+
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            onAuthStateChanged,
+            updateProfile,
+            sendPasswordResetEmail,
+            setPersistence,
+            browserLocalPersistence
+        } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+
+
+        import {
+            getFirestore,
+            doc,
+            getDoc,
+            setDoc,
+            serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+
+
+
+        const firebaseConfig = {
+
+            apiKey:
+                "AIzaSyBAnQmr8Fh-7xALa3RN3gUlevi0149QD7A",
+
+            authDomain:
+                "hooralayn-modesty.firebaseapp.com",
+
+            projectId:
+                "hooralayn-modesty",
+
+            storageBucket:
+                "hooralayn-modesty.firebasestorage.app",
+
+            messagingSenderId:
+                "337343776330",
+
+            appId:
+                "1:337343776330:web:bc803d55711f6909bec8b3"
+
+        };
+
+
+
+        const firebaseApp =
+            initializeApp(firebaseConfig);
+
+
+        const auth =
+            getAuth(firebaseApp);
+
+
+        const db =
+            getFirestore(firebaseApp);
+
+
+
+        await setPersistence(
+            auth,
+            browserLocalPersistence
+        );
+
+
+
+        /* =========================================
+           ALLGEMEIN
+        ========================================== */
 
 
         const euro =
@@ -1710,6 +2253,15 @@
             );
 
 
+        let aktiverUser = null;
+
+        let warenkorb = [];
+
+
+        const GAST_WARENKORB_KEY =
+            "hooralayn-gast-warenkorb";
+
+
 
         function seiteSperren() {
 
@@ -1720,15 +2272,16 @@
         }
 
 
+
         function seiteFreigeben() {
 
-            const offeneOverlays =
+            const offeneFenster =
                 document.querySelectorAll(
                     ".overlay:not([hidden]), .bild-zoom:not([hidden])"
                 );
 
 
-            if (offeneOverlays.length === 0) {
+            if (offeneFenster.length === 0) {
 
                 document.body.classList.remove(
                     "modal-offen"
@@ -1740,35 +2293,1255 @@
 
 
 
+        /* =========================================
+           DOM
+        ========================================== */
+
+
+        const kontoButton =
+            document.getElementById(
+                "konto-button"
+            );
+
+
+        const kontoButtonText =
+            document.getElementById(
+                "konto-button-text"
+            );
+
+
+        const kontoModal =
+            document.getElementById(
+                "konto-modal"
+            );
+
+
+        const kontoSchliessen =
+            document.getElementById(
+                "konto-schliessen"
+            );
+
+
+        const kontoGastBereich =
+            document.getElementById(
+                "konto-gast-bereich"
+            );
+
+
+        const kontoUserBereich =
+            document.getElementById(
+                "konto-user-bereich"
+            );
+
+
+        const kontoBegruessung =
+            document.getElementById(
+                "konto-begruessung"
+            );
+
+
+        const kontoEmailAnzeige =
+            document.getElementById(
+                "konto-email-anzeige"
+            );
+
+
+        const kontoWarenkorbStatus =
+            document.getElementById(
+                "konto-warenkorb-status"
+            );
+
+
+        const tabAnmelden =
+            document.getElementById(
+                "tab-anmelden"
+            );
+
+
+        const tabRegistrieren =
+            document.getElementById(
+                "tab-registrieren"
+            );
+
+
+        const anmeldenForm =
+            document.getElementById(
+                "anmelden-form"
+            );
+
+
+        const registrierenForm =
+            document.getElementById(
+                "registrieren-form"
+            );
+
+
+        const loginFehler =
+            document.getElementById(
+                "login-fehler"
+            );
+
+
+        const registerFehler =
+            document.getElementById(
+                "register-fehler"
+            );
+
+
+        const abmeldenButton =
+            document.getElementById(
+                "abmelden-button"
+            );
+
+
+        const passwortVergessen =
+            document.getElementById(
+                "passwort-vergessen"
+            );
+
+
+        const warenkorbLoginButton =
+            document.getElementById(
+                "warenkorb-login-button"
+            );
+
+
+        const warenkorbSyncText =
+            document.getElementById(
+                "warenkorb-sync-text"
+            );
+
+
         const produktOeffnen =
-            document.getElementById("produkt-oeffnen");
+            document.getElementById(
+                "produkt-oeffnen"
+            );
+
 
         const produktKonfigurieren =
-            document.getElementById("produkt-konfigurieren");
+            document.getElementById(
+                "produkt-konfigurieren"
+            );
+
 
         const produktModal =
-            document.getElementById("produkt-modal");
+            document.getElementById(
+                "produkt-modal"
+            );
+
 
         const modalSchliessen =
-            document.getElementById("modal-schliessen");
+            document.getElementById(
+                "modal-schliessen"
+            );
 
 
-        function produktFensterOeffnen() {
+        const laengeVorne =
+            document.getElementById(
+                "laenge-vorne"
+            );
 
-            produktModal.hidden = false;
+
+        const laengeHinten =
+            document.getElementById(
+                "laenge-hinten"
+            );
+
+
+        const massFehler =
+            document.getElementById(
+                "mass-fehler"
+            );
+
+
+        const modalWarenkorbButton =
+            document.getElementById(
+                "modal-warenkorb-button"
+            );
+
+
+        const warenkorbAnzahl =
+            document.getElementById(
+                "warenkorb-anzahl"
+            );
+
+
+        const warenkorbInhalt =
+            document.getElementById(
+                "warenkorb-inhalt"
+            );
+
+
+        const gesamtpreisAnzeige =
+            document.getElementById(
+                "gesamtpreis"
+            );
+
+
+        const warenkorbAbschluss =
+            document.getElementById(
+                "warenkorb-abschluss"
+            );
+
+
+        const warenkorbNav =
+            document.getElementById(
+                "warenkorb-nav"
+            );
+
+
+        const checkoutModal =
+            document.getElementById(
+                "checkout-modal"
+            );
+
+
+        const checkoutOeffnen =
+            document.getElementById(
+                "checkout-oeffnen"
+            );
+
+
+        const checkoutSchliessen =
+            document.getElementById(
+                "checkout-schliessen"
+            );
+
+
+        const checkoutArtikel =
+            document.getElementById(
+                "checkout-artikel"
+            );
+
+
+        const checkoutGesamt =
+            document.getElementById(
+                "checkout-gesamt"
+            );
+
+
+        const checkoutFehler =
+            document.getElementById(
+                "checkout-fehler"
+            );
+
+
+        const bestellungPruefen =
+            document.getElementById(
+                "bestellung-pruefen"
+            );
+
+
+        const bestellpruefung =
+            document.getElementById(
+                "bestellpruefung"
+            );
+
+
+        const pruefungSchliessen =
+            document.getElementById(
+                "pruefung-schliessen"
+            );
+
+
+        const pruefungInhalt =
+            document.getElementById(
+                "pruefung-inhalt"
+            );
+
+
+        const toast =
+            document.getElementById(
+                "warenkorb-toast"
+            );
+
+
+        const toastTitel =
+            document.getElementById(
+                "toast-titel"
+            );
+
+
+        const toastNachricht =
+            document.getElementById(
+                "toast-nachricht"
+            );
+
+
+
+        /* =========================================
+           KUNDENKONTO FENSTER
+        ========================================== */
+
+
+        function kontoFensterOeffnen() {
+
+            kontoModal.hidden = false;
 
             seiteSperren();
 
         }
 
 
-        function produktFensterSchliessen() {
 
-            produktModal.hidden = true;
+        function kontoFensterSchliessen() {
+
+            kontoModal.hidden = true;
 
             seiteFreigeben();
 
         }
+
+
+
+        kontoButton.addEventListener(
+            "click",
+            kontoFensterOeffnen
+        );
+
+
+        warenkorbLoginButton.addEventListener(
+            "click",
+            kontoFensterOeffnen
+        );
+
+
+        kontoSchliessen.addEventListener(
+            "click",
+            kontoFensterSchliessen
+        );
+
+
+        kontoModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === kontoModal
+                ) {
+
+                    kontoFensterSchliessen();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           LOGIN TABS
+        ========================================== */
+
+
+        function zeigeAnmelden() {
+
+            tabAnmelden.classList.add(
+                "aktiv"
+            );
+
+
+            tabRegistrieren.classList.remove(
+                "aktiv"
+            );
+
+
+            anmeldenForm.hidden = false;
+
+            registrierenForm.hidden = true;
+
+
+            loginFehler.hidden = true;
+
+            registerFehler.hidden = true;
+
+        }
+
+
+
+        function zeigeRegistrieren() {
+
+            tabRegistrieren.classList.add(
+                "aktiv"
+            );
+
+
+            tabAnmelden.classList.remove(
+                "aktiv"
+            );
+
+
+            registrierenForm.hidden = false;
+
+            anmeldenForm.hidden = true;
+
+
+            loginFehler.hidden = true;
+
+            registerFehler.hidden = true;
+
+        }
+
+
+
+        tabAnmelden.addEventListener(
+            "click",
+            zeigeAnmelden
+        );
+
+
+        tabRegistrieren.addEventListener(
+            "click",
+            zeigeRegistrieren
+        );
+
+
+
+        /* =========================================
+           FIREBASE FEHLER AUF DEUTSCH
+        ========================================== */
+
+
+        function firebaseFehlerText(code) {
+
+            switch (code) {
+
+                case "auth/email-already-in-use":
+                    return "Für diese E-Mail-Adresse gibt es bereits ein Konto.";
+
+                case "auth/invalid-email":
+                    return "Bitte gib eine gültige E-Mail-Adresse ein.";
+
+                case "auth/weak-password":
+                    return "Das Passwort ist zu schwach. Verwende mindestens 6 Zeichen.";
+
+                case "auth/invalid-credential":
+                    return "E-Mail-Adresse oder Passwort ist nicht richtig.";
+
+                case "auth/user-disabled":
+                    return "Dieses Konto wurde deaktiviert.";
+
+                case "auth/too-many-requests":
+                    return "Zu viele Versuche. Bitte versuche es später erneut.";
+
+                case "auth/network-request-failed":
+                    return "Keine Verbindung. Bitte prüfe deine Internetverbindung.";
+
+                case "auth/unauthorized-domain":
+                    return "Diese Webadresse ist in Firebase noch nicht als autorisierte Domain eingetragen.";
+
+                default:
+                    return "Etwas ist schiefgelaufen. Bitte versuche es erneut.";
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           KONTO ERSTELLEN
+        ========================================== */
+
+
+        registrierenForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                registerFehler.hidden = true;
+
+
+                const name =
+                    document
+                        .getElementById(
+                            "register-name"
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "register-email"
+                        )
+                        .value
+                        .trim();
+
+
+                const passwort =
+                    document
+                        .getElementById(
+                            "register-passwort"
+                        )
+                        .value;
+
+
+                const passwortWiederholen =
+                    document
+                        .getElementById(
+                            "register-passwort-wiederholen"
+                        )
+                        .value;
+
+
+
+                if (
+                    passwort !==
+                    passwortWiederholen
+                ) {
+
+                    registerFehler.textContent =
+                        "Die beiden Passwörter stimmen nicht überein.";
+
+                    registerFehler.hidden =
+                        false;
+
+                    return;
+
+                }
+
+
+
+                if (
+                    passwort.length < 6
+                ) {
+
+                    registerFehler.textContent =
+                        "Das Passwort muss mindestens 6 Zeichen lang sein.";
+
+                    registerFehler.hidden =
+                        false;
+
+                    return;
+
+                }
+
+
+
+                try {
+
+
+                    const credential =
+                        await createUserWithEmailAndPassword(
+                            auth,
+                            email,
+                            passwort
+                        );
+
+
+                    await updateProfile(
+                        credential.user,
+                        {
+                            displayName:
+                                name
+                        }
+                    );
+
+
+                    await setDoc(
+                        doc(
+                            db,
+                            "users",
+                            credential.user.uid
+                        ),
+                        {
+                            name:
+                                name,
+
+                            email:
+                                email,
+
+                            warenkorb:
+                                [],
+
+                            erstelltAm:
+                                serverTimestamp(),
+
+                            aktualisiertAm:
+                                serverTimestamp()
+                        },
+                        {
+                            merge:
+                                true
+                        }
+                    );
+
+
+                    registrierenForm.reset();
+
+
+                    toastAnzeigen(
+                        "Konto erstellt",
+                        "Willkommen bei HoorAlAyn Modesty."
+                    );
+
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+
+                    registerFehler.textContent =
+                        firebaseFehlerText(
+                            error.code
+                        );
+
+
+                    registerFehler.hidden =
+                        false;
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ANMELDEN
+        ========================================== */
+
+
+        anmeldenForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                loginFehler.hidden =
+                    true;
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "login-email"
+                        )
+                        .value
+                        .trim();
+
+
+                const passwort =
+                    document
+                        .getElementById(
+                            "login-passwort"
+                        )
+                        .value;
+
+
+                try {
+
+
+                    await signInWithEmailAndPassword(
+                        auth,
+                        email,
+                        passwort
+                    );
+
+
+                    anmeldenForm.reset();
+
+
+                    toastAnzeigen(
+                        "Willkommen zurück",
+                        "Dein gespeicherter Warenkorb wird geladen."
+                    );
+
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+
+                    loginFehler.textContent =
+                        firebaseFehlerText(
+                            error.code
+                        );
+
+
+                    loginFehler.hidden =
+                        false;
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           PASSWORT VERGESSEN
+        ========================================== */
+
+
+        passwortVergessen.addEventListener(
+            "click",
+            async function () {
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "login-email"
+                        )
+                        .value
+                        .trim();
+
+
+                if (!email) {
+
+                    loginFehler.textContent =
+                        "Gib zuerst deine E-Mail-Adresse ein.";
+
+                    loginFehler.hidden =
+                        false;
+
+                    return;
+
+                }
+
+
+                try {
+
+
+                    await sendPasswordResetEmail(
+                        auth,
+                        email
+                    );
+
+
+                    loginFehler.hidden =
+                        true;
+
+
+                    toastAnzeigen(
+                        "E-Mail gesendet",
+                        "Du erhältst einen Link zum Zurücksetzen deines Passworts."
+                    );
+
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+
+                    loginFehler.textContent =
+                        firebaseFehlerText(
+                            error.code
+                        );
+
+
+                    loginFehler.hidden =
+                        false;
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ABMELDEN
+        ========================================== */
+
+
+        abmeldenButton.addEventListener(
+            "click",
+            async function () {
+
+                try {
+
+                    await signOut(auth);
+
+                    kontoFensterSchliessen();
+
+
+                    toastAnzeigen(
+                        "Abgemeldet",
+                        "Dein gespeicherter Warenkorb bleibt in deinem Konto."
+                    );
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           GAST WARENKORB
+        ========================================== */
+
+
+        function ladeGastWarenkorb() {
+
+            try {
+
+                const gespeichert =
+                    localStorage.getItem(
+                        GAST_WARENKORB_KEY
+                    );
+
+
+                if (!gespeichert) {
+
+                    return [];
+
+                }
+
+
+                const daten =
+                    JSON.parse(
+                        gespeichert
+                    );
+
+
+                return Array.isArray(daten)
+                    ? daten
+                    : [];
+
+            }
+
+            catch {
+
+                return [];
+
+            }
+
+        }
+
+
+
+        function speichereGastWarenkorb() {
+
+            localStorage.setItem(
+                GAST_WARENKORB_KEY,
+                JSON.stringify(
+                    warenkorb
+                )
+            );
+
+        }
+
+
+
+        /* =========================================
+           WARENKÖRBE ZUSAMMENFÜHREN
+        ========================================== */
+
+
+        function warenkoerbeZusammenfuehren(
+            kontoWarenkorb,
+            gastWarenkorb
+        ) {
+
+
+            const ergebnis =
+                [];
+
+
+            [
+                ...kontoWarenkorb,
+                ...gastWarenkorb
+            ]
+            .forEach(
+                function (artikel) {
+
+
+                    const vorhanden =
+                        ergebnis.find(
+                            function (item) {
+
+                                return (
+                                    item.schluessel ===
+                                    artikel.schluessel
+                                );
+
+                            }
+                        );
+
+
+                    if (vorhanden) {
+
+                        vorhanden.anzahl +=
+                            Number(
+                                artikel.anzahl
+                            ) || 1;
+
+                    }
+
+                    else {
+
+                        ergebnis.push({
+
+                            schluessel:
+                                artikel.schluessel,
+
+                            name:
+                                artikel.name,
+
+                            preis:
+                                Number(
+                                    artikel.preis
+                                ),
+
+                            vorne:
+                                Number(
+                                    artikel.vorne
+                                ),
+
+                            hinten:
+                                Number(
+                                    artikel.hinten
+                                ),
+
+                            anzahl:
+                                Number(
+                                    artikel.anzahl
+                                ) || 1
+
+                        });
+
+                    }
+
+                }
+            );
+
+
+            return ergebnis;
+
+        }
+
+
+
+        /* =========================================
+           FIRESTORE WARENKORB SPEICHERN
+        ========================================== */
+
+
+        async function speichereWarenkorb() {
+
+
+            if (!aktiverUser) {
+
+                speichereGastWarenkorb();
+
+                return;
+
+            }
+
+
+            try {
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Wird gespeichert …";
+
+
+                await setDoc(
+                    doc(
+                        db,
+                        "users",
+                        aktiverUser.uid
+                    ),
+                    {
+
+                        email:
+                            aktiverUser.email || "",
+
+                        name:
+                            aktiverUser.displayName || "",
+
+                        warenkorb:
+                            warenkorb,
+
+                        aktualisiertAm:
+                            serverTimestamp()
+
+                    },
+                    {
+                        merge:
+                            true
+                    }
+                );
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Synchronisiert";
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Warenkorb konnte nicht gespeichert werden:",
+                    error
+                );
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Speicherfehler";
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           FIRESTORE WARENKORB LADEN
+        ========================================== */
+
+
+        async function ladeKontoWarenkorb(
+            user
+        ) {
+
+
+            try {
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Wird geladen …";
+
+
+                const benutzerDokument =
+                    doc(
+                        db,
+                        "users",
+                        user.uid
+                    );
+
+
+                const snapshot =
+                    await getDoc(
+                        benutzerDokument
+                    );
+
+
+                let kontoWarenkorb =
+                    [];
+
+
+                if (
+                    snapshot.exists() &&
+                    Array.isArray(
+                        snapshot.data().warenkorb
+                    )
+                ) {
+
+                    kontoWarenkorb =
+                        snapshot.data().warenkorb;
+
+                }
+
+
+                const gastWarenkorb =
+                    ladeGastWarenkorb();
+
+
+                warenkorb =
+                    warenkoerbeZusammenfuehren(
+                        kontoWarenkorb,
+                        gastWarenkorb
+                    );
+
+
+                localStorage.removeItem(
+                    GAST_WARENKORB_KEY
+                );
+
+
+                warenkorbAktualisieren(
+                    false
+                );
+
+
+                await speichereWarenkorb();
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Synchronisiert";
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Warenkorb konnte nicht geladen werden:",
+                    error
+                );
+
+
+                kontoWarenkorbStatus.textContent =
+                    "Konnte nicht geladen werden";
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           AUTH STATUS
+        ========================================== */
+
+
+        onAuthStateChanged(
+            auth,
+            async function (user) {
+
+
+                aktiverUser =
+                    user;
+
+
+                if (user) {
+
+
+                    kontoGastBereich.hidden =
+                        true;
+
+
+                    kontoUserBereich.hidden =
+                        false;
+
+
+                    kontoButtonText.textContent =
+                        "Mein Konto";
+
+
+                    kontoEmailAnzeige.textContent =
+                        user.email || "";
+
+
+                    const name =
+                        user.displayName
+                        ? user.displayName
+                        : "Willkommen";
+
+
+                    kontoBegruessung.textContent =
+                        user.displayName
+                        ? "Hallo " + name
+                        : "Willkommen";
+
+
+                    warenkorbSyncText.textContent =
+                        "Dein Warenkorb wird sicher mit deinem Kundenkonto synchronisiert.";
+
+
+                    warenkorbLoginButton.hidden =
+                        true;
+
+
+                    const checkoutEmail =
+                        document.getElementById(
+                            "kunde-email"
+                        );
+
+
+                    if (
+                        checkoutEmail &&
+                        user.email
+                    ) {
+
+                        checkoutEmail.value =
+                            user.email;
+
+                    }
+
+
+                    await ladeKontoWarenkorb(
+                        user
+                    );
+
+
+                }
+
+                else {
+
+
+                    kontoGastBereich.hidden =
+                        false;
+
+
+                    kontoUserBereich.hidden =
+                        true;
+
+
+                    kontoButtonText.textContent =
+                        "Anmelden";
+
+
+                    warenkorbSyncText.textContent =
+                        "Melde dich an, damit dein Warenkorb dauerhaft in deinem Konto gespeichert wird.";
+
+
+                    warenkorbLoginButton.hidden =
+                        false;
+
+
+                    warenkorb =
+                        ladeGastWarenkorb();
+
+
+                    warenkorbAktualisieren(
+                        false
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           PRODUKTFENSTER
+        ========================================== */
+
+
+        function produktFensterOeffnen() {
+
+            produktModal.hidden =
+                false;
+
+            seiteSperren();
+
+        }
+
+
+
+        function produktFensterSchliessen() {
+
+            produktModal.hidden =
+                true;
+
+            seiteFreigeben();
+
+        }
+
 
 
         produktOeffnen.addEventListener(
@@ -1793,7 +3566,10 @@
             "click",
             function (event) {
 
-                if (event.target === produktModal) {
+                if (
+                    event.target ===
+                    produktModal
+                ) {
 
                     produktFensterSchliessen();
 
@@ -1804,39 +3580,74 @@
 
 
 
+        /* =========================================
+           BILD ZOOM
+        ========================================== */
+
+
         const zoomButtons =
-            document.querySelectorAll(".zoom-bild-button");
+            document.querySelectorAll(
+                ".zoom-bild-button"
+            );
+
 
         const bildZoom =
-            document.getElementById("bild-zoom");
+            document.getElementById(
+                "bild-zoom"
+            );
+
 
         const zoomBild =
-            document.getElementById("zoom-bild");
+            document.getElementById(
+                "zoom-bild"
+            );
+
 
         const zoomSchliessen =
-            document.getElementById("zoom-schliessen");
+            document.getElementById(
+                "zoom-schliessen"
+            );
+
 
         const zoomPlus =
-            document.getElementById("zoom-plus");
+            document.getElementById(
+                "zoom-plus"
+            );
+
 
         const zoomMinus =
-            document.getElementById("zoom-minus");
+            document.getElementById(
+                "zoom-minus"
+            );
+
 
         const zoomAnzeige =
-            document.getElementById("zoom-anzeige");
+            document.getElementById(
+                "zoom-anzeige"
+            );
 
-        let zoomStufe = 1;
+
+        let zoomStufe =
+            1;
+
 
 
         function zoomAktualisieren() {
 
             zoomBild.style.transform =
-                "scale(" + zoomStufe + ")";
+                "scale(" +
+                zoomStufe +
+                ")";
+
 
             zoomAnzeige.textContent =
-                Math.round(zoomStufe * 100) + " %";
+                Math.round(
+                    zoomStufe * 100
+                ) +
+                " %";
 
         }
+
 
 
         zoomButtons.forEach(
@@ -1846,14 +3657,21 @@
                     "click",
                     function () {
 
+
                         zoomBild.src =
                             button.dataset.bild;
 
-                        zoomStufe = 1;
+
+                        zoomStufe =
+                            1;
+
 
                         zoomAktualisieren();
 
-                        bildZoom.hidden = false;
+
+                        bildZoom.hidden =
+                            false;
+
 
                         seiteSperren();
 
@@ -1864,17 +3682,24 @@
         );
 
 
+
         function zoomSchliessenFunktion() {
 
-            bildZoom.hidden = true;
+            bildZoom.hidden =
+                true;
 
-            zoomStufe = 1;
+
+            zoomStufe =
+                1;
+
 
             zoomAktualisieren();
+
 
             seiteFreigeben();
 
         }
+
 
 
         zoomSchliessen.addEventListener(
@@ -1887,9 +3712,12 @@
             "click",
             function () {
 
-                if (zoomStufe < 3) {
+                if (
+                    zoomStufe < 3
+                ) {
 
-                    zoomStufe += 0.25;
+                    zoomStufe +=
+                        0.25;
 
                     zoomAktualisieren();
 
@@ -1903,9 +3731,12 @@
             "click",
             function () {
 
-                if (zoomStufe > 1) {
+                if (
+                    zoomStufe > 1
+                ) {
 
-                    zoomStufe -= 0.25;
+                    zoomStufe -=
+                        0.25;
 
                     zoomAktualisieren();
 
@@ -1919,9 +3750,12 @@
             "click",
             function () {
 
-                if (zoomStufe < 3) {
+                if (
+                    zoomStufe < 3
+                ) {
 
-                    zoomStufe += 0.25;
+                    zoomStufe +=
+                        0.25;
 
                     zoomAktualisieren();
 
@@ -1932,35 +3766,9 @@
 
 
 
-        const warenkorb = [];
-
-        const laengeVorne =
-            document.getElementById("laenge-vorne");
-
-        const laengeHinten =
-            document.getElementById("laenge-hinten");
-
-        const massFehler =
-            document.getElementById("mass-fehler");
-
-        const modalWarenkorbButton =
-            document.getElementById("modal-warenkorb-button");
-
-        const warenkorbAnzahl =
-            document.getElementById("warenkorb-anzahl");
-
-        const warenkorbInhalt =
-            document.getElementById("warenkorb-inhalt");
-
-        const gesamtpreisAnzeige =
-            document.getElementById("gesamtpreis");
-
-        const warenkorbAbschluss =
-            document.getElementById("warenkorb-abschluss");
-
-        const warenkorbNav =
-            document.getElementById("warenkorb-nav");
-
+        /* =========================================
+           IN WARENKORB
+        ========================================== */
 
 
         modalWarenkorbButton.addEventListener(
@@ -1969,69 +3777,106 @@
 
 
                 const vorne =
-                    Number(laengeVorne.value);
+                    Number(
+                        laengeVorne.value
+                    );
 
 
                 const hinten =
-                    Number(laengeHinten.value);
+                    Number(
+                        laengeHinten.value
+                    );
 
 
 
-                if (!vorne || !hinten) {
+                if (
+                    !vorne ||
+                    !hinten
+                ) {
 
                     massFehler.textContent =
                         "Bitte gib die Länge vorne und hinten ein.";
 
-                    massFehler.hidden = false;
+
+                    massFehler.hidden =
+                        false;
+
 
                     return;
 
                 }
 
 
-                if (vorne < 60 || vorne > 180) {
+
+                if (
+                    vorne < 60 ||
+                    vorne > 180
+                ) {
 
                     massFehler.textContent =
                         "Die Länge vorne muss zwischen 60 cm und 180 cm liegen.";
 
-                    massFehler.hidden = false;
+
+                    massFehler.hidden =
+                        false;
+
 
                     laengeVorne.focus();
+
 
                     return;
 
                 }
 
 
-                if (hinten < 80 || hinten > 220) {
+
+                if (
+                    hinten < 80 ||
+                    hinten > 220
+                ) {
 
                     massFehler.textContent =
                         "Die Länge hinten muss zwischen 80 cm und 220 cm liegen.";
 
-                    massFehler.hidden = false;
+
+                    massFehler.hidden =
+                        false;
+
 
                     laengeHinten.focus();
+
 
                     return;
 
                 }
 
 
-                massFehler.hidden = true;
+
+                massFehler.hidden =
+                    true;
+
 
 
                 const schluessel =
-                    "bambus-" + vorne + "-" + hinten;
+                    "bambus-" +
+                    vorne +
+                    "-" +
+                    hinten;
+
 
 
                 const vorhanden =
                     warenkorb.find(
                         function (artikel) {
 
-                            return artikel.schluessel === schluessel;
+                            return (
+                                artikel.schluessel ===
+                                schluessel
+                            );
 
                         }
                     );
+
 
 
                 if (vorhanden) {
@@ -2067,10 +3912,12 @@
                 }
 
 
+
                 warenkorbAktualisieren();
 
 
                 toastAnzeigen(
+                    "Im Warenkorb",
                     "Bambus Khimar · " +
                     vorne +
                     " cm vorne · " +
@@ -2090,7 +3937,8 @@
             "input",
             function () {
 
-                massFehler.hidden = true;
+                massFehler.hidden =
+                    true;
 
             }
         );
@@ -2100,30 +3948,48 @@
             "input",
             function () {
 
-                massFehler.hidden = true;
+                massFehler.hidden =
+                    true;
 
             }
         );
 
 
 
-        function warenkorbAktualisieren() {
+        /* =========================================
+           WARENKORB ANZEIGEN
+        ========================================== */
+
+
+        function warenkorbAktualisieren(
+            speichern = true
+        ) {
 
 
             const anzahl =
                 warenkorb.reduce(
-                    function (summe, artikel) {
+                    function (
+                        summe,
+                        artikel
+                    ) {
 
-                        return summe + artikel.anzahl;
+                        return (
+                            summe +
+                            artikel.anzahl
+                        );
 
                     },
                     0
                 );
 
 
+
             const gesamt =
                 warenkorb.reduce(
-                    function (summe, artikel) {
+                    function (
+                        summe,
+                        artikel
+                    ) {
 
                         return (
                             summe +
@@ -2136,6 +4002,7 @@
                 );
 
 
+
             warenkorbAnzahl.textContent =
                 anzahl;
 
@@ -2144,13 +4011,19 @@
                 "";
 
 
-            if (warenkorb.length === 0) {
+
+            if (
+                warenkorb.length === 0
+            ) {
+
 
                 warenkorbInhalt.innerHTML = `
 
                     <div class="warenkorb-leer-box">
 
-                        <span>♡</span>
+                        <span>
+                            ♡
+                        </span>
 
                         <p>
                             Dein Warenkorb ist noch leer.
@@ -2171,6 +4044,14 @@
 
                 checkoutAktualisieren();
 
+
+                if (speichern) {
+
+                    speichereWarenkorb();
+
+                }
+
+
                 return;
 
             }
@@ -2178,15 +4059,21 @@
 
 
             warenkorb.forEach(
-                function (artikel, index) {
+                function (
+                    artikel,
+                    index
+                ) {
 
 
                     const zeile =
-                        document.createElement("div");
+                        document.createElement(
+                            "div"
+                        );
 
 
                     zeile.className =
                         "warenkorb-artikel";
+
 
 
                     zeile.innerHTML = `
@@ -2228,6 +4115,7 @@
                             class="entfernen"
                             type="button"
                             data-index="${index}"
+                            aria-label="Artikel entfernen"
                         >
                             ×
                         </button>
@@ -2243,8 +4131,11 @@
             );
 
 
+
             gesamtpreisAnzeige.textContent =
-                euro.format(gesamt);
+                euro.format(
+                    gesamt
+                );
 
 
             warenkorbAbschluss.hidden =
@@ -2253,16 +4144,22 @@
 
 
             document
-                .querySelectorAll(".entfernen")
+                .querySelectorAll(
+                    ".entfernen"
+                )
                 .forEach(
                     function (button) {
+
 
                         button.addEventListener(
                             "click",
                             function () {
 
+
                                 const index =
-                                    Number(button.dataset.index);
+                                    Number(
+                                        button.dataset.index
+                                    );
 
 
                                 warenkorb.splice(
@@ -2280,41 +4177,63 @@
                 );
 
 
+
             checkoutAktualisieren();
+
+
+            if (speichern) {
+
+                speichereWarenkorb();
+
+            }
 
         }
 
 
 
-        const toast =
-            document.getElementById("warenkorb-toast");
+        /* =========================================
+           TOAST
+        ========================================== */
 
-        const toastNachricht =
-            document.getElementById("toast-nachricht");
 
         let toastTimer;
 
 
-        function toastAnzeigen(text) {
+
+        function toastAnzeigen(
+            titel,
+            text
+        ) {
+
+
+            toastTitel.textContent =
+                titel;
+
 
             toastNachricht.textContent =
                 text;
 
 
-            toast.classList.add("anzeigen");
+            toast.classList.add(
+                "anzeigen"
+            );
 
 
-            clearTimeout(toastTimer);
+            clearTimeout(
+                toastTimer
+            );
 
 
             toastTimer =
                 setTimeout(
                     function () {
 
-                        toast.classList.remove("anzeigen");
+                        toast.classList.remove(
+                            "anzeigen"
+                        );
 
                     },
-                    3000
+                    3200
                 );
 
         }
@@ -2323,39 +4242,32 @@
 
         function warenkorbAnimation() {
 
-            warenkorbNav.classList.remove("pulsieren");
+            warenkorbNav.classList.remove(
+                "pulsieren"
+            );
+
 
             void warenkorbNav.offsetWidth;
 
-            warenkorbNav.classList.add("pulsieren");
+
+            warenkorbNav.classList.add(
+                "pulsieren"
+            );
 
         }
 
 
 
-        const checkoutModal =
-            document.getElementById("checkout-modal");
-
-        const checkoutOeffnen =
-            document.getElementById("checkout-oeffnen");
-
-        const checkoutSchliessen =
-            document.getElementById("checkout-schliessen");
-
-        const checkoutArtikel =
-            document.getElementById("checkout-artikel");
-
-        const checkoutGesamt =
-            document.getElementById("checkout-gesamt");
-
-        const checkoutFehler =
-            document.getElementById("checkout-fehler");
-
+        /* =========================================
+           CHECKOUT
+        ========================================== */
 
 
         function checkoutFensterOeffnen() {
 
-            if (warenkorb.length === 0) {
+            if (
+                warenkorb.length === 0
+            ) {
 
                 return;
 
@@ -2364,20 +4276,27 @@
 
             checkoutAktualisieren();
 
-            checkoutModal.hidden = false;
+
+            checkoutModal.hidden =
+                false;
+
 
             seiteSperren();
 
         }
 
 
+
         function checkoutFensterSchliessen() {
 
-            checkoutModal.hidden = true;
+            checkoutModal.hidden =
+                true;
+
 
             seiteFreigeben();
 
         }
+
 
 
         checkoutOeffnen.addEventListener(
@@ -2396,7 +4315,10 @@
             "click",
             function (event) {
 
-                if (event.target === checkoutModal) {
+                if (
+                    event.target ===
+                    checkoutModal
+                ) {
 
                     checkoutFensterSchliessen();
 
@@ -2409,11 +4331,14 @@
 
         function checkoutAktualisieren() {
 
+
             checkoutArtikel.innerHTML =
                 "";
 
 
-            let gesamt = 0;
+            let gesamt =
+                0;
+
 
 
             warenkorb.forEach(
@@ -2426,7 +4351,9 @@
 
 
                     const element =
-                        document.createElement("div");
+                        document.createElement(
+                            "div"
+                        );
 
 
                     element.className =
@@ -2455,6 +4382,7 @@
 
                         </div>
 
+
                         <strong>
 
                             ${euro.format(
@@ -2475,25 +4403,19 @@
             );
 
 
+
             checkoutGesamt.textContent =
-                euro.format(gesamt);
+                euro.format(
+                    gesamt
+                );
 
         }
 
 
 
-        const bestellungPruefen =
-            document.getElementById("bestellung-pruefen");
-
-        const bestellpruefung =
-            document.getElementById("bestellpruefung");
-
-        const pruefungSchliessen =
-            document.getElementById("pruefung-schliessen");
-
-        const pruefungInhalt =
-            document.getElementById("pruefung-inhalt");
-
+        /* =========================================
+           BESTELLUNG PRÜFEN
+        ========================================== */
 
 
         bestellungPruefen.addEventListener(
@@ -2502,42 +4424,73 @@
 
 
                 const vorname =
-                    document.getElementById("kunde-vorname")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-vorname"
+                        )
+                        .value
+                        .trim();
 
 
                 const nachname =
-                    document.getElementById("kunde-nachname")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-nachname"
+                        )
+                        .value
+                        .trim();
 
 
                 const email =
-                    document.getElementById("kunde-email")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-email"
+                        )
+                        .value
+                        .trim();
 
 
                 const telefon =
-                    document.getElementById("kunde-telefon")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-telefon"
+                        )
+                        .value
+                        .trim();
 
 
                 const strasse =
-                    document.getElementById("kunde-strasse")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-strasse"
+                        )
+                        .value
+                        .trim();
 
 
                 const plz =
-                    document.getElementById("kunde-plz")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-plz"
+                        )
+                        .value
+                        .trim();
 
 
                 const ort =
-                    document.getElementById("kunde-ort")
-                        .value.trim();
+                    document
+                        .getElementById(
+                            "kunde-ort"
+                        )
+                        .value
+                        .trim();
 
 
                 const land =
-                    document.getElementById("kunde-land")
+                    document
+                        .getElementById(
+                            "kunde-land"
+                        )
                         .value;
 
 
@@ -2555,34 +4508,47 @@
                     checkoutFehler.textContent =
                         "Bitte fülle alle mit * markierten Felder aus.";
 
+
                     checkoutFehler.hidden =
                         false;
+
 
                     return;
 
                 }
 
 
-                if (!email.includes("@")) {
+
+                if (
+                    !email.includes("@")
+                ) {
 
                     checkoutFehler.textContent =
                         "Bitte gib eine gültige E-Mail-Adresse ein.";
 
+
                     checkoutFehler.hidden =
                         false;
+
 
                     return;
 
                 }
+
 
 
                 checkoutFehler.hidden =
                     true;
 
 
-                let artikelHtml = "";
 
-                let gesamt = 0;
+                let artikelHtml =
+                    "";
+
+
+                let gesamt =
+                    0;
+
 
 
                 warenkorb.forEach(
@@ -2632,6 +4598,7 @@
                 );
 
 
+
                 pruefungInhalt.innerHTML = `
 
                     <div class="pruefung-bereich">
@@ -2642,7 +4609,8 @@
 
                         <p>
                             <strong>
-                                ${vorname} ${nachname}
+                                ${vorname}
+                                ${nachname}
                             </strong>
                         </p>
 
@@ -2652,7 +4620,9 @@
 
                         ${
                             telefon
-                                ? "<p>" + telefon + "</p>"
+                                ? "<p>" +
+                                  telefon +
+                                  "</p>"
                                 : ""
                         }
 
@@ -2670,7 +4640,8 @@
                         </p>
 
                         <p>
-                            ${plz} ${ort}
+                            ${plz}
+                            ${ort}
                         </p>
 
                         <p>
@@ -2698,7 +4669,9 @@
                         </span>
 
                         <strong>
-                            ${euro.format(gesamt)}
+                            ${euro.format(
+                                gesamt
+                            )}
                         </strong>
 
                     </div>
@@ -2716,12 +4689,14 @@
         );
 
 
+
         pruefungSchliessen.addEventListener(
             "click",
             function () {
 
                 bestellpruefung.hidden =
                     true;
+
 
                 seiteFreigeben();
 
@@ -2730,18 +4705,51 @@
 
 
 
+        bestellpruefung.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    bestellpruefung
+                ) {
+
+                    bestellpruefung.hidden =
+                        true;
+
+
+                    seiteFreigeben();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ESC
+        ========================================== */
+
+
         document.addEventListener(
             "keydown",
             function (event) {
 
-                if (event.key !== "Escape") {
+
+                if (
+                    event.key !==
+                    "Escape"
+                ) {
 
                     return;
 
                 }
 
 
-                if (!bildZoom.hidden) {
+                if (
+                    !bildZoom.hidden
+                ) {
 
                     zoomSchliessenFunktion();
 
@@ -2750,10 +4758,13 @@
                 }
 
 
-                if (!bestellpruefung.hidden) {
+                if (
+                    !bestellpruefung.hidden
+                ) {
 
                     bestellpruefung.hidden =
                         true;
+
 
                     seiteFreigeben();
 
@@ -2762,7 +4773,9 @@
                 }
 
 
-                if (!checkoutModal.hidden) {
+                if (
+                    !checkoutModal.hidden
+                ) {
 
                     checkoutFensterSchliessen();
 
@@ -2771,7 +4784,20 @@
                 }
 
 
-                if (!produktModal.hidden) {
+                if (
+                    !kontoModal.hidden
+                ) {
+
+                    kontoFensterSchliessen();
+
+                    return;
+
+                }
+
+
+                if (
+                    !produktModal.hidden
+                ) {
 
                     produktFensterSchliessen();
 
