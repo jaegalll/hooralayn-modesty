@@ -2,7 +2,6 @@
 <html lang="de">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -16,7 +15,6 @@
         rel="stylesheet"
         href="style.css"
     >
-
 </head>
 
 
@@ -136,9 +134,7 @@
             <div class="produkte">
 
 
-                <!-- =================================
-                     BAMBUS KHIMAR
-                ================================== -->
+                <!-- BAMBUS KHIMAR -->
 
                 <article class="produkt">
 
@@ -177,7 +173,7 @@
 
 
                     <button
-                        class="warenkorb-button produkt-konfigurieren"
+                        class="warenkorb-button"
                         id="produkt-konfigurieren"
                         type="button"
                     >
@@ -246,14 +242,34 @@
 
             <div id="warenkorb-inhalt">
 
-                <p>
+                <p class="warenkorb-leer">
                     Dein Warenkorb ist noch leer.
                 </p>
 
             </div>
 
 
-            <p id="gesamtpreis"></p>
+            <div
+                class="warenkorb-abschluss"
+                id="warenkorb-abschluss"
+                hidden
+            >
+
+                <p id="gesamtpreis"></p>
+
+                <button
+                    class="checkout-button"
+                    id="checkout-oeffnen"
+                    type="button"
+                >
+                    Zur Kasse
+                </button>
+
+                <p class="checkout-klein">
+                    Versand und Zahlungsart werden im nächsten Schritt gewählt.
+                </p>
+
+            </div>
 
         </section>
 
@@ -331,15 +347,13 @@
     ========================================== -->
 
     <div
-        class="produkt-modal"
+        class="produkt-modal overlay"
         id="produkt-modal"
         hidden
     >
 
-        <div class="modal-box">
+        <div class="modal-box produkt-modal-box">
 
-
-            <!-- SCHLIESSEN -->
 
             <button
                 class="modal-schliessen"
@@ -351,8 +365,6 @@
             </button>
 
 
-
-            <!-- PRODUKTÜBERSCHRIFT -->
 
             <div class="modal-kopf">
 
@@ -368,9 +380,7 @@
 
 
 
-            <!-- =====================================
-                 PRODUKTBILDER
-            ====================================== -->
+            <!-- PRODUKTBILDER -->
 
             <div class="produkt-detail-bilder">
 
@@ -379,7 +389,7 @@
                     class="zoom-bild-button"
                     type="button"
                     data-bild="bilder/Bambus Khimar.jpg"
-                    aria-label="Erstes Produktbild vergrößern"
+                    aria-label="Produktbild vergrößern"
                 >
 
                     <img
@@ -388,7 +398,7 @@
                     >
 
                     <span>
-                        Zum Vergrößern
+                        Vergrößern
                     </span>
 
                 </button>
@@ -399,7 +409,7 @@
                     class="zoom-bild-button"
                     type="button"
                     data-bild="bilder/Bambus Khimar vorne.jpg"
-                    aria-label="Zweites Produktbild vergrößern"
+                    aria-label="Vorderansicht vergrößern"
                 >
 
                     <img
@@ -408,7 +418,7 @@
                     >
 
                     <span>
-                        Zum Vergrößern
+                        Vergrößern
                     </span>
 
                 </button>
@@ -418,10 +428,6 @@
 
 
 
-            <!-- =====================================
-                 PRODUKTINFORMATIONEN
-            ====================================== -->
-
             <div class="modal-produkt-info">
 
 
@@ -430,18 +436,15 @@
                 </p>
 
 
-                <p class="preis">
+                <p class="preis modal-preis">
                     59,99 €
                 </p>
 
 
 
-                <!-- =================================
-                     STOFF INFO
-                ================================== -->
+                <!-- STOFFINFO -->
 
                 <div class="stoff-info">
-
 
                     <h3>
                         Stoff Info
@@ -463,30 +466,19 @@
                     </p>
 
 
-
                     <ul class="stoff-vorteile">
 
-                        <li>
-                            🌿 Weich & angenehm auf der Haut
-                        </li>
+                        <li>🌿 Weich & angenehm auf der Haut</li>
 
-                        <li>
-                            🌿 Leicht & fließend
-                        </li>
+                        <li>🌿 Leicht & fließend</li>
 
-                        <li>
-                            🌿 Eleganter, natürlicher Fall
-                        </li>
+                        <li>🌿 Eleganter, natürlicher Fall</li>
 
-                        <li>
-                            🌿 Atmungsaktiver Stoff
-                        </li>
+                        <li>🌿 Atmungsaktiver Stoff</li>
 
                     </ul>
 
 
-
-                    <!-- ZUSAMMENSETZUNG -->
 
                     <div class="stoff-details">
 
@@ -509,15 +501,12 @@
 
 
 
-                        <!-- STANDARDMASSE -->
-
                         <h4>
-                            Maße
+                            Feste Breite
                         </h4>
 
 
                         <div class="masse-grid">
-
 
                             <div>
 
@@ -552,27 +541,21 @@
 
                             </div>
 
-
                         </div>
 
 
-                        <p class="bereich-text">
-                            Die Breite bleibt bei jedem Khimar gleich.
-                            Die Länge vorne und hinten kannst du
-                            individuell auswählen.
+                        <p class="stoff-klein">
+                            Die Breite bleibt gleich.
+                            Die Länge vorne und hinten wählst du individuell.
                         </p>
 
-
                     </div>
-
 
                 </div>
 
 
 
-                <!-- =================================
-                     INDIVIDUELLE MAẞE
-                ================================== -->
+                <!-- INDIVIDUELLE MAẞE -->
 
                 <div class="mass-auswahl">
 
@@ -599,14 +582,11 @@
                     <div class="mass-felder">
 
 
-                        <!-- LÄNGE VORNE -->
-
                         <label for="laenge-vorne">
 
                             <span>
                                 Länge vorne
                             </span>
-
 
                             <div class="mass-input">
 
@@ -618,7 +598,6 @@
                                     step="1"
                                     inputmode="numeric"
                                     placeholder="z. B. 100"
-                                    required
                                 >
 
                                 <span>
@@ -631,14 +610,11 @@
 
 
 
-                        <!-- LÄNGE HINTEN -->
-
                         <label for="laenge-hinten">
 
                             <span>
                                 Länge hinten
                             </span>
-
 
                             <div class="mass-input">
 
@@ -650,7 +626,6 @@
                                     step="1"
                                     inputmode="numeric"
                                     placeholder="z. B. 140"
-                                    required
                                 >
 
                                 <span>
@@ -666,21 +641,18 @@
 
 
 
-                    <!-- FEHLERMELDUNG -->
-
                     <p
-                        class="mass-fehler"
+                        class="formular-fehler"
                         id="mass-fehler"
                         hidden
                     >
-                        Bitte gib die Länge vorne und hinten ein.
+                        Bitte gib beide Längen ein.
                     </p>
 
 
-
                     <p class="mass-hinweis">
-                        Bitte kontrolliere deine Maße vor dem
-                        Hinzufügen zum Warenkorb sorgfältig.
+                        Bitte kontrolliere deine Maße sorgfältig,
+                        bevor du den Artikel in den Warenkorb legst.
                     </p>
 
 
@@ -688,12 +660,8 @@
 
 
 
-                <!-- =================================
-                     WARENKORB BUTTON
-                ================================== -->
-
                 <button
-                    class="warenkorb-button"
+                    class="warenkorb-button modal-warenkorb"
                     id="modal-warenkorb-button"
                     type="button"
                 >
@@ -731,54 +699,386 @@
         </button>
 
 
-
         <div class="zoom-bild-bereich">
 
             <img
                 id="zoom-bild"
                 src=""
-                alt="Bambus Khimar vergrößert"
+                alt="Produktbild vergrößert"
             >
 
         </div>
 
 
-
         <div class="zoom-steuerung">
-
 
             <button
                 type="button"
                 id="zoom-minus"
-                aria-label="Herauszoomen"
             >
                 −
             </button>
-
 
             <span id="zoom-anzeige">
                 100 %
             </span>
 
-
             <button
                 type="button"
                 id="zoom-plus"
-                aria-label="Hineinzoomen"
             >
                 +
             </button>
 
-
         </div>
-
 
     </div>
 
 
 
     <!-- =========================================
-         WARENKORB BENACHRICHTIGUNG
+         CHECKOUT
+    ========================================== -->
+
+    <div
+        class="checkout-modal overlay"
+        id="checkout-modal"
+        hidden
+    >
+
+        <div class="modal-box checkout-box">
+
+
+            <button
+                class="modal-schliessen"
+                id="checkout-schliessen"
+                type="button"
+                aria-label="Checkout schließen"
+            >
+                ×
+            </button>
+
+
+            <div class="checkout-kopf">
+
+                <p class="kleiner-text">
+                    CHECKOUT
+                </p>
+
+                <h2>
+                    Deine Bestellung
+                </h2>
+
+                <p>
+                    Gib deine Daten ein und prüfe deine Bestellung
+                    vor dem Absenden.
+                </p>
+
+            </div>
+
+
+
+            <div class="checkout-layout">
+
+
+                <!-- KUNDENDATEN -->
+
+                <div class="checkout-formular">
+
+                    <h3>
+                        Kontaktdaten
+                    </h3>
+
+
+                    <div class="checkout-grid">
+
+
+                        <label>
+
+                            <span>
+                                Vorname *
+                            </span>
+
+                            <input
+                                type="text"
+                                id="kunde-vorname"
+                                autocomplete="given-name"
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Nachname *
+                            </span>
+
+                            <input
+                                type="text"
+                                id="kunde-nachname"
+                                autocomplete="family-name"
+                            >
+
+                        </label>
+
+
+                        <label class="volle-breite">
+
+                            <span>
+                                E-Mail *
+                            </span>
+
+                            <input
+                                type="email"
+                                id="kunde-email"
+                                autocomplete="email"
+                            >
+
+                        </label>
+
+
+                        <label class="volle-breite">
+
+                            <span>
+                                Telefonnummer
+                            </span>
+
+                            <input
+                                type="tel"
+                                id="kunde-telefon"
+                                autocomplete="tel"
+                            >
+
+                        </label>
+
+                    </div>
+
+
+
+                    <h3 class="checkout-zwischenueberschrift">
+                        Lieferadresse
+                    </h3>
+
+
+                    <div class="checkout-grid">
+
+
+                        <label class="volle-breite">
+
+                            <span>
+                                Straße & Hausnummer *
+                            </span>
+
+                            <input
+                                type="text"
+                                id="kunde-strasse"
+                                autocomplete="street-address"
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                PLZ *
+                            </span>
+
+                            <input
+                                type="text"
+                                id="kunde-plz"
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Ort *
+                            </span>
+
+                            <input
+                                type="text"
+                                id="kunde-ort"
+                                autocomplete="address-level2"
+                            >
+
+                        </label>
+
+
+                        <label class="volle-breite">
+
+                            <span>
+                                Land *
+                            </span>
+
+                            <select id="kunde-land">
+
+                                <option value="">
+                                    Bitte auswählen
+                                </option>
+
+                                <option value="Deutschland">
+                                    Deutschland
+                                </option>
+
+                                <option value="Österreich">
+                                    Österreich
+                                </option>
+
+                                <option value="Schweiz">
+                                    Schweiz
+                                </option>
+
+                                <option value="Anderes Land">
+                                    Anderes Land
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <p
+                        class="formular-fehler"
+                        id="checkout-fehler"
+                        hidden
+                    >
+                        Bitte fülle alle Pflichtfelder aus.
+                    </p>
+
+
+                    <button
+                        class="checkout-button"
+                        id="bestellung-pruefen"
+                        type="button"
+                    >
+                        Bestellung prüfen
+                    </button>
+
+                </div>
+
+
+
+                <!-- BESTELLÜBERSICHT -->
+
+                <aside class="checkout-zusammenfassung">
+
+                    <h3>
+                        Zusammenfassung
+                    </h3>
+
+                    <div id="checkout-artikel"></div>
+
+                    <div class="checkout-summe">
+
+                        <span>
+                            Zwischensumme
+                        </span>
+
+                        <strong id="checkout-gesamt">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <p class="checkout-hinweis">
+                        Versandkosten und Zahlungsart werden
+                        im nächsten Schritt ergänzt.
+                    </p>
+
+                </aside>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         BESTELLUNG PRÜFEN
+    ========================================== -->
+
+    <div
+        class="bestellpruefung overlay"
+        id="bestellpruefung"
+        hidden
+    >
+
+        <div class="modal-box pruefung-box">
+
+
+            <button
+                class="modal-schliessen"
+                id="pruefung-schliessen"
+                type="button"
+                aria-label="Bestellübersicht schließen"
+            >
+                ×
+            </button>
+
+
+            <p class="kleiner-text">
+                FAST FERTIG
+            </p>
+
+            <h2>
+                Bestellung prüfen
+            </h2>
+
+
+            <div id="pruefung-inhalt"></div>
+
+
+            <div class="noch-nicht-live">
+
+                <strong>
+                    Testmodus
+                </strong>
+
+                <p>
+                    Diese Bestellung wird aktuell noch nicht an
+                    HoorAlAyn Modesty übermittelt.
+                </p>
+
+                <p>
+                    Als Nächstes verbinden wir diese Seite mit deinem
+                    richtigen Bestellsystem und anschließend mit
+                    PayPal und Kartenzahlung.
+                </p>
+
+            </div>
+
+
+            <button
+                class="bestellung-disabled"
+                type="button"
+                disabled
+            >
+                Bestellung absenden – noch nicht aktiviert
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         WARENKORB-BENACHRICHTIGUNG
     ========================================== -->
 
     <div
@@ -788,11 +1088,9 @@
         aria-live="polite"
     >
 
-
         <div class="toast-check">
             ✓
         </div>
-
 
         <div class="toast-text">
 
@@ -806,7 +1104,6 @@
 
         </div>
 
-
     </div>
 
 
@@ -818,10 +1115,52 @@
     <script>
 
 
-        /* =========================================
-           PRODUKTFENSTER
-        ========================================== */
+        /* =====================================
+           HILFSFUNKTIONEN
+        ====================================== */
 
+        const euro =
+            new Intl.NumberFormat(
+                "de-DE",
+                {
+                    style: "currency",
+                    currency: "EUR"
+                }
+            );
+
+
+        function seiteSperren() {
+
+            document.body.classList.add(
+                "modal-offen"
+            );
+
+        }
+
+
+        function seiteFreigeben() {
+
+            const offeneOverlays =
+                document.querySelectorAll(
+                    ".overlay:not([hidden]), .bild-zoom:not([hidden])"
+                );
+
+
+            if (offeneOverlays.length === 0) {
+
+                document.body.classList.remove(
+                    "modal-offen"
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           PRODUKTFENSTER
+        ====================================== */
 
         const produktOeffnen =
             document.getElementById(
@@ -847,29 +1186,22 @@
             );
 
 
-
         function produktFensterOeffnen() {
 
             produktModal.hidden = false;
 
-            document.body.classList.add(
-                "modal-offen"
-            );
+            seiteSperren();
 
         }
-
 
 
         function produktFensterSchliessen() {
 
             produktModal.hidden = true;
 
-            document.body.classList.remove(
-                "modal-offen"
-            );
+            seiteFreigeben();
 
         }
-
 
 
         produktOeffnen.addEventListener(
@@ -878,13 +1210,11 @@
         );
 
 
-
         produktKonfigurieren.addEventListener(
             "click",
             function () {
 
                 produktFensterOeffnen();
-
 
                 setTimeout(
                     function () {
@@ -894,12 +1224,11 @@
                             .focus();
 
                     },
-                    200
+                    150
                 );
 
             }
         );
-
 
 
         modalSchliessen.addEventListener(
@@ -908,14 +1237,11 @@
         );
 
 
-
         produktModal.addEventListener(
             "click",
             function (event) {
 
-                if (
-                    event.target === produktModal
-                ) {
+                if (event.target === produktModal) {
 
                     produktFensterSchliessen();
 
@@ -926,41 +1252,9 @@
 
 
 
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    if (
-                        bildZoom.hidden === false
-                    ) {
-
-                        zoomSchliessenFunktion();
-
-                    }
-
-                    else if (
-                        produktModal.hidden === false
-                    ) {
-
-                        produktFensterSchliessen();
-
-                    }
-
-                }
-
-            }
-        );
-
-
-
-        /* =========================================
+        /* =====================================
            BILD-ZOOM
-        ========================================== */
-
+        ====================================== */
 
         const zoomButtons =
             document.querySelectorAll(
@@ -1007,7 +1301,6 @@
         let zoomStufe = 1;
 
 
-
         function zoomAktualisieren() {
 
             zoomBild.style.transform =
@@ -1025,7 +1318,6 @@
         }
 
 
-
         zoomButtons.forEach(
             function (button) {
 
@@ -1033,26 +1325,23 @@
                     "click",
                     function () {
 
-
                         zoomBild.src =
                             button.dataset.bild;
 
 
                         zoomStufe = 1;
 
-
                         zoomAktualisieren();
-
 
                         bildZoom.hidden = false;
 
+                        seiteSperren();
 
                     }
                 );
 
             }
         );
-
 
 
         function zoomSchliessenFunktion() {
@@ -1064,8 +1353,9 @@
             zoomBild.style.transform =
                 "scale(1)";
 
-        }
+            seiteFreigeben();
 
+        }
 
 
         zoomSchliessen.addEventListener(
@@ -1074,14 +1364,11 @@
         );
 
 
-
         zoomPlus.addEventListener(
             "click",
             function () {
 
-                if (
-                    zoomStufe < 3
-                ) {
+                if (zoomStufe < 3) {
 
                     zoomStufe += 0.25;
 
@@ -1093,14 +1380,11 @@
         );
 
 
-
         zoomMinus.addEventListener(
             "click",
             function () {
 
-                if (
-                    zoomStufe > 1
-                ) {
+                if (zoomStufe > 1) {
 
                     zoomStufe -= 0.25;
 
@@ -1112,14 +1396,11 @@
         );
 
 
-
         zoomBild.addEventListener(
             "click",
             function () {
 
-                if (
-                    zoomStufe < 3
-                ) {
+                if (zoomStufe < 3) {
 
                     zoomStufe += 0.25;
 
@@ -1132,10 +1413,9 @@
 
 
 
-        /* =========================================
+        /* =====================================
            WARENKORB
-        ========================================== */
-
+        ====================================== */
 
         const warenkorb = [];
 
@@ -1182,20 +1462,15 @@
             );
 
 
-        const warenkorbNav =
+        const warenkorbAbschluss =
             document.getElementById(
-                "warenkorb-nav"
+                "warenkorb-abschluss"
             );
 
 
-
-        const euro =
-            new Intl.NumberFormat(
-                "de-DE",
-                {
-                    style: "currency",
-                    currency: "EUR"
-                }
+        const warenkorbNav =
+            document.getElementById(
+                "warenkorb-nav"
             );
 
 
@@ -1217,24 +1492,16 @@
                     );
 
 
-
-                if (
-                    !vorne ||
-                    !hinten
-                ) {
+                if (!vorne || !hinten) {
 
                     massFehler.textContent =
                         "Bitte gib die Länge vorne und hinten ein.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     return;
 
                 }
-
 
 
                 if (
@@ -1245,18 +1512,13 @@
                     massFehler.textContent =
                         "Die Länge vorne muss zwischen 60 cm und 180 cm liegen.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     laengeVorne.focus();
-
 
                     return;
 
                 }
-
 
 
                 if (
@@ -1267,52 +1529,41 @@
                     massFehler.textContent =
                         "Die Länge hinten muss zwischen 80 cm und 220 cm liegen.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     laengeHinten.focus();
-
 
                     return;
 
                 }
 
 
-
-                massFehler.hidden =
-                    true;
+                massFehler.hidden = true;
 
 
-
-                const artikelSchluessel =
-                    "Bambus Khimar-" +
+                const schluessel =
+                    "bambus-" +
                     vorne +
                     "-" +
                     hinten;
 
 
-
-                const vorhandenerArtikel =
+                const vorhanden =
                     warenkorb.find(
                         function (artikel) {
 
                             return (
                                 artikel.schluessel ===
-                                artikelSchluessel
+                                schluessel
                             );
 
                         }
                     );
 
 
+                if (vorhanden) {
 
-                if (
-                    vorhandenerArtikel
-                ) {
-
-                    vorhandenerArtikel.anzahl++;
+                    vorhanden.anzahl++;
 
                 }
 
@@ -1321,7 +1572,7 @@
                     warenkorb.push({
 
                         schluessel:
-                            artikelSchluessel,
+                            schluessel,
 
                         name:
                             "Bambus Khimar",
@@ -1343,9 +1594,7 @@
                 }
 
 
-
                 warenkorbAktualisieren();
-
 
                 toastAnzeigen(
                     "Bambus Khimar · vorne " +
@@ -1355,18 +1604,31 @@
                     " cm"
                 );
 
-
                 warenkorbAnimation();
-
 
             }
         );
 
 
+        laengeVorne.addEventListener(
+            "input",
+            function () {
 
-        /* =========================================
-           WARENKORB ANZEIGEN
-        ========================================== */
+                massFehler.hidden = true;
+
+            }
+        );
+
+
+        laengeHinten.addEventListener(
+            "input",
+            function () {
+
+                massFehler.hidden = true;
+
+            }
+        );
+
 
 
         function warenkorbAktualisieren() {
@@ -1389,7 +1651,6 @@
                 );
 
 
-
             const gesamt =
                 warenkorb.reduce(
                     function (
@@ -1408,33 +1669,30 @@
                 );
 
 
-
             warenkorbAnzahl.textContent =
                 anzahl;
-
 
 
             warenkorbInhalt.innerHTML =
                 "";
 
 
-
-            if (
-                warenkorb.length === 0
-            ) {
+            if (warenkorb.length === 0) {
 
                 warenkorbInhalt.innerHTML =
-                    "<p>Dein Warenkorb ist noch leer.</p>";
-
+                    "<p class='warenkorb-leer'>Dein Warenkorb ist noch leer.</p>";
 
                 gesamtpreisAnzeige.textContent =
                     "";
 
+                warenkorbAbschluss.hidden =
+                    true;
+
+                checkoutAktualisieren();
 
                 return;
 
             }
-
 
 
             warenkorb.forEach(
@@ -1454,45 +1712,39 @@
                         "warenkorb-artikel";
 
 
-
-                    const artikelGesamt =
-                        artikel.preis *
-                        artikel.anzahl;
-
-
-
                     zeile.innerHTML = `
 
-                        <div>
+                        <div class="warenkorb-artikel-info">
 
                             <strong>
                                 ${artikel.name}
                             </strong>
 
-                            <br>
-
-                            <small>
-                                Vorne:
+                            <span>
+                                Länge vorne:
                                 ${artikel.vorne} cm
-                                ·
-                                Hinten:
+                            </span>
+
+                            <span>
+                                Länge hinten:
                                 ${artikel.hinten} cm
-                            </small>
+                            </span>
 
-                            <br>
-
-                            <small>
+                            <span>
                                 Anzahl:
                                 ${artikel.anzahl}
-                            </small>
+                            </span>
 
                         </div>
 
 
-                        <strong>
+                        <strong class="warenkorb-artikel-preis">
+
                             ${euro.format(
-                                artikelGesamt
+                                artikel.preis *
+                                artikel.anzahl
                             )}
+
                         </strong>
 
 
@@ -1508,15 +1760,12 @@
                     `;
 
 
-
                     warenkorbInhalt.appendChild(
                         zeile
                     );
 
-
                 }
             );
-
 
 
             gesamtpreisAnzeige.textContent =
@@ -1525,6 +1774,9 @@
                     gesamt
                 );
 
+
+            warenkorbAbschluss.hidden =
+                false;
 
 
             document
@@ -1563,14 +1815,15 @@
                 );
 
 
+            checkoutAktualisieren();
+
         }
 
 
 
-        /* =========================================
-           BENACHRICHTIGUNG
-        ========================================== */
-
+        /* =====================================
+           TOAST
+        ====================================== */
 
         const toast =
             document.getElementById(
@@ -1587,11 +1840,7 @@
         let toastTimer;
 
 
-
-        function toastAnzeigen(
-            text
-        ) {
-
+        function toastAnzeigen(text) {
 
             toastNachricht.textContent =
                 text;
@@ -1611,28 +1860,19 @@
                 setTimeout(
                     function () {
 
-
                         toast.classList.remove(
                             "anzeigen"
                         );
-
 
                     },
                     3000
                 );
 
-
         }
 
 
 
-        /* =========================================
-           WARENKORB ANIMATION
-        ========================================== */
-
-
         function warenkorbAnimation() {
-
 
             warenkorbNav.classList.remove(
                 "pulsieren"
@@ -1646,32 +1886,570 @@
                 "pulsieren"
             );
 
-
         }
 
 
 
-        /* =========================================
-           FEHLERMELDUNG ENTFERNEN
-           WENN KUNDIN MAẞE EINGIBT
-        ========================================== */
+        /* =====================================
+           CHECKOUT
+        ====================================== */
+
+        const checkoutModal =
+            document.getElementById(
+                "checkout-modal"
+            );
 
 
-        laengeVorne.addEventListener(
-            "input",
-            function () {
+        const checkoutOeffnen =
+            document.getElementById(
+                "checkout-oeffnen"
+            );
 
-                massFehler.hidden = true;
+
+        const checkoutSchliessen =
+            document.getElementById(
+                "checkout-schliessen"
+            );
+
+
+        const checkoutArtikel =
+            document.getElementById(
+                "checkout-artikel"
+            );
+
+
+        const checkoutGesamt =
+            document.getElementById(
+                "checkout-gesamt"
+            );
+
+
+        const checkoutFehler =
+            document.getElementById(
+                "checkout-fehler"
+            );
+
+
+        function checkoutFensterOeffnen() {
+
+            if (warenkorb.length === 0) {
+
+                return;
+
+            }
+
+
+            checkoutAktualisieren();
+
+            checkoutModal.hidden = false;
+
+            seiteSperren();
+
+        }
+
+
+        function checkoutFensterSchliessen() {
+
+            checkoutModal.hidden = true;
+
+            seiteFreigeben();
+
+        }
+
+
+        checkoutOeffnen.addEventListener(
+            "click",
+            checkoutFensterOeffnen
+        );
+
+
+        checkoutSchliessen.addEventListener(
+            "click",
+            checkoutFensterSchliessen
+        );
+
+
+        checkoutModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === checkoutModal) {
+
+                    checkoutFensterSchliessen();
+
+                }
 
             }
         );
 
 
-        laengeHinten.addEventListener(
-            "input",
+
+        function checkoutAktualisieren() {
+
+            checkoutArtikel.innerHTML =
+                "";
+
+
+            let gesamt = 0;
+
+
+            warenkorb.forEach(
+                function (artikel) {
+
+
+                    gesamt +=
+                        artikel.preis *
+                        artikel.anzahl;
+
+
+                    const element =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    element.className =
+                        "checkout-artikel";
+
+
+                    element.innerHTML = `
+
+                        <div>
+
+                            <strong>
+                                ${artikel.name}
+                            </strong>
+
+                            <span>
+                                Vorne:
+                                ${artikel.vorne} cm
+                            </span>
+
+                            <span>
+                                Hinten:
+                                ${artikel.hinten} cm
+                            </span>
+
+                            <span>
+                                Anzahl:
+                                ${artikel.anzahl}
+                            </span>
+
+                        </div>
+
+
+                        <strong>
+
+                            ${euro.format(
+                                artikel.preis *
+                                artikel.anzahl
+                            )}
+
+                        </strong>
+
+                    `;
+
+
+                    checkoutArtikel.appendChild(
+                        element
+                    );
+
+
+                }
+            );
+
+
+            checkoutGesamt.textContent =
+                euro.format(
+                    gesamt
+                );
+
+        }
+
+
+
+        /* =====================================
+           BESTELLUNG PRÜFEN
+        ====================================== */
+
+        const bestellungPruefen =
+            document.getElementById(
+                "bestellung-pruefen"
+            );
+
+
+        const bestellpruefung =
+            document.getElementById(
+                "bestellpruefung"
+            );
+
+
+        const pruefungSchliessen =
+            document.getElementById(
+                "pruefung-schliessen"
+            );
+
+
+        const pruefungInhalt =
+            document.getElementById(
+                "pruefung-inhalt"
+            );
+
+
+
+        bestellungPruefen.addEventListener(
+            "click",
             function () {
 
-                massFehler.hidden = true;
+
+                const vorname =
+                    document
+                        .getElementById(
+                            "kunde-vorname"
+                        )
+                        .value
+                        .trim();
+
+
+                const nachname =
+                    document
+                        .getElementById(
+                            "kunde-nachname"
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "kunde-email"
+                        )
+                        .value
+                        .trim();
+
+
+                const telefon =
+                    document
+                        .getElementById(
+                            "kunde-telefon"
+                        )
+                        .value
+                        .trim();
+
+
+                const strasse =
+                    document
+                        .getElementById(
+                            "kunde-strasse"
+                        )
+                        .value
+                        .trim();
+
+
+                const plz =
+                    document
+                        .getElementById(
+                            "kunde-plz"
+                        )
+                        .value
+                        .trim();
+
+
+                const ort =
+                    document
+                        .getElementById(
+                            "kunde-ort"
+                        )
+                        .value
+                        .trim();
+
+
+                const land =
+                    document
+                        .getElementById(
+                            "kunde-land"
+                        )
+                        .value;
+
+
+                if (
+                    !vorname ||
+                    !nachname ||
+                    !email ||
+                    !strasse ||
+                    !plz ||
+                    !ort ||
+                    !land
+                ) {
+
+                    checkoutFehler.textContent =
+                        "Bitte fülle alle mit * markierten Felder aus.";
+
+                    checkoutFehler.hidden =
+                        false;
+
+                    return;
+
+                }
+
+
+                if (
+                    !email.includes("@")
+                ) {
+
+                    checkoutFehler.textContent =
+                        "Bitte gib eine gültige E-Mail-Adresse ein.";
+
+                    checkoutFehler.hidden =
+                        false;
+
+                    return;
+
+                }
+
+
+                checkoutFehler.hidden =
+                    true;
+
+
+                let artikelHtml = "";
+
+                let gesamt = 0;
+
+
+                warenkorb.forEach(
+                    function (artikel) {
+
+
+                        gesamt +=
+                            artikel.preis *
+                            artikel.anzahl;
+
+
+                        artikelHtml += `
+
+                            <div class="pruefung-artikel">
+
+                                <strong>
+                                    ${artikel.name}
+                                </strong>
+
+                                <span>
+                                    Länge vorne:
+                                    ${artikel.vorne} cm
+                                </span>
+
+                                <span>
+                                    Länge hinten:
+                                    ${artikel.hinten} cm
+                                </span>
+
+                                <span>
+                                    Anzahl:
+                                    ${artikel.anzahl}
+                                </span>
+
+                                <strong>
+                                    ${euro.format(
+                                        artikel.preis *
+                                        artikel.anzahl
+                                    )}
+                                </strong>
+
+                            </div>
+
+                        `;
+
+
+                    }
+                );
+
+
+                pruefungInhalt.innerHTML = `
+
+                    <div class="pruefung-bereich">
+
+                        <h3>
+                            Kundendaten
+                        </h3>
+
+                        <p>
+                            <strong>
+                                ${vorname}
+                                ${nachname}
+                            </strong>
+                        </p>
+
+                        <p>
+                            ${email}
+                        </p>
+
+                        ${
+                            telefon
+                                ? "<p>" +
+                                  telefon +
+                                  "</p>"
+                                : ""
+                        }
+
+                    </div>
+
+
+                    <div class="pruefung-bereich">
+
+                        <h3>
+                            Lieferadresse
+                        </h3>
+
+                        <p>
+                            ${strasse}
+                        </p>
+
+                        <p>
+                            ${plz}
+                            ${ort}
+                        </p>
+
+                        <p>
+                            ${land}
+                        </p>
+
+                    </div>
+
+
+                    <div class="pruefung-bereich">
+
+                        <h3>
+                            Deine Artikel
+                        </h3>
+
+                        ${artikelHtml}
+
+                    </div>
+
+
+                    <div class="pruefung-gesamt">
+
+                        <span>
+                            Gesamt
+                        </span>
+
+                        <strong>
+                            ${euro.format(
+                                gesamt
+                            )}
+                        </strong>
+
+                    </div>
+
+                `;
+
+
+                bestellpruefung.hidden =
+                    false;
+
+                seiteSperren();
+
+
+            }
+        );
+
+
+        pruefungSchliessen.addEventListener(
+            "click",
+            function () {
+
+                bestellpruefung.hidden =
+                    true;
+
+                seiteFreigeben();
+
+            }
+        );
+
+
+        bestellpruefung.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    bestellpruefung
+                ) {
+
+                    bestellpruefung.hidden =
+                        true;
+
+                    seiteFreigeben();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================
+           ESC-TASTE
+        ====================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key !== "Escape"
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    bildZoom.hidden === false
+                ) {
+
+                    zoomSchliessenFunktion();
+
+                    return;
+
+                }
+
+
+                if (
+                    bestellpruefung.hidden === false
+                ) {
+
+                    bestellpruefung.hidden =
+                        true;
+
+                    seiteFreigeben();
+
+                    return;
+
+                }
+
+
+                if (
+                    checkoutModal.hidden === false
+                ) {
+
+                    checkoutFensterSchliessen();
+
+                    return;
+
+                }
+
+
+                if (
+                    produktModal.hidden === false
+                ) {
+
+                    produktFensterSchliessen();
+
+                }
 
             }
         );
