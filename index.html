@@ -245,11 +245,6 @@
                     <div class="hero-produktkarte">
 
 
-                        <span class="hero-badge">
-                            SIGNATURE PIECE
-                        </span>
-
-
                         <div class="hero-bild">
 
                             <img
@@ -2648,52 +2643,30 @@
             switch (code) {
 
                 case "auth/email-already-in-use":
-
                     return "Für diese E-Mail-Adresse gibt es bereits ein Konto.";
 
-
                 case "auth/invalid-email":
-
                     return "Bitte gib eine gültige E-Mail-Adresse ein.";
 
-
                 case "auth/weak-password":
-
                     return "Das Passwort ist zu schwach. Verwende mindestens 6 Zeichen.";
 
-
                 case "auth/invalid-credential":
-
                     return "E-Mail-Adresse oder Passwort ist nicht richtig.";
 
-
                 case "auth/user-disabled":
-
                     return "Dieses Kundenkonto wurde deaktiviert.";
 
-
                 case "auth/too-many-requests":
-
                     return "Zu viele Versuche. Bitte versuche es später erneut.";
 
-
                 case "auth/network-request-failed":
-
                     return "Bitte prüfe deine Internetverbindung.";
 
-
                 case "auth/unauthorized-domain":
-
                     return "Diese Webseite ist in Firebase noch nicht als autorisierte Domain eingetragen.";
 
-
-                case "auth/api-key-not-valid.-please-pass-a-valid-api-key.":
-
-                    return "Die Verbindung zu unserem Kundenkonto-System ist momentan fehlerhaft.";
-
-
                 default:
-
                     return "Etwas ist schiefgelaufen. Bitte versuche es erneut.";
 
             }
