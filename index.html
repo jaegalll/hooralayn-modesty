@@ -20,6 +20,59 @@
         rel="stylesheet"
         href="style.css"
     >
+
+    <!-- Nur für den neuen Hero-Bereich ohne Produktbild -->
+    <style>
+        .hero.hero-ohne-bild {
+            min-height: 620px;
+        }
+
+        .hero.hero-ohne-bild .hero-inhalt {
+            width: min(900px, 90%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero.hero-ohne-bild .hero-text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero.hero-ohne-bild .hero-text h1 {
+            max-width: 850px;
+        }
+
+        .hero.hero-ohne-bild .hero-beschreibung {
+            max-width: 650px;
+            margin: 25px auto 32px;
+        }
+
+        .hero.hero-ohne-bild .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero.hero-ohne-bild .hero-vorteile {
+            justify-content: center;
+        }
+
+        @media (max-width: 700px) {
+            .hero.hero-ohne-bild {
+                min-height: 570px;
+            }
+
+            .hero.hero-ohne-bild .hero-inhalt {
+                width: min(92%, 700px);
+            }
+
+            .hero.hero-ohne-bild .hero-vorteile {
+                gap: 25px;
+            }
+        }
+    </style>
 </head>
 
 
@@ -138,10 +191,10 @@
     <main>
 
 
-        <!-- HERO -->
+        <!-- HERO OHNE PRODUKTBILD -->
 
         <section
-            class="hero"
+            class="hero hero-ohne-bild"
             id="home"
         >
 
@@ -231,73 +284,6 @@
 
                         </div>
 
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="hero-visual">
-
-
-                    <div class="hero-produktkarte">
-
-
-                        <div class="hero-bild">
-
-                            <img
-                                src="bilder/Bambus Khimar.jpg"
-                                alt="Bambus Khimar"
-                            >
-
-                        </div>
-
-
-                        <div class="hero-produkt-unten">
-
-
-                            <div>
-
-                                <small>
-                                    HOORALAYN MODESTY
-                                </small>
-
-                                <strong>
-                                    Bambus Khimar
-                                </strong>
-
-                            </div>
-
-
-                            <span>
-                                59,99 €
-                            </span>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="hero-floating-card">
-
-                        <span>🌿</span>
-
-                        <div>
-
-                            <strong>
-                                Natürlich weich
-                            </strong>
-
-                            <small>
-                                Leicht & atmungsaktiv
-                            </small>
-
-                        </div>
 
                     </div>
 
@@ -1327,7 +1313,7 @@
             <div class="modal-kopf">
 
                 <p class="eyebrow">
-                    SIGNATURE COLLECTION
+                    BAMBUS KOLLEKTION
                 </p>
 
                 <h2>
@@ -2160,27 +2146,16 @@
             new Intl.NumberFormat(
                 "de-DE",
                 {
-                    style:
-                        "currency",
-
-                    currency:
-                        "EUR"
+                    style: "currency",
+                    currency: "EUR"
                 }
             );
 
 
 
-        let aktiverUser =
-            null;
-
-
-        let warenkorb =
-            [];
-
-
-        let aktuelleBestelldaten =
-            null;
-
+        let aktiverUser = null;
+        let warenkorb = [];
+        let aktuelleBestelldaten = null;
 
         const GAST_WARENKORB_KEY =
             "hooralayn-gast-warenkorb";
@@ -2188,315 +2163,160 @@
 
 
         const kontoModal =
-            document.getElementById(
-                "konto-modal"
-            );
-
+            document.getElementById("konto-modal");
 
         const kontoButton =
-            document.getElementById(
-                "konto-button"
-            );
-
+            document.getElementById("konto-button");
 
         const kontoButtonText =
-            document.getElementById(
-                "konto-button-text"
-            );
-
+            document.getElementById("konto-button-text");
 
         const kontoSchliessen =
-            document.getElementById(
-                "konto-schliessen"
-            );
-
+            document.getElementById("konto-schliessen");
 
         const kontoGastBereich =
-            document.getElementById(
-                "konto-gast-bereich"
-            );
-
+            document.getElementById("konto-gast-bereich");
 
         const kontoUserBereich =
-            document.getElementById(
-                "konto-user-bereich"
-            );
-
+            document.getElementById("konto-user-bereich");
 
         const kontoBegruessung =
-            document.getElementById(
-                "konto-begruessung"
-            );
-
+            document.getElementById("konto-begruessung");
 
         const kontoEmailAnzeige =
-            document.getElementById(
-                "konto-email-anzeige"
-            );
-
+            document.getElementById("konto-email-anzeige");
 
         const kontoWarenkorbStatus =
-            document.getElementById(
-                "konto-warenkorb-status"
-            );
-
+            document.getElementById("konto-warenkorb-status");
 
         const meineBestellungen =
-            document.getElementById(
-                "meine-bestellungen"
-            );
-
+            document.getElementById("meine-bestellungen");
 
         const bestellungenNeuladen =
-            document.getElementById(
-                "bestellungen-neuladen"
-            );
-
+            document.getElementById("bestellungen-neuladen");
 
         const tabAnmelden =
-            document.getElementById(
-                "tab-anmelden"
-            );
-
+            document.getElementById("tab-anmelden");
 
         const tabRegistrieren =
-            document.getElementById(
-                "tab-registrieren"
-            );
-
+            document.getElementById("tab-registrieren");
 
         const anmeldenForm =
-            document.getElementById(
-                "anmelden-form"
-            );
-
+            document.getElementById("anmelden-form");
 
         const registrierenForm =
-            document.getElementById(
-                "registrieren-form"
-            );
-
+            document.getElementById("registrieren-form");
 
         const loginFehler =
-            document.getElementById(
-                "login-fehler"
-            );
-
+            document.getElementById("login-fehler");
 
         const registerFehler =
-            document.getElementById(
-                "register-fehler"
-            );
-
+            document.getElementById("register-fehler");
 
         const abmeldenButton =
-            document.getElementById(
-                "abmelden-button"
-            );
-
+            document.getElementById("abmelden-button");
 
         const passwortVergessen =
-            document.getElementById(
-                "passwort-vergessen"
-            );
-
+            document.getElementById("passwort-vergessen");
 
         const warenkorbLoginButton =
-            document.getElementById(
-                "warenkorb-login-button"
-            );
-
+            document.getElementById("warenkorb-login-button");
 
         const warenkorbSyncText =
-            document.getElementById(
-                "warenkorb-sync-text"
-            );
-
+            document.getElementById("warenkorb-sync-text");
 
         const produktModal =
-            document.getElementById(
-                "produkt-modal"
-            );
-
+            document.getElementById("produkt-modal");
 
         const produktOeffnen =
-            document.getElementById(
-                "produkt-oeffnen"
-            );
-
+            document.getElementById("produkt-oeffnen");
 
         const produktKonfigurieren =
-            document.getElementById(
-                "produkt-konfigurieren"
-            );
-
+            document.getElementById("produkt-konfigurieren");
 
         const modalSchliessen =
-            document.getElementById(
-                "modal-schliessen"
-            );
-
+            document.getElementById("modal-schliessen");
 
         const laengeVorne =
-            document.getElementById(
-                "laenge-vorne"
-            );
-
+            document.getElementById("laenge-vorne");
 
         const laengeHinten =
-            document.getElementById(
-                "laenge-hinten"
-            );
-
+            document.getElementById("laenge-hinten");
 
         const massFehler =
-            document.getElementById(
-                "mass-fehler"
-            );
-
+            document.getElementById("mass-fehler");
 
         const modalWarenkorbButton =
-            document.getElementById(
-                "modal-warenkorb-button"
-            );
-
+            document.getElementById("modal-warenkorb-button");
 
         const warenkorbAnzahl =
-            document.getElementById(
-                "warenkorb-anzahl"
-            );
-
+            document.getElementById("warenkorb-anzahl");
 
         const warenkorbInhalt =
-            document.getElementById(
-                "warenkorb-inhalt"
-            );
-
+            document.getElementById("warenkorb-inhalt");
 
         const gesamtpreis =
-            document.getElementById(
-                "gesamtpreis"
-            );
-
+            document.getElementById("gesamtpreis");
 
         const warenkorbAbschluss =
-            document.getElementById(
-                "warenkorb-abschluss"
-            );
-
+            document.getElementById("warenkorb-abschluss");
 
         const warenkorbNav =
-            document.getElementById(
-                "warenkorb-nav"
-            );
-
+            document.getElementById("warenkorb-nav");
 
         const checkoutModal =
-            document.getElementById(
-                "checkout-modal"
-            );
-
+            document.getElementById("checkout-modal");
 
         const checkoutOeffnen =
-            document.getElementById(
-                "checkout-oeffnen"
-            );
-
+            document.getElementById("checkout-oeffnen");
 
         const checkoutSchliessen =
-            document.getElementById(
-                "checkout-schliessen"
-            );
-
+            document.getElementById("checkout-schliessen");
 
         const checkoutArtikel =
-            document.getElementById(
-                "checkout-artikel"
-            );
-
+            document.getElementById("checkout-artikel");
 
         const checkoutGesamt =
-            document.getElementById(
-                "checkout-gesamt"
-            );
-
+            document.getElementById("checkout-gesamt");
 
         const checkoutFehler =
-            document.getElementById(
-                "checkout-fehler"
-            );
-
+            document.getElementById("checkout-fehler");
 
         const bestellungPruefen =
-            document.getElementById(
-                "bestellung-pruefen"
-            );
-
+            document.getElementById("bestellung-pruefen");
 
         const bestellpruefung =
-            document.getElementById(
-                "bestellpruefung"
-            );
-
+            document.getElementById("bestellpruefung");
 
         const pruefungSchliessen =
-            document.getElementById(
-                "pruefung-schliessen"
-            );
-
+            document.getElementById("pruefung-schliessen");
 
         const pruefungInhalt =
-            document.getElementById(
-                "pruefung-inhalt"
-            );
-
+            document.getElementById("pruefung-inhalt");
 
         const bestellungAbsenden =
-            document.getElementById(
-                "bestellung-absenden"
-            );
-
+            document.getElementById("bestellung-absenden");
 
         const bestellungFehler =
-            document.getElementById(
-                "bestellung-fehler"
-            );
-
+            document.getElementById("bestellung-fehler");
 
         const bestellbestaetigung =
-            document.getElementById(
-                "bestellbestaetigung"
-            );
-
+            document.getElementById("bestellbestaetigung");
 
         const bestaetigungBestellnummer =
-            document.getElementById(
-                "bestaetigung-bestellnummer"
-            );
-
+            document.getElementById("bestaetigung-bestellnummer");
 
         const bestaetigungSchliessen =
-            document.getElementById(
-                "bestaetigung-schliessen"
-            );
-
+            document.getElementById("bestaetigung-schliessen");
 
         const toast =
-            document.getElementById(
-                "warenkorb-toast"
-            );
-
+            document.getElementById("warenkorb-toast");
 
         const toastTitel =
-            document.getElementById(
-                "toast-titel"
-            );
-
+            document.getElementById("toast-titel");
 
         const toastNachricht =
-            document.getElementById(
-                "toast-nachricht"
-            );
+            document.getElementById("toast-nachricht");
 
 
 
@@ -2518,9 +2338,7 @@
                 );
 
 
-            if (
-                offen.length === 0
-            ) {
+            if (offen.length === 0) {
 
                 document.body.classList.remove(
                     "modal-offen"
@@ -2534,16 +2352,12 @@
 
         function kontoOeffnen() {
 
-            kontoModal.hidden =
-                false;
-
+            kontoModal.hidden = false;
 
             seiteSperren();
 
 
-            if (
-                aktiverUser
-            ) {
+            if (aktiverUser) {
 
                 ladeBestellungen();
 
@@ -2555,9 +2369,7 @@
 
         function kontoSchliessenFunktion() {
 
-            kontoModal.hidden =
-                true;
-
+            kontoModal.hidden = true;
 
             seiteFreigeben();
 
@@ -2588,22 +2400,13 @@
             "click",
             function () {
 
-                tabAnmelden.classList.add(
-                    "aktiv"
-                );
+                tabAnmelden.classList.add("aktiv");
 
+                tabRegistrieren.classList.remove("aktiv");
 
-                tabRegistrieren.classList.remove(
-                    "aktiv"
-                );
+                anmeldenForm.hidden = false;
 
-
-                anmeldenForm.hidden =
-                    false;
-
-
-                registrierenForm.hidden =
-                    true;
+                registrierenForm.hidden = true;
 
             }
         );
@@ -2614,31 +2417,20 @@
             "click",
             function () {
 
-                tabRegistrieren.classList.add(
-                    "aktiv"
-                );
+                tabRegistrieren.classList.add("aktiv");
 
+                tabAnmelden.classList.remove("aktiv");
 
-                tabAnmelden.classList.remove(
-                    "aktiv"
-                );
+                registrierenForm.hidden = false;
 
-
-                registrierenForm.hidden =
-                    false;
-
-
-                anmeldenForm.hidden =
-                    true;
+                anmeldenForm.hidden = true;
 
             }
         );
 
 
 
-        function authFehlerText(
-            code
-        ) {
+        function authFehlerText(code) {
 
             switch (code) {
 
@@ -2677,64 +2469,46 @@
 
         registrierenForm.addEventListener(
             "submit",
-            async function (
-                event
-            ) {
+            async function (event) {
 
                 event.preventDefault();
 
-
-                registerFehler.hidden =
-                    true;
+                registerFehler.hidden = true;
 
 
                 const name =
                     document
-                        .getElementById(
-                            "register-name"
-                        )
+                        .getElementById("register-name")
                         .value
                         .trim();
 
 
                 const email =
                     document
-                        .getElementById(
-                            "register-email"
-                        )
+                        .getElementById("register-email")
                         .value
                         .trim();
 
 
                 const passwort =
                     document
-                        .getElementById(
-                            "register-passwort"
-                        )
+                        .getElementById("register-passwort")
                         .value;
 
 
                 const wiederholung =
                     document
-                        .getElementById(
-                            "register-passwort-wiederholen"
-                        )
+                        .getElementById("register-passwort-wiederholen")
                         .value;
 
 
 
-                if (
-                    passwort !==
-                    wiederholung
-                ) {
+                if (passwort !== wiederholung) {
 
                     registerFehler.textContent =
                         "Die beiden Passwörter stimmen nicht überein.";
 
-
-                    registerFehler.hidden =
-                        false;
-
+                    registerFehler.hidden = false;
 
                     return;
 
@@ -2743,7 +2517,6 @@
 
 
                 try {
-
 
                     const credential =
                         await createUserWithEmailAndPassword(
@@ -2756,8 +2529,7 @@
                     await updateProfile(
                         credential.user,
                         {
-                            displayName:
-                                name
+                            displayName: name
                         }
                     );
 
@@ -2769,24 +2541,14 @@
                             credential.user.uid
                         ),
                         {
-                            name:
-                                name,
-
-                            email:
-                                email,
-
-                            warenkorb:
-                                [],
-
-                            erstelltAm:
-                                serverTimestamp(),
-
-                            aktualisiertAm:
-                                serverTimestamp()
+                            name: name,
+                            email: email,
+                            warenkorb: [],
+                            erstelltAm: serverTimestamp(),
+                            aktualisiertAm: serverTimestamp()
                         },
                         {
-                            merge:
-                                true
+                            merge: true
                         }
                     );
 
@@ -2799,26 +2561,16 @@
                         "Willkommen bei HoorAlAyn Modesty."
                     );
 
-
                 }
 
-                catch (
-                    error
-                ) {
+                catch (error) {
 
-                    console.error(
-                        error
-                    );
-
+                    console.error(error);
 
                     registerFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-
-                    registerFehler.hidden =
-                        false;
+                    registerFehler.hidden = false;
 
                 }
 
@@ -2829,36 +2581,27 @@
 
         anmeldenForm.addEventListener(
             "submit",
-            async function (
-                event
-            ) {
+            async function (event) {
 
                 event.preventDefault();
 
-
-                loginFehler.hidden =
-                    true;
+                loginFehler.hidden = true;
 
 
                 const email =
                     document
-                        .getElementById(
-                            "login-email"
-                        )
+                        .getElementById("login-email")
                         .value
                         .trim();
 
 
                 const passwort =
                     document
-                        .getElementById(
-                            "login-passwort"
-                        )
+                        .getElementById("login-passwort")
                         .value;
 
 
                 try {
-
 
                     await signInWithEmailAndPassword(
                         auth,
@@ -2875,26 +2618,16 @@
                         "Du bist jetzt angemeldet."
                     );
 
-
                 }
 
-                catch (
-                    error
-                ) {
+                catch (error) {
 
-                    console.error(
-                        error
-                    );
-
+                    console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-
-                    loginFehler.hidden =
-                        false;
+                    loginFehler.hidden = false;
 
                 }
 
@@ -2907,27 +2640,19 @@
             "click",
             async function () {
 
-
                 const email =
                     document
-                        .getElementById(
-                            "login-email"
-                        )
+                        .getElementById("login-email")
                         .value
                         .trim();
 
 
-                if (
-                    !email
-                ) {
+                if (!email) {
 
                     loginFehler.textContent =
                         "Gib zuerst deine E-Mail-Adresse ein.";
 
-
-                    loginFehler.hidden =
-                        false;
-
+                    loginFehler.hidden = false;
 
                     return;
 
@@ -2936,15 +2661,13 @@
 
                 try {
 
-
                     await sendPasswordResetEmail(
                         auth,
                         email
                     );
 
 
-                    loginFehler.hidden =
-                        true;
+                    loginFehler.hidden = true;
 
 
                     toastAnzeigen(
@@ -2952,26 +2675,16 @@
                         "Du erhältst einen Link zum Zurücksetzen deines Passworts."
                     );
 
-
                 }
 
-                catch (
-                    error
-                ) {
+                catch (error) {
 
-                    console.error(
-                        error
-                    );
-
+                    console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-
-                    loginFehler.hidden =
-                        false;
+                    loginFehler.hidden = false;
 
                 }
 
@@ -2984,10 +2697,7 @@
             "click",
             async function () {
 
-                await signOut(
-                    auth
-                );
-
+                await signOut(auth);
 
                 kontoSchliessenFunktion();
 
@@ -3014,9 +2724,7 @@
                     );
 
 
-                return Array.isArray(
-                    daten
-                )
+                return Array.isArray(daten)
                     ? daten
                     : [];
 
@@ -3036,9 +2744,7 @@
 
             localStorage.setItem(
                 GAST_WARENKORB_KEY,
-                JSON.stringify(
-                    warenkorb
-                )
+                JSON.stringify(warenkorb)
             );
 
         }
@@ -3047,10 +2753,7 @@
 
         async function warenkorbSpeichern() {
 
-
-            if (
-                !aktiverUser
-            ) {
+            if (!aktiverUser) {
 
                 gastWarenkorbSpeichern();
 
@@ -3060,7 +2763,6 @@
 
 
             try {
-
 
                 kontoWarenkorbStatus.textContent =
                     "Wird gespeichert …";
@@ -3086,8 +2788,7 @@
                             serverTimestamp()
                     },
                     {
-                        merge:
-                            true
+                        merge: true
                     }
                 );
 
@@ -3095,17 +2796,11 @@
                 kontoWarenkorbStatus.textContent =
                     "Synchronisiert";
 
-
             }
 
-            catch (
-                error
-            ) {
+            catch (error) {
 
-                console.error(
-                    error
-                );
-
+                console.error(error);
 
                 kontoWarenkorbStatus.textContent =
                     "Fehler";
@@ -3116,13 +2811,9 @@
 
 
 
-        async function kontoWarenkorbLaden(
-            user
-        ) {
-
+        async function kontoWarenkorbLaden(user) {
 
             try {
-
 
                 const snapshot =
                     await getDoc(
@@ -3134,8 +2825,7 @@
                     );
 
 
-                let gespeichert =
-                    [];
+                let gespeichert = [];
 
 
                 if (
@@ -3162,16 +2852,11 @@
 
 
                 gast.forEach(
-                    function (
-                        artikel
-                    ) {
-
+                    function (artikel) {
 
                         const gefunden =
                             warenkorb.find(
-                                function (
-                                    item
-                                ) {
+                                function (item) {
 
                                     return (
                                         item.schluessel ===
@@ -3182,9 +2867,7 @@
                             );
 
 
-                        if (
-                            gefunden
-                        ) {
+                        if (gefunden) {
 
                             gefunden.anzahl +=
                                 artikel.anzahl;
@@ -3208,23 +2891,16 @@
                 );
 
 
-                warenkorbAktualisieren(
-                    false
-                );
+                warenkorbAktualisieren(false);
 
 
                 await warenkorbSpeichern();
 
-
             }
 
-            catch (
-                error
-            ) {
+            catch (error) {
 
-                console.error(
-                    error
-                );
+                console.error(error);
 
             }
 
@@ -3234,27 +2910,16 @@
 
         onAuthStateChanged(
             auth,
-            async function (
-                user
-            ) {
+            async function (user) {
+
+                aktiverUser = user;
 
 
-                aktiverUser =
-                    user;
+                if (user) {
 
+                    kontoGastBereich.hidden = true;
 
-                if (
-                    user
-                ) {
-
-
-                    kontoGastBereich.hidden =
-                        true;
-
-
-                    kontoUserBereich.hidden =
-                        false;
-
+                    kontoUserBereich.hidden = false;
 
                     kontoButtonText.textContent =
                         "Mein Konto";
@@ -3262,8 +2927,7 @@
 
                     kontoBegruessung.textContent =
                         user.displayName
-                            ? "Hallo " +
-                              user.displayName
+                            ? "Hallo " + user.displayName
                             : "Willkommen";
 
 
@@ -3303,19 +2967,13 @@
 
                     await ladeBestellungen();
 
-
                 }
 
                 else {
 
+                    kontoGastBereich.hidden = false;
 
-                    kontoGastBereich.hidden =
-                        false;
-
-
-                    kontoUserBereich.hidden =
-                        true;
-
+                    kontoUserBereich.hidden = true;
 
                     kontoButtonText.textContent =
                         "Anmelden";
@@ -3333,9 +2991,7 @@
                         gastWarenkorbLaden();
 
 
-                    warenkorbAktualisieren(
-                        false
-                    );
+                    warenkorbAktualisieren(false);
 
                 }
 
@@ -3348,9 +3004,7 @@
             "click",
             function () {
 
-                produktModal.hidden =
-                    false;
-
+                produktModal.hidden = false;
 
                 seiteSperren();
 
@@ -3362,9 +3016,7 @@
             "click",
             function () {
 
-                produktModal.hidden =
-                    false;
-
+                produktModal.hidden = false;
 
                 seiteSperren();
 
@@ -3376,9 +3028,7 @@
             "click",
             function () {
 
-                produktModal.hidden =
-                    true;
-
+                produktModal.hidden = true;
 
                 seiteFreigeben();
 
@@ -3388,43 +3038,25 @@
 
 
         const bildZoom =
-            document.getElementById(
-                "bild-zoom"
-            );
-
+            document.getElementById("bild-zoom");
 
         const zoomBild =
-            document.getElementById(
-                "zoom-bild"
-            );
-
+            document.getElementById("zoom-bild");
 
         const zoomSchliessen =
-            document.getElementById(
-                "zoom-schliessen"
-            );
-
+            document.getElementById("zoom-schliessen");
 
         const zoomPlus =
-            document.getElementById(
-                "zoom-plus"
-            );
-
+            document.getElementById("zoom-plus");
 
         const zoomMinus =
-            document.getElementById(
-                "zoom-minus"
-            );
-
+            document.getElementById("zoom-minus");
 
         const zoomAnzeige =
-            document.getElementById(
-                "zoom-anzeige"
-            );
+            document.getElementById("zoom-anzeige");
 
 
-        let zoom =
-            1;
+        let zoom = 1;
 
 
 
@@ -3433,35 +3065,24 @@
                 ".zoom-bild-button"
             )
             .forEach(
-                function (
-                    button
-                ) {
-
+                function (button) {
 
                     button.addEventListener(
                         "click",
                         function () {
 
-
                             zoomBild.src =
                                 button.dataset.bild;
 
-
-                            zoom =
-                                1;
-
+                            zoom = 1;
 
                             zoomBild.style.transform =
                                 "scale(1)";
 
-
                             zoomAnzeige.textContent =
                                 "100 %";
 
-
-                            bildZoom.hidden =
-                                false;
-
+                            bildZoom.hidden = false;
 
                             seiteSperren();
 
@@ -3477,12 +3098,9 @@
             "click",
             function () {
 
-                if (
-                    zoom < 3
-                ) {
+                if (zoom < 3) {
 
-                    zoom +=
-                        0.25;
+                    zoom += 0.25;
 
                 }
 
@@ -3494,8 +3112,7 @@
                 zoomAnzeige.textContent =
                     Math.round(
                         zoom * 100
-                    ) +
-                    " %";
+                    ) + " %";
 
             }
         );
@@ -3506,12 +3123,9 @@
             "click",
             function () {
 
-                if (
-                    zoom > 1
-                ) {
+                if (zoom > 1) {
 
-                    zoom -=
-                        0.25;
+                    zoom -= 0.25;
 
                 }
 
@@ -3523,8 +3137,7 @@
                 zoomAnzeige.textContent =
                     Math.round(
                         zoom * 100
-                    ) +
-                    " %";
+                    ) + " %";
 
             }
         );
@@ -3535,9 +3148,7 @@
             "click",
             function () {
 
-                bildZoom.hidden =
-                    true;
-
+                bildZoom.hidden = true;
 
                 seiteFreigeben();
 
@@ -3549,7 +3160,6 @@
         modalWarenkorbButton.addEventListener(
             "click",
             function () {
-
 
                 const vorne =
                     Number(
@@ -3571,10 +3181,7 @@
                     massFehler.textContent =
                         "Bitte gib die Länge vorne und hinten ein.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     return;
 
@@ -3589,10 +3196,7 @@
                     massFehler.textContent =
                         "Die Länge vorne muss zwischen 60 cm und 180 cm liegen.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     return;
 
@@ -3607,18 +3211,14 @@
                     massFehler.textContent =
                         "Die Länge hinten muss zwischen 80 cm und 220 cm liegen.";
 
-
-                    massFehler.hidden =
-                        false;
-
+                    massFehler.hidden = false;
 
                     return;
 
                 }
 
 
-                massFehler.hidden =
-                    true;
+                massFehler.hidden = true;
 
 
                 const schluessel =
@@ -3627,9 +3227,7 @@
 
                 const vorhanden =
                     warenkorb.find(
-                        function (
-                            artikel
-                        ) {
+                        function (artikel) {
 
                             return (
                                 artikel.schluessel ===
@@ -3640,9 +3238,7 @@
                     );
 
 
-                if (
-                    vorhanden
-                ) {
+                if (vorhanden) {
 
                     vorhanden.anzahl++;
 
@@ -3709,7 +3305,6 @@
             speichern = true
         ) {
 
-
             warenkorbAnzahl.textContent =
                 warenkorb.reduce(
                     function (
@@ -3727,8 +3322,7 @@
                 );
 
 
-            warenkorbInhalt.innerHTML =
-                "";
+            warenkorbInhalt.innerHTML = "";
 
 
             const gesamt =
@@ -3749,10 +3343,7 @@
                 );
 
 
-            if (
-                warenkorb.length === 0
-            ) {
-
+            if (warenkorb.length === 0) {
 
                 warenkorbInhalt.innerHTML = `
 
@@ -3773,16 +3364,13 @@
                 `;
 
 
-                warenkorbAbschluss.hidden =
-                    true;
+                warenkorbAbschluss.hidden = true;
 
 
                 checkoutAktualisieren();
 
 
-                if (
-                    speichern
-                ) {
+                if (speichern) {
 
                     warenkorbSpeichern();
 
@@ -3800,7 +3388,6 @@
                     artikel,
                     index
                 ) {
-
 
                     const element =
                         document.createElement(
@@ -3870,8 +3457,7 @@
                 );
 
 
-            warenkorbAbschluss.hidden =
-                false;
+            warenkorbAbschluss.hidden = false;
 
 
 
@@ -3880,15 +3466,11 @@
                     ".entfernen"
                 )
                 .forEach(
-                    function (
-                        button
-                    ) {
-
+                    function (button) {
 
                         button.addEventListener(
                             "click",
                             function () {
-
 
                                 warenkorb.splice(
                                     Number(
@@ -3910,9 +3492,7 @@
             checkoutAktualisieren();
 
 
-            if (
-                speichern
-            ) {
+            if (speichern) {
 
                 warenkorbSpeichern();
 
@@ -3926,10 +3506,7 @@
             "click",
             function () {
 
-
-                if (
-                    !aktiverUser
-                ) {
+                if (!aktiverUser) {
 
                     toastAnzeigen(
                         "Bitte anmelden",
@@ -3939,15 +3516,12 @@
 
                     kontoOeffnen();
 
-
                     return;
 
                 }
 
 
-                if (
-                    warenkorb.length === 0
-                ) {
+                if (warenkorb.length === 0) {
 
                     return;
 
@@ -3957,9 +3531,7 @@
                 checkoutAktualisieren();
 
 
-                checkoutModal.hidden =
-                    false;
-
+                checkoutModal.hidden = false;
 
                 seiteSperren();
 
@@ -3972,9 +3544,7 @@
             "click",
             function () {
 
-                checkoutModal.hidden =
-                    true;
-
+                checkoutModal.hidden = true;
 
                 seiteFreigeben();
 
@@ -3985,20 +3555,13 @@
 
         function checkoutAktualisieren() {
 
+            checkoutArtikel.innerHTML = "";
 
-            checkoutArtikel.innerHTML =
-                "";
-
-
-            let gesamt =
-                0;
+            let gesamt = 0;
 
 
             warenkorb.forEach(
-                function (
-                    artikel
-                ) {
-
+                function (artikel) {
 
                     gesamt +=
                         artikel.preis *
@@ -4071,75 +3634,58 @@
             "click",
             function () {
 
-
                 const vorname =
                     document
-                        .getElementById(
-                            "kunde-vorname"
-                        )
+                        .getElementById("kunde-vorname")
                         .value
                         .trim();
 
 
                 const nachname =
                     document
-                        .getElementById(
-                            "kunde-nachname"
-                        )
+                        .getElementById("kunde-nachname")
                         .value
                         .trim();
 
 
                 const email =
                     document
-                        .getElementById(
-                            "kunde-email"
-                        )
+                        .getElementById("kunde-email")
                         .value
                         .trim();
 
 
                 const telefon =
                     document
-                        .getElementById(
-                            "kunde-telefon"
-                        )
+                        .getElementById("kunde-telefon")
                         .value
                         .trim();
 
 
                 const strasse =
                     document
-                        .getElementById(
-                            "kunde-strasse"
-                        )
+                        .getElementById("kunde-strasse")
                         .value
                         .trim();
 
 
                 const plz =
                     document
-                        .getElementById(
-                            "kunde-plz"
-                        )
+                        .getElementById("kunde-plz")
                         .value
                         .trim();
 
 
                 const ort =
                     document
-                        .getElementById(
-                            "kunde-ort"
-                        )
+                        .getElementById("kunde-ort")
                         .value
                         .trim();
 
 
                 const land =
                     document
-                        .getElementById(
-                            "kunde-land"
-                        )
+                        .getElementById("kunde-land")
                         .value;
 
 
@@ -4157,18 +3703,14 @@
                     checkoutFehler.textContent =
                         "Bitte fülle alle Pflichtfelder aus.";
 
-
-                    checkoutFehler.hidden =
-                        false;
-
+                    checkoutFehler.hidden = false;
 
                     return;
 
                 }
 
 
-                checkoutFehler.hidden =
-                    true;
+                checkoutFehler.hidden = true;
 
 
 
@@ -4236,9 +3778,7 @@
                 const artikelHtml =
                     warenkorb
                         .map(
-                            function (
-                                artikel
-                            ) {
+                            function (artikel) {
 
                                 return `
 
@@ -4276,9 +3816,7 @@
 
                             }
                         )
-                        .join(
-                            ""
-                        );
+                        .join("");
 
 
 
@@ -4356,12 +3894,9 @@
                 `;
 
 
-                checkoutModal.hidden =
-                    true;
+                checkoutModal.hidden = true;
 
-
-                bestellpruefung.hidden =
-                    false;
+                bestellpruefung.hidden = false;
 
             }
         );
@@ -4372,9 +3907,7 @@
             "click",
             function () {
 
-                bestellpruefung.hidden =
-                    true;
-
+                bestellpruefung.hidden = true;
 
                 seiteFreigeben();
 
@@ -4385,7 +3918,6 @@
 
         function bestellnummerErstellen() {
 
-
             const datum =
                 new Date();
 
@@ -4394,15 +3926,12 @@
                 datum
                     .getFullYear()
                     .toString()
-                    .slice(
-                        -2
-                    );
+                    .slice(-2);
 
 
             const monat =
                 String(
-                    datum.getMonth() +
-                    1
+                    datum.getMonth() + 1
                 )
                 .padStart(
                     2,
@@ -4440,7 +3969,6 @@
             "click",
             async function () {
 
-
                 if (
                     !aktiverUser ||
                     !aktuelleBestelldaten
@@ -4449,10 +3977,7 @@
                     bestellungFehler.textContent =
                         "Die Bestellung konnte nicht vorbereitet werden.";
 
-
-                    bestellungFehler.hidden =
-                        false;
-
+                    bestellungFehler.hidden = false;
 
                     return;
 
@@ -4460,13 +3985,9 @@
 
 
 
-                bestellungFehler.hidden =
-                    true;
+                bestellungFehler.hidden = true;
 
-
-                bestellungAbsenden.disabled =
-                    true;
-
+                bestellungAbsenden.disabled = true;
 
                 bestellungAbsenden.textContent =
                     "Bestellung wird gesendet …";
@@ -4479,7 +4000,6 @@
 
 
                 try {
-
 
                     await addDoc(
                         collection(
@@ -4521,62 +4041,48 @@
 
 
 
-                    warenkorb =
-                        [];
+                    warenkorb = [];
 
 
                     await warenkorbSpeichern();
 
 
-                    warenkorbAktualisieren(
-                        false
-                    );
+                    warenkorbAktualisieren(false);
 
 
-                    aktuelleBestelldaten =
-                        null;
+                    aktuelleBestelldaten = null;
 
 
-                    bestellpruefung.hidden =
-                        true;
+                    bestellpruefung.hidden = true;
 
 
                     bestaetigungBestellnummer.textContent =
                         bestellnummer;
 
 
-                    bestellbestaetigung.hidden =
-                        false;
+                    bestellbestaetigung.hidden = false;
 
 
                     await ladeBestellungen();
 
-
                 }
 
-                catch (
-                    error
-                ) {
+                catch (error) {
 
-                    console.error(
-                        error
-                    );
+                    console.error(error);
 
 
                     bestellungFehler.textContent =
                         "Die Bestellung konnte nicht gespeichert werden. Bitte versuche es erneut.";
 
 
-                    bestellungFehler.hidden =
-                        false;
+                    bestellungFehler.hidden = false;
 
                 }
 
                 finally {
 
-
-                    bestellungAbsenden.disabled =
-                        false;
+                    bestellungAbsenden.disabled = false;
 
 
                     bestellungAbsenden.textContent =
@@ -4593,9 +4099,7 @@
             "click",
             function () {
 
-                bestellbestaetigung.hidden =
-                    true;
-
+                bestellbestaetigung.hidden = true;
 
                 seiteFreigeben();
 
@@ -4610,10 +4114,7 @@
 
         async function ladeBestellungen() {
 
-
-            if (
-                !aktiverUser
-            ) {
+            if (!aktiverUser) {
 
                 return;
 
@@ -4631,7 +4132,6 @@
 
 
             try {
-
 
                 const q =
                     query(
@@ -4653,15 +4153,11 @@
                     );
 
 
-                const bestellungen =
-                    [];
+                const bestellungen = [];
 
 
                 snapshot.forEach(
-                    function (
-                        dokument
-                    ) {
-
+                    function (dokument) {
 
                         bestellungen.push(
                             {
@@ -4678,11 +4174,7 @@
 
 
                 bestellungen.sort(
-                    function (
-                        a,
-                        b
-                    ) {
-
+                    function (a, b) {
 
                         const aZeit =
                             a.erstelltAm
@@ -4706,9 +4198,7 @@
 
 
 
-                if (
-                    bestellungen.length === 0
-                ) {
+                if (bestellungen.length === 0) {
 
                     meineBestellungen.innerHTML = `
 
@@ -4731,16 +4221,12 @@
 
 
 
-                meineBestellungen.innerHTML =
-                    "";
+                meineBestellungen.innerHTML = "";
 
 
 
                 bestellungen.forEach(
-                    function (
-                        bestellung
-                    ) {
-
+                    function (bestellung) {
 
                         const datum =
                             bestellung.erstelltAm
@@ -4822,16 +4308,11 @@
                     }
                 );
 
-
             }
 
-            catch (
-                error
-            ) {
+            catch (error) {
 
-                console.error(
-                    error
-                );
+                console.error(error);
 
 
                 meineBestellungen.innerHTML = `
@@ -4863,7 +4344,6 @@
             titel,
             text
         ) {
-
 
             toastTitel.textContent =
                 titel;
@@ -4901,10 +4381,7 @@
 
         document.addEventListener(
             "keydown",
-            function (
-                event
-            ) {
-
+            function (event) {
 
                 if (
                     event.key !==
@@ -4925,17 +4402,14 @@
                     kontoModal
                 ]
                 .forEach(
-                    function (
-                        element
-                    ) {
+                    function (element) {
 
                         if (
                             element &&
                             !element.hidden
                         ) {
 
-                            element.hidden =
-                                true;
+                            element.hidden = true;
 
                         }
 
