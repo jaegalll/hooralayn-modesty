@@ -999,8 +999,6 @@
 
 
 
-            <!-- NICHT ANGEMELDET -->
-
             <div id="konto-gast-bereich">
 
 
@@ -1204,8 +1202,6 @@
             </div>
 
 
-
-            <!-- ANGEMELDET -->
 
             <div
                 id="konto-user-bereich"
@@ -2124,7 +2120,7 @@
         const firebaseConfig = {
 
             apiKey:
-                "AIzaSyBAnQmr8Fh-7xALa3RN3gUlevi0149QD7A",
+                "AIzaSyBAnQmr8FH-7xALa3RN3gUlevi0149QD7A",
 
             authDomain:
                 "hooralayn-modesty.firebaseapp.com",
@@ -2195,8 +2191,6 @@
             "hooralayn-gast-warenkorb";
 
 
-
-        /* DOM */
 
         const kontoModal =
             document.getElementById(
@@ -2511,8 +2505,6 @@
 
 
 
-        /* MODAL */
-
         function seiteSperren() {
 
             document.body.classList.add(
@@ -2597,8 +2589,6 @@
 
 
 
-        /* LOGIN TABS */
-
         tabAnmelden.addEventListener(
             "click",
             function () {
@@ -2669,12 +2659,17 @@
 
                 case "auth/weak-password":
 
-                    return "Das Passwort ist zu schwach.";
+                    return "Das Passwort ist zu schwach. Verwende mindestens 6 Zeichen.";
 
 
                 case "auth/invalid-credential":
 
                     return "E-Mail-Adresse oder Passwort ist nicht richtig.";
+
+
+                case "auth/user-disabled":
+
+                    return "Dieses Kundenkonto wurde deaktiviert.";
 
 
                 case "auth/too-many-requests":
@@ -2687,6 +2682,16 @@
                     return "Bitte prüfe deine Internetverbindung.";
 
 
+                case "auth/unauthorized-domain":
+
+                    return "Diese Webseite ist in Firebase noch nicht als autorisierte Domain eingetragen.";
+
+
+                case "auth/api-key-not-valid.-please-pass-a-valid-api-key.":
+
+                    return "Die Verbindung zu unserem Kundenkonto-System ist momentan fehlerhaft.";
+
+
                 default:
 
                     return "Etwas ist schiefgelaufen. Bitte versuche es erneut.";
@@ -2696,8 +2701,6 @@
         }
 
 
-
-        /* REGISTRIEREN */
 
         registrierenForm.addEventListener(
             "submit",
@@ -2851,8 +2854,6 @@
 
 
 
-        /* LOGIN */
-
         anmeldenForm.addEventListener(
             "submit",
             async function (
@@ -2908,6 +2909,11 @@
                     error
                 ) {
 
+                    console.error(
+                        error
+                    );
+
+
                     loginFehler.textContent =
                         authFehlerText(
                             error.code
@@ -2923,8 +2929,6 @@
         );
 
 
-
-        /* PASSWORT */
 
         passwortVergessen.addEventListener(
             "click",
@@ -2966,6 +2970,10 @@
                     );
 
 
+                    loginFehler.hidden =
+                        true;
+
+
                     toastAnzeigen(
                         "E-Mail gesendet",
                         "Du erhältst einen Link zum Zurücksetzen deines Passworts."
@@ -2977,6 +2985,11 @@
                 catch (
                     error
                 ) {
+
+                    console.error(
+                        error
+                    );
+
 
                     loginFehler.textContent =
                         authFehlerText(
@@ -2993,8 +3006,6 @@
         );
 
 
-
-        /* ABMELDEN */
 
         abmeldenButton.addEventListener(
             "click",
@@ -3017,8 +3028,6 @@
         );
 
 
-
-        /* GASTWARENKORB */
 
         function gastWarenkorbLaden() {
 
@@ -3062,8 +3071,6 @@
         }
 
 
-
-        /* WARENKORB FIRESTORE */
 
         async function warenkorbSpeichern() {
 
@@ -3252,8 +3259,6 @@
 
 
 
-        /* AUTH STATUS */
-
         onAuthStateChanged(
             auth,
             async function (
@@ -3366,8 +3371,6 @@
 
 
 
-        /* PRODUKT */
-
         produktOeffnen.addEventListener(
             "click",
             function () {
@@ -3410,8 +3413,6 @@
         );
 
 
-
-        /* BILDZOOM */
 
         const bildZoom =
             document.getElementById(
@@ -3572,8 +3573,6 @@
 
 
 
-        /* PRODUKT IN WARENKORB */
-
         modalWarenkorbButton.addEventListener(
             "click",
             function () {
@@ -3732,8 +3731,6 @@
         );
 
 
-
-        /* WARENKORB ANZEIGE */
 
         function warenkorbAktualisieren(
             speichern = true
@@ -3952,8 +3949,6 @@
 
 
 
-        /* CHECKOUT */
-
         checkoutOeffnen.addEventListener(
             "click",
             function () {
@@ -4098,8 +4093,6 @@
         }
 
 
-
-        /* BESTELLUNG PRÜFEN */
 
         bestellungPruefen.addEventListener(
             "click",
@@ -4417,8 +4410,6 @@
 
 
 
-        /* BESTELLNUMMER */
-
         function bestellnummerErstellen() {
 
 
@@ -4471,8 +4462,6 @@
         }
 
 
-
-        /* BESTELLUNG ABSENDEN */
 
         bestellungAbsenden.addEventListener(
             "click",
@@ -4627,8 +4616,6 @@
 
 
 
-        /* BESTÄTIGUNG */
-
         bestaetigungSchliessen.addEventListener(
             "click",
             function () {
@@ -4647,8 +4634,6 @@
         );
 
 
-
-        /* BESTELLUNGEN LADEN */
 
         async function ladeBestellungen() {
 
@@ -4897,8 +4882,6 @@
 
 
 
-        /* TOAST */
-
         let toastTimer;
 
 
@@ -4942,8 +4925,6 @@
         }
 
 
-
-        /* ESC */
 
         document.addEventListener(
             "keydown",
