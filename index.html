@@ -1079,21 +1079,50 @@
 
                     </div>
 
-                    <div class="stoff-details">
 
-                        <h4>
-                            Zusammensetzung
-                        </h4>
+                    <div class="stoff-details stoff-details-zweispaltig">
 
-                        <p>
-                            <strong>Khimar:</strong>
-                            100 % Bambus
-                        </p>
+                        <div class="stoff-detail-block">
 
-                        <p>
-                            <strong>Kopf & Kinn:</strong>
-                            95 % Baumwolle & 5 % Elasthan
-                        </p>
+                            <h4>
+                                Zusammensetzung
+                            </h4>
+
+                            <p>
+                                <strong>Khimar:</strong>
+                                100 % Bambus
+                            </p>
+
+                            <p>
+                                <strong>Kopf & Kinn:</strong>
+                                95 % Baumwolle & 5 % Elasthan
+                            </p>
+
+                        </div>
+
+
+                        <div class="stoff-detail-block produktbild-masse">
+
+                            <h4>
+                                Maße auf den Produktbildern
+                            </h4>
+
+                            <p>
+                                <strong>Vorne:</strong>
+                                100 cm
+                            </p>
+
+                            <p>
+                                <strong>Hinten:</strong>
+                                140 cm
+                            </p>
+
+                            <small>
+                                Diese Maße dienen zur Orientierung
+                                anhand der gezeigten Produktbilder.
+                            </small>
+
+                        </div>
 
                     </div>
 
@@ -1712,9 +1741,7 @@
             "hooralayn-gast-warenkorb";
 
 
-        /* =========================================
-           PRODUKTSUCHE
-        ========================================= */
+        /* PRODUKTSUCHE */
 
         const produktsuche =
             document.getElementById(
@@ -1843,281 +1870,167 @@
         );
 
 
-        /* =========================================
-           ELEMENTE
-        ========================================= */
+        /* ELEMENTE */
 
         const kontoModal =
-            document.getElementById(
-                "konto-modal"
-            );
+            document.getElementById("konto-modal");
 
         const kontoButton =
-            document.getElementById(
-                "konto-button"
-            );
+            document.getElementById("konto-button");
 
         const kontoButtonText =
-            document.getElementById(
-                "konto-button-text"
-            );
+            document.getElementById("konto-button-text");
 
         const kontoSchliessen =
-            document.getElementById(
-                "konto-schliessen"
-            );
+            document.getElementById("konto-schliessen");
 
         const kontoGastBereich =
-            document.getElementById(
-                "konto-gast-bereich"
-            );
+            document.getElementById("konto-gast-bereich");
 
         const kontoUserBereich =
-            document.getElementById(
-                "konto-user-bereich"
-            );
+            document.getElementById("konto-user-bereich");
 
         const kontoBegruessung =
-            document.getElementById(
-                "konto-begruessung"
-            );
+            document.getElementById("konto-begruessung");
 
         const kontoEmailAnzeige =
-            document.getElementById(
-                "konto-email-anzeige"
-            );
+            document.getElementById("konto-email-anzeige");
 
         const kontoWarenkorbStatus =
-            document.getElementById(
-                "konto-warenkorb-status"
-            );
+            document.getElementById("konto-warenkorb-status");
 
         const meineBestellungen =
-            document.getElementById(
-                "meine-bestellungen"
-            );
+            document.getElementById("meine-bestellungen");
 
         const bestellungenNeuladen =
-            document.getElementById(
-                "bestellungen-neuladen"
-            );
+            document.getElementById("bestellungen-neuladen");
 
         const tabAnmelden =
-            document.getElementById(
-                "tab-anmelden"
-            );
+            document.getElementById("tab-anmelden");
 
         const tabRegistrieren =
-            document.getElementById(
-                "tab-registrieren"
-            );
+            document.getElementById("tab-registrieren");
 
         const anmeldenForm =
-            document.getElementById(
-                "anmelden-form"
-            );
+            document.getElementById("anmelden-form");
 
         const registrierenForm =
-            document.getElementById(
-                "registrieren-form"
-            );
+            document.getElementById("registrieren-form");
 
         const loginFehler =
-            document.getElementById(
-                "login-fehler"
-            );
+            document.getElementById("login-fehler");
 
         const registerFehler =
-            document.getElementById(
-                "register-fehler"
-            );
+            document.getElementById("register-fehler");
 
         const abmeldenButton =
-            document.getElementById(
-                "abmelden-button"
-            );
+            document.getElementById("abmelden-button");
 
         const passwortVergessen =
-            document.getElementById(
-                "passwort-vergessen"
-            );
+            document.getElementById("passwort-vergessen");
 
         const warenkorbLoginButton =
-            document.getElementById(
-                "warenkorb-login-button"
-            );
+            document.getElementById("warenkorb-login-button");
 
         const warenkorbSyncText =
-            document.getElementById(
-                "warenkorb-sync-text"
-            );
+            document.getElementById("warenkorb-sync-text");
 
         const produktModal =
-            document.getElementById(
-                "produkt-modal"
-            );
+            document.getElementById("produkt-modal");
 
         const produktOeffnen =
-            document.getElementById(
-                "produkt-oeffnen"
-            );
+            document.getElementById("produkt-oeffnen");
 
         const produktKonfigurieren =
-            document.getElementById(
-                "produkt-konfigurieren"
-            );
+            document.getElementById("produkt-konfigurieren");
 
         const modalSchliessen =
-            document.getElementById(
-                "modal-schliessen"
-            );
+            document.getElementById("modal-schliessen");
 
         const laengeVorne =
-            document.getElementById(
-                "laenge-vorne"
-            );
+            document.getElementById("laenge-vorne");
 
         const laengeHinten =
-            document.getElementById(
-                "laenge-hinten"
-            );
+            document.getElementById("laenge-hinten");
 
         const massFehler =
-            document.getElementById(
-                "mass-fehler"
-            );
+            document.getElementById("mass-fehler");
 
         const modalWarenkorbButton =
-            document.getElementById(
-                "modal-warenkorb-button"
-            );
+            document.getElementById("modal-warenkorb-button");
 
         const warenkorbAnzahl =
-            document.getElementById(
-                "warenkorb-anzahl"
-            );
+            document.getElementById("warenkorb-anzahl");
 
         const warenkorbInhalt =
-            document.getElementById(
-                "warenkorb-inhalt"
-            );
+            document.getElementById("warenkorb-inhalt");
 
         const gesamtpreis =
-            document.getElementById(
-                "gesamtpreis"
-            );
+            document.getElementById("gesamtpreis");
 
         const warenkorbAbschluss =
-            document.getElementById(
-                "warenkorb-abschluss"
-            );
+            document.getElementById("warenkorb-abschluss");
 
         const warenkorbNav =
-            document.getElementById(
-                "warenkorb-nav"
-            );
+            document.getElementById("warenkorb-nav");
 
         const checkoutModal =
-            document.getElementById(
-                "checkout-modal"
-            );
+            document.getElementById("checkout-modal");
 
         const checkoutOeffnen =
-            document.getElementById(
-                "checkout-oeffnen"
-            );
+            document.getElementById("checkout-oeffnen");
 
         const checkoutSchliessen =
-            document.getElementById(
-                "checkout-schliessen"
-            );
+            document.getElementById("checkout-schliessen");
 
         const checkoutArtikel =
-            document.getElementById(
-                "checkout-artikel"
-            );
+            document.getElementById("checkout-artikel");
 
         const checkoutGesamt =
-            document.getElementById(
-                "checkout-gesamt"
-            );
+            document.getElementById("checkout-gesamt");
 
         const checkoutFehler =
-            document.getElementById(
-                "checkout-fehler"
-            );
+            document.getElementById("checkout-fehler");
 
         const bestellungPruefen =
-            document.getElementById(
-                "bestellung-pruefen"
-            );
+            document.getElementById("bestellung-pruefen");
 
         const bestellpruefung =
-            document.getElementById(
-                "bestellpruefung"
-            );
+            document.getElementById("bestellpruefung");
 
         const pruefungSchliessen =
-            document.getElementById(
-                "pruefung-schliessen"
-            );
+            document.getElementById("pruefung-schliessen");
 
         const pruefungInhalt =
-            document.getElementById(
-                "pruefung-inhalt"
-            );
+            document.getElementById("pruefung-inhalt");
 
         const bestellungAbsenden =
-            document.getElementById(
-                "bestellung-absenden"
-            );
+            document.getElementById("bestellung-absenden");
 
         const bestellungFehler =
-            document.getElementById(
-                "bestellung-fehler"
-            );
+            document.getElementById("bestellung-fehler");
 
         const bestellbestaetigung =
-            document.getElementById(
-                "bestellbestaetigung"
-            );
+            document.getElementById("bestellbestaetigung");
 
         const bestaetigungBestellnummer =
-            document.getElementById(
-                "bestaetigung-bestellnummer"
-            );
+            document.getElementById("bestaetigung-bestellnummer");
 
         const bestaetigungSchliessen =
-            document.getElementById(
-                "bestaetigung-schliessen"
-            );
+            document.getElementById("bestaetigung-schliessen");
 
         const toast =
-            document.getElementById(
-                "warenkorb-toast"
-            );
+            document.getElementById("warenkorb-toast");
 
         const toastTitel =
-            document.getElementById(
-                "toast-titel"
-            );
+            document.getElementById("toast-titel");
 
         const toastNachricht =
-            document.getElementById(
-                "toast-nachricht"
-            );
+            document.getElementById("toast-nachricht");
 
-
-        /* =========================================
-           MODALS
-        ========================================= */
 
         function seiteSperren() {
-
-            document.body.classList.add(
-                "modal-offen"
-            );
-
+            document.body.classList.add("modal-offen");
         }
 
 
@@ -2129,11 +2042,7 @@
                 );
 
             if (offen.length === 0) {
-
-                document.body.classList.remove(
-                    "modal-offen"
-                );
-
+                document.body.classList.remove("modal-offen");
             }
 
         }
@@ -2141,8 +2050,7 @@
 
         function kontoOeffnen() {
 
-            kontoModal.hidden =
-                false;
+            kontoModal.hidden = false;
 
             seiteSperren();
 
@@ -2154,12 +2062,8 @@
 
 
         function kontoSchliessenFunktion() {
-
-            kontoModal.hidden =
-                true;
-
+            kontoModal.hidden = true;
             seiteFreigeben();
-
         }
 
 
@@ -2185,19 +2089,11 @@
             "click",
             function () {
 
-                tabAnmelden.classList.add(
-                    "aktiv"
-                );
+                tabAnmelden.classList.add("aktiv");
+                tabRegistrieren.classList.remove("aktiv");
 
-                tabRegistrieren.classList.remove(
-                    "aktiv"
-                );
-
-                anmeldenForm.hidden =
-                    false;
-
-                registrierenForm.hidden =
-                    true;
+                anmeldenForm.hidden = false;
+                registrierenForm.hidden = true;
 
             }
         );
@@ -2207,27 +2103,15 @@
             "click",
             function () {
 
-                tabRegistrieren.classList.add(
-                    "aktiv"
-                );
+                tabRegistrieren.classList.add("aktiv");
+                tabAnmelden.classList.remove("aktiv");
 
-                tabAnmelden.classList.remove(
-                    "aktiv"
-                );
-
-                registrierenForm.hidden =
-                    false;
-
-                anmeldenForm.hidden =
-                    true;
+                registrierenForm.hidden = false;
+                anmeldenForm.hidden = true;
 
             }
         );
 
-
-        /* =========================================
-           AUTH
-        ========================================= */
 
         function authFehlerText(code) {
 
@@ -2271,54 +2155,41 @@
 
                 event.preventDefault();
 
-                registerFehler.hidden =
-                    true;
+                registerFehler.hidden = true;
 
 
                 const name =
                     document
-                        .getElementById(
-                            "register-name"
-                        )
+                        .getElementById("register-name")
                         .value
                         .trim();
 
 
                 const email =
                     document
-                        .getElementById(
-                            "register-email"
-                        )
+                        .getElementById("register-email")
                         .value
                         .trim();
 
 
                 const passwort =
                     document
-                        .getElementById(
-                            "register-passwort"
-                        )
+                        .getElementById("register-passwort")
                         .value;
 
 
                 const wiederholung =
                     document
-                        .getElementById(
-                            "register-passwort-wiederholen"
-                        )
+                        .getElementById("register-passwort-wiederholen")
                         .value;
 
 
-                if (
-                    passwort !==
-                    wiederholung
-                ) {
+                if (passwort !== wiederholung) {
 
                     registerFehler.textContent =
                         "Die beiden Passwörter stimmen nicht überein.";
 
-                    registerFehler.hidden =
-                        false;
+                    registerFehler.hidden = false;
 
                     return;
 
@@ -2379,12 +2250,9 @@
                     console.error(error);
 
                     registerFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-                    registerFehler.hidden =
-                        false;
+                    registerFehler.hidden = false;
 
                 }
 
@@ -2398,24 +2266,19 @@
 
                 event.preventDefault();
 
-                loginFehler.hidden =
-                    true;
+                loginFehler.hidden = true;
 
 
                 const email =
                     document
-                        .getElementById(
-                            "login-email"
-                        )
+                        .getElementById("login-email")
                         .value
                         .trim();
 
 
                 const passwort =
                     document
-                        .getElementById(
-                            "login-passwort"
-                        )
+                        .getElementById("login-passwort")
                         .value;
 
 
@@ -2443,12 +2306,9 @@
                     console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-                    loginFehler.hidden =
-                        false;
+                    loginFehler.hidden = false;
 
                 }
 
@@ -2462,9 +2322,7 @@
 
                 const email =
                     document
-                        .getElementById(
-                            "login-email"
-                        )
+                        .getElementById("login-email")
                         .value
                         .trim();
 
@@ -2474,8 +2332,7 @@
                     loginFehler.textContent =
                         "Gib zuerst deine E-Mail-Adresse ein.";
 
-                    loginFehler.hidden =
-                        false;
+                    loginFehler.hidden = false;
 
                     return;
 
@@ -2490,8 +2347,7 @@
                     );
 
 
-                    loginFehler.hidden =
-                        true;
+                    loginFehler.hidden = true;
 
 
                     toastAnzeigen(
@@ -2506,12 +2362,9 @@
                     console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
-                    loginFehler.hidden =
-                        false;
+                    loginFehler.hidden = false;
 
                 }
 
@@ -2537,10 +2390,6 @@
         );
 
 
-        /* =========================================
-           GAST-WARENKORB
-        ========================================= */
-
         function gastWarenkorbLaden() {
 
             try {
@@ -2560,9 +2409,7 @@
             }
 
             catch {
-
                 return [];
-
             }
 
         }
@@ -2572,9 +2419,7 @@
 
             localStorage.setItem(
                 GAST_WARENKORB_KEY,
-                JSON.stringify(
-                    warenkorb
-                )
+                JSON.stringify(warenkorb)
             );
 
         }
@@ -2639,9 +2484,7 @@
         }
 
 
-        async function kontoWarenkorbLaden(
-            user
-        ) {
+        async function kontoWarenkorbLaden(user) {
 
             try {
 
@@ -2655,8 +2498,7 @@
                     );
 
 
-                let gespeichert =
-                    [];
+                let gespeichert = [];
 
 
                 if (
@@ -2722,9 +2564,7 @@
                 );
 
 
-                warenkorbAktualisieren(
-                    false
-                );
+                warenkorbAktualisieren(false);
 
 
                 await warenkorbSpeichern();
@@ -2740,25 +2580,17 @@
         }
 
 
-        /* =========================================
-           AUTH STATUS
-        ========================================= */
-
         onAuthStateChanged(
             auth,
             async function (user) {
 
-                aktiverUser =
-                    user;
+                aktiverUser = user;
 
 
                 if (user) {
 
-                    kontoGastBereich.hidden =
-                        true;
-
-                    kontoUserBereich.hidden =
-                        false;
+                    kontoGastBereich.hidden = true;
+                    kontoUserBereich.hidden = false;
 
                     kontoButtonText.textContent =
                         "Mein Konto";
@@ -2811,11 +2643,8 @@
 
                 else {
 
-                    kontoGastBereich.hidden =
-                        false;
-
-                    kontoUserBereich.hidden =
-                        true;
+                    kontoGastBereich.hidden = false;
+                    kontoUserBereich.hidden = true;
 
                     kontoButtonText.textContent =
                         "Anmelden";
@@ -2843,16 +2672,11 @@
         );
 
 
-        /* =========================================
-           PRODUKT MODAL
-        ========================================= */
-
         produktOeffnen.addEventListener(
             "click",
             function () {
 
-                produktModal.hidden =
-                    false;
+                produktModal.hidden = false;
 
                 seiteSperren();
 
@@ -2864,8 +2688,7 @@
             "click",
             function () {
 
-                produktModal.hidden =
-                    false;
+                produktModal.hidden = false;
 
                 seiteSperren();
 
@@ -2877,8 +2700,7 @@
             "click",
             function () {
 
-                produktModal.hidden =
-                    true;
+                produktModal.hidden = true;
 
                 seiteFreigeben();
 
@@ -2886,39 +2708,23 @@
         );
 
 
-        /* =========================================
-           ZOOM
-        ========================================= */
-
         const bildZoom =
-            document.getElementById(
-                "bild-zoom"
-            );
+            document.getElementById("bild-zoom");
 
         const zoomBild =
-            document.getElementById(
-                "zoom-bild"
-            );
+            document.getElementById("zoom-bild");
 
         const zoomSchliessen =
-            document.getElementById(
-                "zoom-schliessen"
-            );
+            document.getElementById("zoom-schliessen");
 
         const zoomPlus =
-            document.getElementById(
-                "zoom-plus"
-            );
+            document.getElementById("zoom-plus");
 
         const zoomMinus =
-            document.getElementById(
-                "zoom-minus"
-            );
+            document.getElementById("zoom-minus");
 
         const zoomAnzeige =
-            document.getElementById(
-                "zoom-anzeige"
-            );
+            document.getElementById("zoom-anzeige");
 
 
         let zoom = 1;
@@ -2938,8 +2744,7 @@
                             zoomBild.src =
                                 button.dataset.bild;
 
-                            zoom =
-                                1;
+                            zoom = 1;
 
                             zoomBild.style.transform =
                                 "scale(1)";
@@ -3009,18 +2814,13 @@
             "click",
             function () {
 
-                bildZoom.hidden =
-                    true;
+                bildZoom.hidden = true;
 
                 seiteFreigeben();
 
             }
         );
 
-
-        /* =========================================
-           BAMBUS KHIMAR IN WARENKORB
-        ========================================= */
 
         modalWarenkorbButton.addEventListener(
             "click",
@@ -3046,8 +2846,7 @@
                     massFehler.textContent =
                         "Bitte gib die Länge vorne und hinten ein.";
 
-                    massFehler.hidden =
-                        false;
+                    massFehler.hidden = false;
 
                     return;
 
@@ -3062,8 +2861,7 @@
                     massFehler.textContent =
                         "Die Länge vorne darf maximal 140 cm betragen.";
 
-                    massFehler.hidden =
-                        false;
+                    massFehler.hidden = false;
 
                     return;
 
@@ -3078,16 +2876,14 @@
                     massFehler.textContent =
                         "Die Länge hinten darf maximal 140 cm betragen.";
 
-                    massFehler.hidden =
-                        false;
+                    massFehler.hidden = false;
 
                     return;
 
                 }
 
 
-                massFehler.hidden =
-                    true;
+                massFehler.hidden = true;
 
 
                 const schluessel =
@@ -3168,10 +2964,6 @@
             }
         );
 
-
-        /* =========================================
-           WARENKORB ANZEIGE
-        ========================================= */
 
         function warenkorbAktualisieren(
             speichern = true
@@ -3370,10 +3162,6 @@
         }
 
 
-        /* =========================================
-           CHECKOUT
-        ========================================= */
-
         checkoutOeffnen.addEventListener(
             "click",
             function () {
@@ -3403,8 +3191,7 @@
                 checkoutAktualisieren();
 
 
-                checkoutModal.hidden =
-                    false;
+                checkoutModal.hidden = false;
 
                 seiteSperren();
 
@@ -3416,8 +3203,7 @@
             "click",
             function () {
 
-                checkoutModal.hidden =
-                    true;
+                checkoutModal.hidden = true;
 
                 seiteFreigeben();
 
@@ -3590,16 +3376,14 @@
                     checkoutFehler.textContent =
                         "Bitte fülle alle Pflichtfelder aus.";
 
-                    checkoutFehler.hidden =
-                        false;
+                    checkoutFehler.hidden = false;
 
                     return;
 
                 }
 
 
-                checkoutFehler.hidden =
-                    true;
+                checkoutFehler.hidden = true;
 
 
                 const gesamt =
@@ -4005,10 +3789,6 @@
         );
 
 
-        /* =========================================
-           BESTELLUNGEN IM KONTO
-        ========================================= */
-
         async function ladeBestellungen() {
 
             if (!aktiverUser) {
@@ -4227,10 +4007,6 @@
         );
 
 
-        /* =========================================
-           TOAST
-        ========================================= */
-
         let toastTimer;
 
 
@@ -4271,10 +4047,6 @@
 
         }
 
-
-        /* =========================================
-           ESC SCHLIESST MODALS
-        ========================================= */
 
         document.addEventListener(
             "keydown",
