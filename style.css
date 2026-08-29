@@ -307,12 +307,10 @@ nav a:hover::after {
 }
 
 @keyframes pulsieren {
-
     50% {
         transform:
             scale(1.08);
     }
-
 }
 
 
@@ -1421,7 +1419,7 @@ nav a:hover::after {
 }
 
 
-/* SOCIAL MEDIA IM ÜBER-UNS-BEREICH */
+/* SOCIAL MEDIA */
 
 .social-bereich {
     margin-top: 18px;
@@ -3107,9 +3105,6 @@ footer small {
         );
 }
 
-
-/* BESCHRIFTUNG ALLER MAẞFELDER */
-
 .mass-auswahl label > span {
     display: block;
 
@@ -3137,9 +3132,6 @@ footer small {
 
     font-size: 8px;
 }
-
-
-/* INPUT */
 
 .mass-input {
     display: flex;
@@ -3225,9 +3217,6 @@ footer small {
     align-items: start;
 }
 
-
-/* ABAYA LINKS */
-
 .abaya-masse-layout > label {
     min-width: 0;
 
@@ -3240,9 +3229,6 @@ footer small {
     background:
         var(--cream-light);
 }
-
-
-/* HIJAB RECHTS */
 
 .abaya-hijab-masse {
     min-width: 0;
@@ -3265,9 +3251,6 @@ footer small {
     min-width: 0;
 }
 
-
-/* Kleine optische Trennung zwischen vorne und hinten */
-
 .abaya-hijab-masse label + label {
     padding-top: 17px;
 
@@ -3275,7 +3258,6 @@ footer small {
         1px solid
         var(--line);
 }
-
 
 .modal-warenkorb {
     width: 100%;
@@ -4072,7 +4054,7 @@ footer small {
     .kontakt-section {
         padding:
             75px
-            5%;
+            4%;
     }
 
     .section-heading {
@@ -4088,7 +4070,7 @@ footer small {
         margin:
             -10px
             auto
-            35px;
+            30px;
     }
 
     .produktsuche {
@@ -4104,25 +4086,170 @@ footer small {
     }
 
 
+    /* =========================================
+       PRODUKTE AUF HANDY:
+       2 KARTEN NEBENEINANDER
+    ========================================= */
+
     .produkte {
+        width: 100%;
+
         grid-template-columns:
-            1fr;
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap: 10px;
+
+        align-items: stretch;
     }
 
     .produkt {
-        width:
-            min(
-                430px,
-                100%
-            );
+        width: 100%;
 
-        margin:
-            0
-            auto;
+        min-width: 0;
+
+        margin: 0;
+
+        padding: 8px;
+
+        box-shadow:
+            0 8px 22px
+            rgba(
+                73,
+                58,
+                49,
+                0.08
+            );
+    }
+
+    .produkt:hover {
+        transform: none;
+    }
+
+    .produkt-top {
+        top: 14px;
+        left: 14px;
+        right: 14px;
+    }
+
+    .produkt-label {
+        padding:
+            4px
+            5px;
+
+        font-size: 5px;
+
+        letter-spacing: 0.8px;
+    }
+
+    .produkt-herz {
+        width: 24px;
+        height: 24px;
+
+        font-size: 11px;
+    }
+
+    .produkt-hauptbild {
+        aspect-ratio:
+            4 / 5;
     }
 
     .produkt-overlay {
         display: none;
+    }
+
+    .produkt-titel-bereich {
+        padding:
+            12px
+            1px
+            0;
+    }
+
+    .produkt-kategorie {
+        margin-bottom: 5px;
+
+        font-size: 6px;
+
+        letter-spacing: 0.8px;
+
+        line-height: 1.4;
+    }
+
+    .produkt-titel-bereich h3 {
+        font-size: 17px;
+
+        line-height: 1.1;
+    }
+
+    .material {
+        min-height: 35px;
+
+        margin:
+            6px
+            1px
+            8px;
+
+        font-size: 7px;
+
+        line-height: 1.45;
+    }
+
+    .produkt-preis-zeile {
+        margin:
+            0
+            1px
+            9px;
+
+        display: block;
+    }
+
+    .preis {
+        font-size: 17px;
+    }
+
+    .produkt-preis-zeile span {
+        display: block;
+
+        margin-top: 3px;
+
+        font-size: 6px;
+
+        line-height: 1.35;
+
+        text-align: left;
+    }
+
+    .produkt
+    .warenkorb-button {
+        min-height: 40px;
+
+        padding:
+            8px
+            5px;
+
+        font-size: 7px;
+
+        line-height: 1.3;
+
+        letter-spacing: 0.2px;
+
+        text-align: center;
+    }
+
+    .produkt-hinweis {
+        margin:
+            6px
+            0
+            0;
+
+        font-size: 6px;
+
+        line-height: 1.35;
     }
 
 
@@ -4287,8 +4414,6 @@ footer small {
             1fr;
     }
 
-
-    /* ABAYA + HIJAB AUF HANDY UNTEREINANDER */
 
     .abaya-masse-layout {
         grid-template-columns:
