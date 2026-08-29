@@ -540,6 +540,7 @@
 
             </div>
 
+
             <div class="ueber-text">
 
                 <p class="eyebrow">
@@ -561,6 +562,87 @@
                     auf angenehmen Fall, Komfort und eine elegante,
                     zurückhaltende Silhouette.
                 </p>
+
+
+                <!-- SOCIAL MEDIA -->
+                <div class="social-bereich">
+
+                    <p class="social-ueberschrift">
+                        FOLGE HOORALAYN MODESTY
+                    </p>
+
+                    <div class="social-links">
+
+                        <a
+                            class="social-link"
+                            href="https://www.instagram.com/hooralayn_modesty/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="HoorAlAyn Modesty auf Instagram"
+                        >
+
+                            <span class="social-symbol">
+                                ◎
+                            </span>
+
+                            <span class="social-link-text">
+
+                                <small>
+                                    INSTAGRAM
+                                </small>
+
+                                <strong>
+                                    @hooralayn_modesty
+                                </strong>
+
+                            </span>
+
+                            <span class="social-pfeil">
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            class="social-link"
+                            href="https://www.tiktok.com/@hural.ayn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="HoorAlAyn Modesty auf TikTok"
+                        >
+
+                            <span class="social-symbol">
+                                ♪
+                            </span>
+
+                            <span class="social-link-text">
+
+                                <small>
+                                    TIKTOK
+                                </small>
+
+                                <strong>
+                                    @hural.ayn
+                                </strong>
+
+                            </span>
+
+                            <span class="social-pfeil">
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <p class="social-hinweis">
+                        Folge uns für neue Pieces, Stofffarben und Einblicke
+                        hinter die Kulissen.
+                    </p>
+
+                </div>
+
 
                 <div class="ueber-signatur">
 
@@ -1304,7 +1386,6 @@
                 </div>
 
 
-                <!-- KHIMAR MAẞE -->
                 <div class="mass-auswahl">
 
                     <p class="eyebrow">
@@ -1437,7 +1518,6 @@
             </div>
 
 
-            <!-- 4 PRODUKTBILDER -->
             <div class="produkt-detail-bilder vier-bilder">
 
                 <button
@@ -1827,7 +1907,7 @@
                 </div>
 
 
-                <!-- ABAYA LÄNGE - OHNE MAXIMUM -->
+                <!-- ABAYA LÄNGE -->
                 <div class="mass-auswahl">
 
                     <p class="eyebrow">
@@ -2420,9 +2500,7 @@
             "hooralayn-gast-warenkorb";
 
 
-        /* =========================================
-           PRODUKTSUCHE
-        ========================================= */
+        /* PRODUKTSUCHE */
 
         const produktsuche =
             document.getElementById(
@@ -2448,8 +2526,7 @@
         function produkteFiltern() {
 
             const suchbegriff =
-                produktsuche
-                    .value
+                produktsuche.value
                     .trim()
                     .toLowerCase();
 
@@ -2469,18 +2546,12 @@
                         (
                             produkt.textContent +
                             " " +
-                            (
-                                produkt.dataset.search ||
-                                ""
-                            )
-                        )
-                        .toLowerCase();
+                            (produkt.dataset.search || "")
+                        ).toLowerCase();
 
                     const passt =
                         !suchbegriff ||
-                        suchtext.includes(
-                            suchbegriff
-                        );
+                        suchtext.includes(suchbegriff);
 
                     produkt.hidden =
                         !passt;
@@ -2546,9 +2617,7 @@
         );
 
 
-        /* =========================================
-           ELEMENTE
-        ========================================= */
+        /* ELEMENTE */
 
         const kontoModal =
             document.getElementById("konto-modal");
@@ -2740,16 +2809,10 @@
             document.getElementById("toast-nachricht");
 
 
-        /* =========================================
-           MODALS
-        ========================================= */
+        /* MODALS */
 
         function seiteSperren() {
-
-            document.body.classList.add(
-                "modal-offen"
-            );
-
+            document.body.classList.add("modal-offen");
         }
 
 
@@ -2761,11 +2824,7 @@
                 );
 
             if (offen.length === 0) {
-
-                document.body.classList.remove(
-                    "modal-offen"
-                );
-
+                document.body.classList.remove("modal-offen");
             }
 
         }
@@ -2800,12 +2859,10 @@
             kontoOeffnen
         );
 
-
         warenkorbLoginButton.addEventListener(
             "click",
             kontoOeffnen
         );
-
 
         kontoSchliessen.addEventListener(
             "click",
@@ -2817,13 +2874,8 @@
             "click",
             function () {
 
-                tabAnmelden.classList.add(
-                    "aktiv"
-                );
-
-                tabRegistrieren.classList.remove(
-                    "aktiv"
-                );
+                tabAnmelden.classList.add("aktiv");
+                tabRegistrieren.classList.remove("aktiv");
 
                 anmeldenForm.hidden =
                     false;
@@ -2839,13 +2891,8 @@
             "click",
             function () {
 
-                tabRegistrieren.classList.add(
-                    "aktiv"
-                );
-
-                tabAnmelden.classList.remove(
-                    "aktiv"
-                );
+                tabRegistrieren.classList.add("aktiv");
+                tabAnmelden.classList.remove("aktiv");
 
                 registrierenForm.hidden =
                     false;
@@ -2857,9 +2904,7 @@
         );
 
 
-        /* =========================================
-           AUTH
-        ========================================= */
+        /* AUTH */
 
         function authFehlerText(code) {
 
@@ -2907,25 +2952,19 @@
                     true;
 
                 const name =
-                    document
-                        .getElementById("register-name")
-                        .value
-                        .trim();
+                    document.getElementById("register-name")
+                        .value.trim();
 
                 const email =
-                    document
-                        .getElementById("register-email")
-                        .value
-                        .trim();
+                    document.getElementById("register-email")
+                        .value.trim();
 
                 const passwort =
-                    document
-                        .getElementById("register-passwort")
+                    document.getElementById("register-passwort")
                         .value;
 
                 const wiederholung =
-                    document
-                        .getElementById("register-passwort-wiederholen")
+                    document.getElementById("register-passwort-wiederholen")
                         .value;
 
 
@@ -3005,9 +3044,7 @@
                     console.error(error);
 
                     registerFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
                     registerFehler.hidden =
                         false;
@@ -3028,14 +3065,11 @@
                     true;
 
                 const email =
-                    document
-                        .getElementById("login-email")
-                        .value
-                        .trim();
+                    document.getElementById("login-email")
+                        .value.trim();
 
                 const passwort =
-                    document
-                        .getElementById("login-passwort")
+                    document.getElementById("login-passwort")
                         .value;
 
 
@@ -3047,9 +3081,7 @@
                         passwort
                     );
 
-
                     anmeldenForm.reset();
-
 
                     toastAnzeigen(
                         "Willkommen zurück",
@@ -3063,9 +3095,7 @@
                     console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
                     loginFehler.hidden =
                         false;
@@ -3081,10 +3111,8 @@
             async function () {
 
                 const email =
-                    document
-                        .getElementById("login-email")
-                        .value
-                        .trim();
+                    document.getElementById("login-email")
+                        .value.trim();
 
 
                 if (!email) {
@@ -3107,10 +3135,8 @@
                         email
                     );
 
-
                     loginFehler.hidden =
                         true;
-
 
                     toastAnzeigen(
                         "E-Mail gesendet",
@@ -3124,9 +3150,7 @@
                     console.error(error);
 
                     loginFehler.textContent =
-                        authFehlerText(
-                            error.code
-                        );
+                        authFehlerText(error.code);
 
                     loginFehler.hidden =
                         false;
@@ -3145,7 +3169,6 @@
 
                 kontoSchliessenFunktion();
 
-
                 toastAnzeigen(
                     "Abgemeldet",
                     "Deine Kontodaten bleiben gespeichert."
@@ -3155,9 +3178,7 @@
         );
 
 
-        /* =========================================
-           WARENKORB SPEICHERN
-        ========================================= */
+        /* WARENKORB SPEICHERN */
 
         function gastWarenkorbLaden() {
 
@@ -3189,9 +3210,7 @@
 
             localStorage.setItem(
                 GAST_WARENKORB_KEY,
-                JSON.stringify(
-                    warenkorb
-                )
+                JSON.stringify(warenkorb)
             );
 
         }
@@ -3292,9 +3311,7 @@
 
 
                 warenkorb =
-                    [
-                        ...gespeichert
-                    ];
+                    [...gespeichert];
 
 
                 gast.forEach(
@@ -3322,9 +3339,7 @@
 
                         else {
 
-                            warenkorb.push(
-                                artikel
-                            );
+                            warenkorb.push(artikel);
 
                         }
 
@@ -3337,10 +3352,7 @@
                 );
 
 
-                warenkorbAktualisieren(
-                    false
-                );
-
+                warenkorbAktualisieren(false);
 
                 await warenkorbSpeichern();
 
@@ -3377,8 +3389,7 @@
 
                     kontoBegruessung.textContent =
                         user.displayName
-                            ? "Hallo " +
-                              user.displayName
+                            ? "Hallo " + user.displayName
                             : "Willkommen";
 
 
@@ -3411,10 +3422,7 @@
                     }
 
 
-                    await kontoWarenkorbLaden(
-                        user
-                    );
-
+                    await kontoWarenkorbLaden(user);
 
                     await ladeBestellungen();
 
@@ -3444,9 +3452,7 @@
                         gastWarenkorbLaden();
 
 
-                    warenkorbAktualisieren(
-                        false
-                    );
+                    warenkorbAktualisieren(false);
 
                 }
 
@@ -3454,9 +3460,7 @@
         );
 
 
-        /* =========================================
-           NUR KHIMAR AUF 140 CM BEGRENZEN
-        ========================================= */
+        /* NUR KHIMAR MAX. 140 CM */
 
         function begrenzeAuf140(input) {
 
@@ -3464,15 +3468,8 @@
                 "input",
                 function () {
 
-                    if (
-                        Number(
-                            input.value
-                        ) > 140
-                    ) {
-
-                        input.value =
-                            140;
-
+                    if (Number(input.value) > 140) {
+                        input.value = 140;
                     }
 
                 }
@@ -3490,13 +3487,7 @@
         );
 
 
-        /* WICHTIG:
-           ABAYA WIRD NICHT AUF 140 CM BEGRENZT */
-
-
-        /* =========================================
-           KHIMAR MODAL
-        ========================================= */
+        /* KHIMAR MODAL */
 
         function khimarOeffnen() {
 
@@ -3513,12 +3504,10 @@
             khimarOeffnen
         );
 
-
         khimarKonfigurieren.addEventListener(
             "click",
             khimarOeffnen
         );
-
 
         khimarModalSchliessen.addEventListener(
             "click",
@@ -3533,9 +3522,7 @@
         );
 
 
-        /* =========================================
-           ABAYA MODAL
-        ========================================= */
+        /* ABAYA MODAL */
 
         function abayaOeffnen() {
 
@@ -3552,12 +3539,10 @@
             abayaOeffnen
         );
 
-
         abayaKonfigurieren.addEventListener(
             "click",
             abayaOeffnen
         );
-
 
         abayaModalSchliessen.addEventListener(
             "click",
@@ -3572,9 +3557,7 @@
         );
 
 
-        /* =========================================
-           FARBAUSWAHL ABAYA
-        ========================================= */
+        /* FARBAUSWAHL */
 
         document
             .querySelectorAll(
@@ -3626,39 +3609,25 @@
             );
 
 
-        /* =========================================
-           ZOOM
-        ========================================= */
+        /* ZOOM */
 
         const bildZoom =
-            document.getElementById(
-                "bild-zoom"
-            );
+            document.getElementById("bild-zoom");
 
         const zoomBild =
-            document.getElementById(
-                "zoom-bild"
-            );
+            document.getElementById("zoom-bild");
 
         const zoomSchliessen =
-            document.getElementById(
-                "zoom-schliessen"
-            );
+            document.getElementById("zoom-schliessen");
 
         const zoomPlus =
-            document.getElementById(
-                "zoom-plus"
-            );
+            document.getElementById("zoom-plus");
 
         const zoomMinus =
-            document.getElementById(
-                "zoom-minus"
-            );
+            document.getElementById("zoom-minus");
 
         const zoomAnzeige =
-            document.getElementById(
-                "zoom-anzeige"
-            );
+            document.getElementById("zoom-anzeige");
 
 
         let zoom =
@@ -3666,9 +3635,7 @@
 
 
         document
-            .querySelectorAll(
-                ".zoom-bild-button"
-            )
+            .querySelectorAll(".zoom-bild-button")
             .forEach(
                 function (button) {
 
@@ -3712,9 +3679,7 @@
                     `scale(${zoom})`;
 
                 zoomAnzeige.textContent =
-                    Math.round(
-                        zoom * 100
-                    ) +
+                    Math.round(zoom * 100) +
                     " %";
 
             }
@@ -3733,9 +3698,7 @@
                     `scale(${zoom})`;
 
                 zoomAnzeige.textContent =
-                    Math.round(
-                        zoom * 100
-                    ) +
+                    Math.round(zoom * 100) +
                     " %";
 
             }
@@ -3755,9 +3718,7 @@
         );
 
 
-        /* =========================================
-           KHIMAR IN WARENKORB
-        ========================================= */
+        /* KHIMAR IN WARENKORB */
 
         khimarWarenkorbButton.addEventListener(
             "click",
@@ -3774,10 +3735,7 @@
                     );
 
 
-                if (
-                    !vorne ||
-                    !hinten
-                ) {
+                if (!vorne || !hinten) {
 
                     khimarMassFehler.textContent =
                         "Bitte gib die Länge vorne und hinten ein.";
@@ -3894,10 +3852,7 @@
         );
 
 
-        /* =========================================
-           ABAYA SET IN WARENKORB
-           KEINE 140-CM-BEGRENZUNG
-        ========================================= */
+        /* ABAYA IN WARENKORB */
 
         abayaWarenkorbButton.addEventListener(
             "click",
@@ -4040,9 +3995,7 @@
         }
 
 
-        /* =========================================
-           ARTIKELDETAILS
-        ========================================= */
+        /* ARTIKELDETAILS */
 
         function artikelDetailsHtml(artikel) {
 
@@ -4091,9 +4044,7 @@
         }
 
 
-        /* =========================================
-           WARENKORB
-        ========================================= */
+        /* WARENKORB */
 
         function warenkorbAktualisieren(
             speichern = true
@@ -4138,9 +4089,7 @@
                 );
 
 
-            if (
-                warenkorb.length === 0
-            ) {
+            if (warenkorb.length === 0) {
 
                 warenkorbInhalt.innerHTML = `
 
@@ -4169,9 +4118,7 @@
 
 
                 if (speichern) {
-
                     warenkorbSpeichern();
-
                 }
 
 
@@ -4235,9 +4182,7 @@
 
 
             gesamtpreis.textContent =
-                euro.format(
-                    gesamt
-                );
+                euro.format(gesamt);
 
 
             warenkorbAbschluss.hidden =
@@ -4245,9 +4190,7 @@
 
 
             document
-                .querySelectorAll(
-                    ".entfernen"
-                )
+                .querySelectorAll(".entfernen")
                 .forEach(
                     function (button) {
 
@@ -4276,17 +4219,13 @@
 
 
             if (speichern) {
-
                 warenkorbSpeichern();
-
             }
 
         }
 
 
-        /* =========================================
-           CHECKOUT
-        ========================================= */
+        /* CHECKOUT */
 
         checkoutOeffnen.addEventListener(
             "click",
@@ -4307,12 +4246,8 @@
                 }
 
 
-                if (
-                    warenkorb.length === 0
-                ) {
-
+                if (warenkorb.length === 0) {
                     return;
-
                 }
 
 
@@ -4400,16 +4335,12 @@
 
 
             checkoutGesamt.textContent =
-                euro.format(
-                    gesamt
-                );
+                euro.format(gesamt);
 
         }
 
 
-        /* =========================================
-           BESTELLUNG PRÜFEN
-        ========================================= */
+        /* BESTELLUNG PRÜFEN */
 
         function htmlSicher(wert) {
 
@@ -4428,50 +4359,35 @@
             function () {
 
                 const vorname =
-                    document
-                        .getElementById("kunde-vorname")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-vorname")
+                        .value.trim();
 
                 const nachname =
-                    document
-                        .getElementById("kunde-nachname")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-nachname")
+                        .value.trim();
 
                 const email =
-                    document
-                        .getElementById("kunde-email")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-email")
+                        .value.trim();
 
                 const telefon =
-                    document
-                        .getElementById("kunde-telefon")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-telefon")
+                        .value.trim();
 
                 const strasse =
-                    document
-                        .getElementById("kunde-strasse")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-strasse")
+                        .value.trim();
 
                 const plz =
-                    document
-                        .getElementById("kunde-plz")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-plz")
+                        .value.trim();
 
                 const ort =
-                    document
-                        .getElementById("kunde-ort")
-                        .value
-                        .trim();
+                    document.getElementById("kunde-ort")
+                        .value.trim();
 
                 const land =
-                    document
-                        .getElementById("kunde-land")
+                    document.getElementById("kunde-land")
                         .value;
 
 
@@ -4523,29 +4439,14 @@
 
                         kunde:
                             {
-                                vorname:
-                                    vorname,
-
-                                nachname:
-                                    nachname,
-
-                                email:
-                                    email,
-
-                                telefon:
-                                    telefon,
-
-                                strasse:
-                                    strasse,
-
-                                plz:
-                                    plz,
-
-                                ort:
-                                    ort,
-
-                                land:
-                                    land
+                                vorname,
+                                nachname,
+                                email,
+                                telefon,
+                                strasse,
+                                plz,
+                                ort,
+                                land
                             },
 
                         artikel:
@@ -4596,9 +4497,7 @@
 
                     <div class="pruefung-bereich">
 
-                        <h3>
-                            Kunde
-                        </h3>
+                        <h3>Kunde</h3>
 
                         <p>
                             ${htmlSicher(vorname)}
@@ -4655,9 +4554,7 @@
                         </span>
 
                         <strong>
-                            ${euro.format(
-                                gesamt
-                            )}
+                            ${euro.format(gesamt)}
                         </strong>
 
                     </div>
@@ -4689,9 +4586,7 @@
         );
 
 
-        /* =========================================
-           BESTELLUNG SPEICHERN
-        ========================================= */
+        /* BESTELLUNG SPEICHERN */
 
         function bestellnummerErstellen() {
 
@@ -4699,15 +4594,13 @@
                 new Date();
 
             const jahr =
-                datum
-                    .getFullYear()
+                datum.getFullYear()
                     .toString()
                     .slice(-2);
 
             const monat =
                 String(
-                    datum.getMonth() +
-                    1
+                    datum.getMonth() + 1
                 )
                 .padStart(
                     2,
@@ -4820,9 +4713,7 @@
                     await warenkorbSpeichern();
 
 
-                    warenkorbAktualisieren(
-                        false
-                    );
+                    warenkorbAktualisieren(false);
 
 
                     aktuelleBestelldaten =
@@ -4881,9 +4772,7 @@
                 bestellbestaetigung.hidden =
                     true;
 
-
                 seiteFreigeben();
-
 
                 window.location.hash =
                     "kollektion";
@@ -4892,9 +4781,7 @@
         );
 
 
-        /* =========================================
-           BESTELLUNGEN
-        ========================================= */
+        /* BESTELLUNGEN */
 
         async function ladeBestellungen() {
 
@@ -4974,9 +4861,7 @@
                 );
 
 
-                if (
-                    bestellungen.length === 0
-                ) {
+                if (bestellungen.length === 0) {
 
                     meineBestellungen.innerHTML = `
 
@@ -5111,9 +4996,7 @@
         );
 
 
-        /* =========================================
-           TOAST
-        ========================================= */
+        /* TOAST */
 
         let toastTimer;
 
@@ -5152,18 +5035,13 @@
         }
 
 
-        /* =========================================
-           ESC
-        ========================================= */
+        /* ESC */
 
         document.addEventListener(
             "keydown",
             function (event) {
 
-                if (
-                    event.key !==
-                    "Escape"
-                ) {
+                if (event.key !== "Escape") {
                     return;
                 }
 
