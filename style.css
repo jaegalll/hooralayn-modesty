@@ -3107,7 +3107,10 @@ footer small {
         );
 }
 
-.mass-felder label > span {
+
+/* BESCHRIFTUNG ALLER MAẞFELDER */
+
+.mass-auswahl label > span {
     display: block;
 
     margin-bottom: 7px;
@@ -3119,6 +3122,24 @@ footer small {
     font-size: 9px;
     font-weight: bold;
 }
+
+.mass-auswahl label > small {
+    display: block;
+
+    margin-top: 6px;
+
+    color:
+        var(--brown-light);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+}
+
+
+/* INPUT */
 
 .mass-input {
     display: flex;
@@ -3135,6 +3156,15 @@ footer small {
 .mass-input:focus-within {
     border-color:
         var(--brown);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(
+            73,
+            58,
+            49,
+            0.05
+        );
 }
 
 .mass-input input {
@@ -3166,6 +3196,8 @@ footer small {
         0
         13px;
 
+    margin: 0 !important;
+
     color:
         var(--brown-light);
 
@@ -3174,22 +3206,76 @@ footer small {
         sans-serif;
 
     font-size: 9px;
+
+    font-weight: normal !important;
 }
 
-.mass-felder label > small {
-    display: block;
 
-    margin-top: 6px;
+/* ABAYA + HIJAB MAẞE */
 
-    color:
-        var(--brown-light);
+.abaya-masse-layout {
+    display: grid;
 
-    font-family:
-        Arial,
-        sans-serif;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    font-size: 8px;
+    gap: 18px;
+
+    align-items: start;
 }
+
+
+/* ABAYA LINKS */
+
+.abaya-masse-layout > label {
+    min-width: 0;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        var(--cream-light);
+}
+
+
+/* HIJAB RECHTS */
+
+.abaya-hijab-masse {
+    min-width: 0;
+
+    padding: 18px;
+
+    display: grid;
+
+    gap: 17px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:
+        var(--cream);
+}
+
+.abaya-hijab-masse label {
+    min-width: 0;
+}
+
+
+/* Kleine optische Trennung zwischen vorne und hinten */
+
+.abaya-hijab-masse label + label {
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
 
 .modal-warenkorb {
     width: 100%;
@@ -4199,6 +4285,21 @@ footer small {
     .mass-felder-eins {
         grid-template-columns:
             1fr;
+    }
+
+
+    /* ABAYA + HIJAB AUF HANDY UNTEREINANDER */
+
+    .abaya-masse-layout {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+    .abaya-masse-layout > label,
+    .abaya-hijab-masse {
+        padding: 14px;
     }
 
 
