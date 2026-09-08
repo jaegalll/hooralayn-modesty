@@ -2017,7 +2017,8 @@
                                 <input
                                     type="number"
                                     id="abaya-laenge"
-                                    min="1"
+                                    min="60"
+                                    max="220"
                                     inputmode="numeric"
                                 >
 
@@ -2047,7 +2048,8 @@
                                     <input
                                         type="number"
                                         id="abaya-hijab-vorne"
-                                        min="1"
+                                        min="60"
+                                        max="220"
                                         inputmode="numeric"
                                     >
 
@@ -2075,7 +2077,8 @@
                                     <input
                                         type="number"
                                         id="abaya-hijab-hinten"
-                                        min="1"
+                                        min="60"
+                                        max="220"
                                         inputmode="numeric"
                                     >
 
@@ -2362,10 +2365,6 @@
                                     Schweiz
                                 </option>
 
-                                <option value="Anderes Land">
-                                    Anderes Land
-                                </option>
-
                             </select>
 
                         </label>
@@ -2400,6 +2399,10 @@
                     </h3>
 
                     <div id="checkout-artikel"></div>
+
+                    <p class="checkout-versand-hinweis" id="checkout-versand-hinweis">
+                        Wähle dein Lieferland, damit der Versand angezeigt wird.
+                    </p>
 
                     <div class="checkout-summe">
 
@@ -2679,6 +2682,14 @@
             "Königsblau",
             "Rosa"
         ];
+
+        /* Diese Werte entsprechen der serverseitigen Versandberechnung.
+           Der Server bleibt die maßgebliche Stelle für den Endbetrag. */
+        const VERSAND_PREISE = Object.freeze({
+            Deutschland: { produkt: "DHL Paket bis 2 kg", betrag: 6.19 },
+            "Österreich": { produkt: "DHL Paket International bis 2 kg", betrag: 14.49 },
+            Schweiz: { produkt: "DHL Paket International bis 2 kg", betrag: 19.49 }
+        });
 
 
         const GAST_WARENKORB_KEY =
@@ -3224,6 +3235,11 @@
         const checkoutArtikel =
             document.getElementById(
                 "checkout-artikel"
+            );
+
+        const checkoutVersandHinweis =
+            document.getElementById(
+                "checkout-versand-hinweis"
             );
 
         const checkoutGesamt =
@@ -4564,13 +4580,16 @@
 
 
                 if (
-                    laenge <= 0 ||
-                    hijabVorne <= 0 ||
-                    hijabHinten <= 0
+                    laenge < 60 ||
+                    laenge > 220 ||
+                    hijabVorne < 60 ||
+                    hijabVorne > 220 ||
+                    hijabHinten < 60 ||
+                    hijabHinten > 220
                 ) {
 
                     abayaFehler.textContent =
-                        "Bitte gib gültige Maße ein.";
+                        "Bitte gib Maße zwischen 60 und 220 cm ein.";
 
                     abayaFehler.hidden =
                         false;
@@ -5074,15 +5093,12 @@
                         !ERLAUBTE_FARBEN.includes(
                             artikel.farbe
                         ) ||
-                        Number(
-                            artikel.abayaLaenge
-                        ) <= 0 ||
-                        Number(
-                            artikel.hijabVorne
-                        ) <= 0 ||
-                        Number(
-                            artikel.hijabHinten
-                        ) <= 0
+                        Number(artikel.abayaLaenge) < 60 ||
+                        Number(artikel.abayaLaenge) > 220 ||
+                        Number(artikel.hijabVorne) < 60 ||
+                        Number(artikel.hijabVorne) > 220 ||
+                        Number(artikel.hijabHinten) < 60 ||
+                        Number(artikel.hijabHinten) > 220
                     ) {
 
                         return false;
@@ -5100,6 +5116,15 @@
 
 
         function checkoutZusammenfassungAnzeigen() {
+
+            const land = document
+                .getElementById("kunde-land")
+                .value
+                .trim();
+
+            const versand =
+                VERSAND_PREISE[land] ||
+                null;
 
             checkoutArtikel.innerHTML =
                 warenkorb
@@ -5152,10 +5177,19 @@
                     .join("");
 
 
-            checkoutGesamt.textContent =
-                euro.format(
-                    warenkorbGesamt()
-                );
+            if (versand) {
+                checkoutVersandHinweis.textContent =
+                    `Versand: ${versand.produkt} · ${euro.format(versand.betrag)}. ` +
+                    "Eine Bestellung entspricht einem Paket bis 2 kg.";
+                checkoutGesamt.textContent =
+                    euro.format(warenkorbGesamt() + versand.betrag);
+            }
+            else {
+                checkoutVersandHinweis.textContent =
+                    "Wähle dein Lieferland, damit der Versand angezeigt wird.";
+                checkoutGesamt.textContent =
+                    euro.format(warenkorbGesamt());
+            }
 
         }
 
@@ -5238,6 +5272,10 @@
 
             }
         );
+
+        document
+            .getElementById("kunde-land")
+            .addEventListener("change", checkoutZusammenfassungAnzeigen);
 
 
         checkoutSchliessen.addEventListener(
@@ -5584,8 +5622,7 @@
                 ![
                     "Deutschland",
                     "Österreich",
-                    "Schweiz",
-                    "Anderes Land"
+                    "Schweiz"
                 ].includes(
                     kunde.land
                 )
@@ -5673,6 +5710,9 @@
                         )
                 };
 
+
+                const versand =
+                    VERSAND_PREISE[kunde.land];
 
                 const artikelHTML =
                     warenkorb
@@ -5775,13 +5815,29 @@
                         <div class="pruefung-gesamt">
 
                             <span>
-                                Gesamt
+                                Artikel
                             </span>
 
                             <strong>
                                 ${euro.format(
                                     warenkorbGesamt()
                                 )}
+                            </strong>
+
+                            <span>
+                                Versand (${escapeHTML(versand.produkt)})
+                            </span>
+
+                            <strong>
+                                ${euro.format(versand.betrag)}
+                            </strong>
+
+                            <span>
+                                Gesamt
+                            </span>
+
+                            <strong>
+                                ${euro.format(warenkorbGesamt() + versand.betrag)}
                             </strong>
 
                         </div>
