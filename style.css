@@ -239,6 +239,7 @@ nav a:hover::after {
 }
 
 .konto-nav,
+.favoriten-nav,
 .warenkorb-nav {
     min-height: 38px;
 
@@ -274,6 +275,7 @@ nav a:hover::after {
 }
 
 .konto-nav:hover,
+.favoriten-nav:hover,
 .warenkorb-nav:hover {
     background:
         var(--cream);
@@ -4917,4 +4919,187 @@ footer small {
         max-width: none;
     }
 
+}
+
+
+/* PRODUKTKARTEN: FARBEN & FAVORITEN */
+
+.favoriten-badge {
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--taupe);
+    color: white;
+    font-size: 8px;
+}
+
+.produkt-herz {
+    border: 0;
+    color: var(--brown);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.produkt-herz:hover,
+.produkt-herz.aktiv {
+    transform: scale(1.08);
+    background: var(--brown);
+    color: white;
+}
+
+.produkt-farben {
+    min-height: 26px;
+    margin: 0 3px 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.farbpunkt {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 1px solid rgba(73, 58, 49, 0.22);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.farbpunkt:hover,
+.farbpunkt:focus-visible {
+    transform: scale(1.14);
+    outline: 0;
+    box-shadow: 0 0 0 3px var(--cream-dark);
+}
+
+.farbpunkt.schwarz { background: #1f1d1e; }
+.farbpunkt.navy { background: #24334a; }
+.farbpunkt.taupe-braun { background: #9a7c69; }
+
+.weitere-farben {
+    min-width: 28px;
+    height: 22px;
+    padding: 0 6px;
+    border: 1px solid var(--taupe-light);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--brown-soft);
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.weitere-farben:hover,
+.weitere-farben:focus-visible {
+    border-color: var(--brown);
+    outline: 0;
+}
+
+.preis {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.favorit-section { padding-top: 35px; }
+
+.favoriten-inhalt {
+    width: min(760px, 100%);
+    margin: 0 auto;
+}
+
+.favoriten-leer {
+    padding: 35px 25px;
+    border: 1px solid var(--line);
+    background: white;
+    text-align: center;
+}
+
+.favoriten-leer span { font-size: 29px; }
+.favoriten-leer p { margin: 9px 0 14px; }
+
+.favoriten-leer a {
+    color: var(--brown);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.favorit-karte {
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 92px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--line);
+    background: white;
+}
+
+.favorit-karte img {
+    width: 92px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.favorit-karte p {
+    margin: 0 0 6px;
+    color: var(--brown-light);
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+}
+
+.favorit-karte h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.favorit-karte strong { font-size: 19px; }
+
+.favorit-karte-aktionen {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.favorit-karte-aktionen button {
+    min-height: 35px;
+    padding: 8px 10px;
+    border: 1px solid var(--brown);
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.favorit-karte-aktionen .favorit-entfernen {
+    width: 35px;
+    padding: 0;
+    background: var(--brown);
+    color: white;
+    font-size: 15px;
+}
+
+@media (max-width: 650px) {
+    .favoriten-text { display: none; }
+    .favoriten-nav { padding: 8px; font-size: 13px; }
+    .produkt-farben { min-height: 22px; margin: 0 1px 8px; gap: 5px; }
+    .farbpunkt { width: 13px; height: 13px; }
+    .weitere-farben { min-width: 24px; height: 18px; font-size: 6px; }
+    .preis { font-size: 19px; }
+    .favorit-karte { grid-template-columns: 62px 1fr; gap: 10px; }
+    .favorit-karte img { width: 62px; height: 77px; }
+    .favorit-karte h3 { margin-bottom: 5px; font-size: 16px; }
+    .favorit-karte strong { font-size: 16px; }
+    .favorit-karte-aktionen { grid-column: 1 / -1; }
+    .favorit-karte-aktionen button:first-child { flex: 1; }
 }

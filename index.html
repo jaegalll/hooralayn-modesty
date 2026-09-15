@@ -54,6 +54,16 @@
                 </button>
 
                 <a
+                    href="#favoriten"
+                    class="favoriten-nav"
+                    aria-label="Favoriten ansehen"
+                >
+                    <span aria-hidden="true">♡</span>
+                    <span class="favoriten-text">Favoriten</span>
+                    <span class="favoriten-badge" id="favoriten-anzahl">0</span>
+                </a>
+
+                <a
                     href="#warenkorb"
                     class="warenkorb-nav"
                     id="warenkorb-nav"
@@ -246,7 +256,7 @@
 
                     <div class="produkt-top">
                         <span class="produkt-label">HANDMADE</span>
-                        <span class="produkt-herz">♡</span>
+                        <button class="produkt-herz" type="button" data-favorit="khimar" aria-label="Bambus Khimar zu Favoriten hinzufügen" aria-pressed="false">♡</button>
                     </div>
 
                     <button
@@ -286,6 +296,13 @@
                         Handmade from 100% bamboo
                     </p>
 
+                    <div class="produkt-farben" aria-label="Verfügbare Farben: Schwarz, Navy, Taupe-Braun und drei weitere">
+                        <button class="farbpunkt schwarz" type="button" data-schnellfarbe="Schwarz" data-schnellprodukt="khimar" aria-label="Schwarz auswählen"></button>
+                        <button class="farbpunkt navy" type="button" data-schnellfarbe="Navy" data-schnellprodukt="khimar" aria-label="Navy auswählen"></button>
+                        <button class="farbpunkt taupe-braun" type="button" data-schnellfarbe="Taupe-Braun" data-schnellprodukt="khimar" aria-label="Taupe-Braun auswählen"></button>
+                        <button class="weitere-farben" type="button" data-schnellprodukt="khimar" aria-label="Drei weitere Farben ansehen">+3</button>
+                    </div>
+
                     <div class="produkt-preis-zeile">
 
                         <p class="preis">
@@ -321,7 +338,7 @@
 
                     <div class="produkt-top">
                         <span class="produkt-label">2-TEILIG</span>
-                        <span class="produkt-herz">♡</span>
+                        <button class="produkt-herz" type="button" data-favorit="abaya" aria-label="Two-Piece Abaya Set zu Favoriten hinzufügen" aria-pressed="false">♡</button>
                     </div>
 
                     <button
@@ -360,6 +377,13 @@
                     <p class="material">
                         Farasha Abaya and Slip On Hijab in 100% bamboo
                     </p>
+
+                    <div class="produkt-farben" aria-label="Verfügbare Farben: Schwarz, Navy, Taupe-Braun und drei weitere">
+                        <button class="farbpunkt schwarz" type="button" data-schnellfarbe="Schwarz" data-schnellprodukt="abaya" aria-label="Schwarz auswählen"></button>
+                        <button class="farbpunkt navy" type="button" data-schnellfarbe="Navy" data-schnellprodukt="abaya" aria-label="Navy auswählen"></button>
+                        <button class="farbpunkt taupe-braun" type="button" data-schnellfarbe="Taupe-Braun" data-schnellprodukt="abaya" aria-label="Taupe-Braun auswählen"></button>
+                        <button class="weitere-farben" type="button" data-schnellprodukt="abaya" aria-label="Drei weitere Farben ansehen">+3</button>
+                    </div>
 
                     <div class="produkt-preis-zeile">
 
@@ -407,6 +431,20 @@
                 </p>
 
             </div>
+
+        </section>
+
+
+        <!-- FAVORITEN -->
+        <section class="favorit-section bereich" id="favoriten">
+
+            <div class="section-heading">
+                <p class="eyebrow">DEINE AUSWAHL</p>
+                <h2>Deine Favoriten</h2>
+                <p>Merke dir deine Lieblingsstücke mit dem Herz.</p>
+            </div>
+
+            <div class="favoriten-inhalt" id="favoriten-inhalt"></div>
 
         </section>
 
@@ -2695,6 +2733,9 @@
         const GAST_WARENKORB_KEY =
             "hooralayn-gast-warenkorb";
 
+        const FAVORITEN_KEY =
+            "hooralayn-favoriten";
+
         const CHECKOUT_BESTELLUNG_KEY =
             "hooralayn-checkout-bestellung";
 
@@ -2706,6 +2747,9 @@
             null;
 
         let warenkorb =
+            [];
+
+        let favoriten =
             [];
 
         let aktuelleBestelldaten =
@@ -4227,6 +4271,388 @@
             abayaFarbeAnzeige,
             "abaya"
         );
+
+
+        /* =========================================
+           FAVORITEN & SCHNELLE FARBWAHL
+        ========================================= */
+
+        const FAVORITEN_PRODUKTE = Object.freeze({
+            khimar: {
+                name: "Bambus Khimar",
+                preis: "59,99 €",
+                bild: "bilder/Bambus Khimar.jpg"
+            },
+            abaya: {
+                name: "2-teiliges Abaya Set",
+                preis: "104,99 €",
+                bild: "bilder/abaya-set-1.jpg"
+            }
+        });
+
+        const favoritenInhalt =
+            document.getElementById(
+                "favoriten-inhalt"
+            );
+
+        const favoritenAnzahl =
+            document.getElementById(
+                "favoriten-anzahl"
+            );
+
+
+        function favoritenLaden() {
+
+            try {
+
+                const gespeichert =
+                    JSON.parse(
+                        localStorage.getItem(
+                            FAVORITEN_KEY
+                        ) || "[]"
+                    );
+
+                return Array.isArray(gespeichert)
+                    ? gespeichert.filter(
+                        function (produkt) {
+
+                            return Boolean(
+                                FAVORITEN_PRODUKTE[
+                                    produkt
+                                ]
+                            );
+
+                        }
+                    )
+                    : [];
+
+            }
+
+            catch {
+
+                return [];
+
+            }
+
+        }
+
+
+        function favoritenAktualisieren() {
+
+            localStorage.setItem(
+                FAVORITEN_KEY,
+                JSON.stringify(
+                    favoriten
+                )
+            );
+
+
+            favoritenAnzahl.textContent =
+                String(
+                    favoriten.length
+                );
+
+
+            document
+                .querySelectorAll(
+                    "[data-favorit]"
+                )
+                .forEach(
+                    function (button) {
+
+                        const istFavorit =
+                            favoriten.includes(
+                                button.dataset.favorit
+                            );
+
+                        button.classList.toggle(
+                            "aktiv",
+                            istFavorit
+                        );
+
+                        button.setAttribute(
+                            "aria-pressed",
+                            String(istFavorit)
+                        );
+
+                        button.textContent =
+                            istFavorit
+                                ? "♥"
+                                : "♡";
+
+                    }
+                );
+
+
+            if (favoriten.length === 0) {
+
+                favoritenInhalt.innerHTML =
+                    `
+                        <div class="favoriten-leer">
+                            <span>♡</span>
+                            <p>Deine Favoriten sind noch leer.</p>
+                            <a href="#kollektion">Kollektion entdecken</a>
+                        </div>
+                    `;
+
+                return;
+
+            }
+
+
+            favoritenInhalt.innerHTML =
+                favoriten.map(
+                    function (produkt) {
+
+                        const details =
+                            FAVORITEN_PRODUKTE[
+                                produkt
+                            ];
+
+                        return `
+                            <article class="favorit-karte">
+                                <img
+                                    src="${details.bild}"
+                                    alt="${details.name}"
+                                >
+                                <div>
+                                    <p>FAVORIT</p>
+                                    <h3>${details.name}</h3>
+                                    <strong>${details.preis}</strong>
+                                </div>
+                                <div class="favorit-karte-aktionen">
+                                    <button
+                                        type="button"
+                                        data-favorit-oeffnen="${produkt}"
+                                    >Produkt ansehen</button>
+                                    <button
+                                        class="favorit-entfernen"
+                                        type="button"
+                                        data-favorit-entfernen="${produkt}"
+                                        aria-label="${details.name} aus Favoriten entfernen"
+                                    >♥</button>
+                                </div>
+                            </article>
+                        `;
+
+                    }
+                ).join("");
+
+
+            document
+                .querySelectorAll(
+                    "[data-favorit-oeffnen]"
+                )
+                .forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                if (
+                                    button.dataset.favoritOeffnen ===
+                                    "khimar"
+                                ) {
+
+                                    khimarOeffnen();
+
+                                }
+
+                                else {
+
+                                    abayaOeffnen();
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+
+            document
+                .querySelectorAll(
+                    "[data-favorit-entfernen]"
+                )
+                .forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                favoritUmschalten(
+                                    button.dataset.favoritEntfernen
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+        function favoritUmschalten(produkt) {
+
+            if (favoriten.includes(produkt)) {
+
+                favoriten = favoriten.filter(
+                    function (eintrag) {
+
+                        return eintrag !== produkt;
+
+                    }
+                );
+
+            }
+
+            else {
+
+                favoriten.push(produkt);
+
+            }
+
+
+            favoritenAktualisieren();
+
+        }
+
+
+        function schnellfarbeWaehlen(
+            produkt,
+            farbe
+        ) {
+
+            const gridSelector =
+                produkt === "khimar"
+                    ? "#khimar-farben-grid"
+                    : "#abaya-farben-grid";
+
+            const anzeige =
+                produkt === "khimar"
+                    ? khimarFarbeAnzeige
+                    : abayaFarbeAnzeige;
+
+
+            document
+                .querySelectorAll(
+                    `${gridSelector} .farbe-option`
+                )
+                .forEach(
+                    function (button) {
+
+                        button.classList.toggle(
+                            "aktiv",
+                            button.dataset.farbe === farbe
+                        );
+
+                    }
+                );
+
+
+            if (produkt === "khimar") {
+
+                khimarGewaehltFarbe = farbe;
+                khimarMassFehler.hidden = true;
+                khimarOeffnen();
+
+            }
+
+            else {
+
+                abayaGewaehltFarbe = farbe;
+                abayaFehler.hidden = true;
+                abayaOeffnen();
+
+            }
+
+
+            anzeige.textContent =
+                "Gewählte Farbe: " + farbe;
+
+        }
+
+
+        document
+            .querySelectorAll(
+                "[data-favorit]"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            favoritUmschalten(
+                                button.dataset.favorit
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                "[data-schnellfarbe]"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            schnellfarbeWaehlen(
+                                button.dataset.schnellprodukt,
+                                button.dataset.schnellfarbe
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                ".weitere-farben"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                button.dataset.schnellprodukt ===
+                                "khimar"
+                            ) {
+
+                                khimarOeffnen();
+
+                            }
+
+                            else {
+
+                                abayaOeffnen();
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
 
 
         /* =========================================
@@ -7025,6 +7451,12 @@
         warenkorbAktualisieren(
             false
         );
+
+
+        favoriten =
+            favoritenLaden();
+
+        favoritenAktualisieren();
 
 
         produkteFiltern();
